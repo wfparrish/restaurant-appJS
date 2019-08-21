@@ -8,18 +8,21 @@
 
     <script src="menu.js"></script>
     <script src="order.js"></script>
-
+    <script src="products.js"></script>
     <script src="userlog.js"></script>
     <script src="calculator.js"></script>
     <script src="index.js"></script>
 
     <title>Restaurant App</title>
   </head>
+
   <body onload="calc.displayDataInUserLog()">
     <div id="root"></div>
 
     <div class="display">
-      <div class="section1">header</div>
+      <div class="section1">
+        <div>header</div>
+      </div>
       <div class="section2">
         <div>menus</div>
         <div class="menu-displays">m-d1</div>
@@ -34,8 +37,8 @@
         <div class="product-displays">
           p-d1
           <button
-            onclick="calc.passDataToUserLog();"
-            id="addMeBtn"
+            onclick="productBox.passDataToUserLog(this.id);"
+            id="addMeBtn1"
             class="addMeBtn"
           >
             Add Me to Cart
@@ -43,20 +46,40 @@
         </div>
         <div class="product-displays">
           p-d2
-          <button class="addMeBtn">Add Me to Cart</button>
+          <button
+            onclick="productBox.passDataToUserLog(this.id);"
+            id="addMeBtn2"
+            class="addMeBtn"
+          >
+            Add Me to Cart
+          </button>
         </div>
         <div class="product-displays">
           p-d3
-          <button class="addMeBtn">Add Me to Cart</button>
+          <button
+            onclick="productBox.passDataToUserLog(this.id);"
+            id="addMeBtn3"
+            class="addMeBtn"
+          >
+            Add Me to Cart
+          </button>
         </div>
         <div class="product-displays">
           p-d4
-          <button class="addMeBtn">Add Me to Cart</button>
+          <button
+            onclick="productBox.passDataToUserLog(this.id);"
+            id="addMeBtn4"
+            class="addMeBtn"
+          >
+            Add Me to Cart
+          </button>
         </div>
       </div>
-      <div class="section4">seats</div>
+      <div class="section4">
+        <div>seats</div>
+      </div>
       <div id="logInfo" class="section5">
-        user log
+        <div>user log</div>
       </div>
     </div>
   </body>

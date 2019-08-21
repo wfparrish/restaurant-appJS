@@ -950,3 +950,48 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 Commit this code to GitHub 
 
+-----------------------------------------------------------------------------------------------------------
+
+August 20, 2019
+
+Commited my code to GitHub
+
+So the calc.passDataToUserLog() is going to become a method of the products instance
+
+in the HTML
+productBox.passDataToUserLog(this.id)
+
+in the JS
+ passDataToUserLog(id) {
+    this.selectedProdDisp = document.getElementById(id);
+    console.log(this.selectedProdDisp);
+    this.myArrProducts.push(this.selectedProdDisp);
+    this.viewBuilder = this.myArrProducts;
+    console.log(productBox.viewBuilder);
+  }
+
+I am getting some output, and the viewBuilder array grows each time I push any of the Add Me to Cart buttons. 
+
+  ex. Clicked the buttons 6 times on the page:
+
+Output ===>
+(6) [null, button#addMeBtn1.addMeBtn, button#addMeBtn2.addMeBtn, button#addMeBtn1.addMeBtn, button#addMeBtn1.addMeBtn, button#addMeBtn2.addMeBtn]
+
+These are the buttons as DOM nodes. I can view all their individual attributes in the console.
+
+But I am sending the wrong object. I don't need to send the button, I want to send the product display holding the menu item I want to access. Ultimately I want that array to have as output:
+
+(6) [null, burger1, fries1, burger1, burger1, fries1]
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+In the project.js file I have a commented out statement that will create an array filled with burgers
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+ToDoList:
+
+Rewrite the passDataToUserLog() method to fill the viewBuilder array with menu objects
+Pass the objects in the viewBuilder to the UserLog
+
+-----------------------------------------------------------------------------------------------------------
