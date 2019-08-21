@@ -1,0 +1,18 @@
+
+Debugging using Node.js and VSCode:
+
+https://code.visualstudio.com/docs/introvideos/debugging
+
+--------------------------------------------------------------------------------------
+
+I can run my .js files by simply typing:
+
+node <the name of the file>
+
+ex. 
+node Playpen.js
+
+I will see the output in the console
+
+--------------------------------------------------------------------------------------
+

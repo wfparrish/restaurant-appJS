@@ -1,0 +1,952 @@
+
+May 1, 2019
+May 2, 2019
+
+
+
+<!DOCTYPE html>
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="stylesheet" href="../src/index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <title>Restaurant App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+
+    <div class="display-holder column left">
+
+      <div class="holder-row">
+        <div class="product-displays">p-d1</div>
+        <div class="product-displays">p-d2</div>
+      </div>
+      <div class="holder-row">
+        <div class="product-displays">p-d3</div>
+        <div class="product-displays">p-d4</div>
+      </div>
+      <div class="holder-row">
+          <div class="product-displays">p-d5</div>
+          <div class="product-displays">p-d6</div>
+        </div>
+
+    </div>
+
+    <div class="seats-holder"></div>
+
+    <!--Keep the names of the classes above for the product display, but redo that code below this code.
+        Rename the code above and create CSS classes for the renamed attributes and properties
+       Use this above pattern with the "display-holder column left" to create the column of menu buttons
+      You are going to have to figure out the reason the buttons are displaying as one column and not two short columns
+      and why when you resize the page the buttons are not inside the column but directly beside the column
+        Place the product-displays in their proper space on the right side of the page
+        Create a div on the bottom of the page for the seats-holder  -->
+
+  </body>
+</html>
+
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+May 3, 2019
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="stylesheet" href="../src/index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <title>Restaurant App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+
+    <div class="display-holder column left">
+
+      <div class="menu-holder-horiz">
+        <div class="menu-displays">m-d1</div>
+        <div class="menu-displays">m-d2</div>
+      </div>
+      <div class="menu-holder-horiz">
+        <div class="menu-displays">m-d3</div>
+        <div class="menu-displays">m-d4</div>
+      </div>
+      <div class="menu-holder-horiz">
+          <div class="menu-displays">m-d5</div>
+          <div class="menu-displays">m-d6</div>
+      </div>
+      <div class="menu-holder-horiz">
+          <div class="menu-displays">m-d7</div>
+      </div>
+
+    </div>
+
+    <div class="display-holder column right">
+
+      <div class="p-displays-container">
+          <div class="display-holder-vert">
+              <div class="product-displays">p-d1</div>
+              <div class="product-displays">p-d2</div>
+            </div>
+            <div class="display-holder-vert">
+                <div class="product-displays">p-d3</div>
+                <div class="product-displays">p-d4</div>
+            </div>
+      </div>
+      
+
+
+
+    <div class="seats-holder-horiz"></div>
+
+    <!--
+      So we need to find a way to take the code we have, turn it into a component,
+    then resize it so there is room for a header and a footer (navigation and seats)
+    This may just be visual presentation or we may need to wrap the current code in a div and go from there
+
+    Look at this flexbox tutorial:
+    https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+  -->
+
+  </body>
+</html>
+	<div class="holder-row">
+        <div class="product-displays">p-d1</div>
+        <div class="product-displays">p-d2</div>
+      </div>
+      <div class="holder-row">
+        <div class="product-displays">p-d3</div>
+        <div class="product-displays">p-d4</div>
+      </div>
+      <div class="holder-row">
+          <div class="product-displays">p-d5</div>
+          <div class="product-displays">p-d6</div>
+        </div>
+
+
+      <div class="holder-column">
+        <div class="menu-displays">m-d1</div>
+        <div class="menu-displays">m-d2</div>
+      </div>
+      <div class="holder-row">
+        <div class="menu-displays">m-d3</div>
+        <div class="menu-displays">m-d4</div>
+      </div>
+      <div class="holder-row">
+          <div class="menu-displays">m-d5</div>
+          <div class="menu-displays">m-d6</div>
+        </div>
+
+    </div>
+	
+	     <div class="holder-row">
+        <div class="seat-displays">s-d1</div>
+        <div class="seat-displays">s-d2</div>
+      </div>
+      <div class="holder-row">
+        <div class="seat-displays">s-d3</div>
+        <div class="seat-displays">s-d4</div>
+      </div>
+      <div class="holder-row">
+          <div class="seat-displays">s-d5</div>
+          <div class="seat-displays">s-d6</div>
+        </div>
+
+    </div>
+	
+	
+	-----------------------------------------------------------
+	
+	
+	html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.column {
+  display: block;
+  height: 100%;
+  width: 100%;
+  float: left;
+}
+
+.left {
+  width: 25%;
+  height: 100%;
+  background-color:#477f8c;
+}
+
+.right {
+  width: 75%;
+  height: 100%;
+  background-color: beige;
+}
+
+.p-displays-container {
+  position: relative;
+  top: 10px;
+  left: 50px;
+
+}
+
+.product-displays {
+  position: relative;
+  display: inline-block;
+  height: 202px;
+  width: 300px;
+  background-color: lightblue;
+  border: 2px;
+  border-style: solid;
+  border-color: blue;
+  padding: 3.5%;
+  margin-top: 30px;
+  margin-left: 20px;
+}
+
+.menu-displays {
+  position: relative;
+  top: 10px;
+  left: 30px;
+  display: inline-block;
+  height: 30px;
+  width: 200px;
+  background-color: lightblue;
+  border: 2px;
+  border-style: solid;
+  border-color: blue;
+  padding: 3.5%;
+  margin-top: 30px;
+  margin-left: 20px;
+}
+
+
+-------------------------------------------------------------
+
+May 4,5 2019
+	
+Final code of v1 of app page:
+
+ <div class="display-holder column left">
+
+      <div class="menu-holder-horiz">
+        <div class="menu-displays">m-d1</div>
+        <div class="menu-displays">m-d2</div>
+      </div>
+      <div class="menu-holder-horiz">
+        <div class="menu-displays">m-d3</div>
+        <div class="menu-displays">m-d4</div>
+      </div>
+      <div class="menu-holder-horiz">
+          <div class="menu-displays">m-d5</div>
+          <div class="menu-displays">m-d6</div>
+      </div>
+      <div class="menu-holder-horiz">
+          <div class="menu-displays">m-d7</div>
+      </div>
+
+    </div>
+
+    <div class="display-holder column right">
+
+      <div class="p-displays-container">
+          <div class="display-holder-vert">
+              <div class="product-displays">p-d1</div>
+              <div class="product-displays">p-d2</div>
+            </div>
+            <div class="display-holder-vert">
+                <div class="product-displays">p-d3</div>
+                <div class="product-displays">p-d4</div>
+            </div>
+      </div>
+      
+
+    <div class="seats-holder-horiz"></div>
+
+    <!--
+      You used the FCC tutorial to study flexbox and grid. Grid is the best option, with sprinkles of flexbox
+      
+      1. Complete the HTML for the seats portion of the layout
+      
+      2. Revise the code using CSS Grid and CSS Flexbox
+        Use the last FCC CSS Grid exercise to see how to apply the Grid 
+
+
+      Use grid-template-areas: 
+            "header header header"
+            "menus content content"
+            "footer footer footer"
+
+            in this fashion (or something similar):
+
+            header header header
+            menus products products
+            seats seats seats
+  -->
+
+  Final code CSS of the v1 app page:
+
+  html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  overflow: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.column {
+  display: block;
+  height: 100%;
+  width: 100%;
+  float: left;
+}
+
+.left {
+  width: 25%;
+  height: 100%;
+  background-color:#477f8c;
+}
+
+.right {
+  width: 75%;
+  height: 100%;
+  background-color: beige;
+}
+
+.p-displays-container {
+  position: relative;
+  top: 10px;
+  left: 50px;
+
+}
+
+.product-displays {
+  position: relative;
+  display: inline-block;
+  height: 202px;
+  width: 300px;
+  background-color: lightblue;
+  border: 2px;
+  border-style: solid;
+  border-color: blue;
+  padding: 3.5%;
+  margin-top: 30px;
+  margin-left: 20px;
+}
+
+.menu-displays {
+  position: relative;
+  top: 10px;
+  left: 30px;
+  display: inline-block;
+  height: 30px;
+  width: 200px;
+  background-color: lightblue;
+  border: 2px;
+  border-style: solid;
+  border-color: blue;
+  padding: 3.5%;
+  margin-top: 30px;
+  margin-left: 20px;
+}
+
+
+----------------------------------------------------------------------------------------------------------
+May 6th, 2019
+
+We divided the grid into an area template:
+
+https://learn.freecodecamp.org/responsive-web-design/css-grid/divide-the-grid-into-an-area-template
+You can group cells of your grid together into an area and give the area a custom name. Do this by using grid-template-areas on the container like this:
+
+grid-template-areas:
+  "header header header"
+  "advert content content"
+  "footer footer footer";
+The code above merges the top three cells together into an area named header, the bottom three cells into a footer area, and it makes two areas in the middle row; advert and content.
+	
+-----------------------------------------------------------------------------------------------------------
+	
+July 14, 2019
+
+What I would like to accomplish
+
+1. Implement Navigation between the menus. When a category is selected, the products component should swap out the old displays for the new ones
+
+2. Create a products class so we can add, subtract, multiply, and divide quantities of the products selected and display the information.
+This information is part of the state of the application
+
+For instance, everytime I click the burger button, I could be adding a value to an array that stores each item 
+
+3. Create a seats class 
+4. Create a menus class
+5. Create a user log class
+
+The user log class would display selected state data and would
+perform some simple calculations
+
+6. Create state variables to handle where in the ordering process the user is
+
+7. Read these tutorials and articles:
+
+https://gomakethings.com/rendering-dynamic-and-conditional-templates-with-vanilla-javascript/
+
+https://gomakethings.com/components-state-and-vanilla-javascript/
+
+https://gomakethings.com/automatically-re-rendering-an-element-when-its-state-changes-with-vanilla-javascript/
+
+-----------------------------------------------------------------
+July 14, 2019
+
+So to simplify the process and test the passing of information:
+
+Create p-d class with constructor
+With each click of any of the product-displays items, we should:
+
+1. Create a new p-d instance
+2. Store the state of the instance in an array
+3. Pass the values of the array to the itemList() method of the userLog element
+4. display the number of product-displays items we selected in the userlog
+5. display the sum total of all items selected
+
+class P-d {
+  constructor(id, itemType) {
+    this.id = 'P-d' + id;
+    this.itemType = itemType;
+  }
+}
+	
+Currently the product-displays items are childnodes of one of the section elements. With each click of product-display elements maybe we could store some of the state of the app in 
+the section element that is the parent to the childnodes
+
+We would then need to find a way to pass that data to the user-log
+
+class userLog {
+  constructor(logId, seatNum) {
+  this.logId = logId;
+  this.seatNum = seatNum;
+  this.itemList = [];
+  }
+
+  itemTally(this.itemList) {
+    return this.itemList.length;
+  }
+}
+	
+
+-----------------------------------------------------------------
+
+July 15, 2019
+
+Altered the p-d1 button. It sends data to the UserLog
+
+Learned that I cannot apply a click event to an array(or array-like collection) of objects. I need to iterate through and
+apply the click event to each element in the array.
+
+Also that to call the DOM is just one of the things you can do.
+You can alter the DOM when you call it by assigning the object new values, or you can use what you called by putting what was returned into a variable.
+
+ex. Incorrect syntax
+
+document.getElementsByClassName("classname");
+
+How would you use this collection of objects? It is just floating in space
+
+ex. Correct syntax
+
+document.getElementById("addMeBtn").addEventListener("click", function(){
+document.getElementById("logInfo").innerHTML = "Wasn't that some bomb-ass food? See ya soon bitch!";
+
+
+ex. Correct syntax
+
+let classname = document.getElementsByClassName("classname");
+
+Now it can be used by JavaScript, although actually it is still not a JS array. That is why we can't use an array method to loop through this collection. classname is a live HTMLCollection of found elements
+
+-----------------------------------------------------------------------------------------------------
+
+July 16, 2019
+
+Realized the 
+
+function passDataToUserLog() {
+  document.getElementById("logInfo").innerHTML =
+    "<p>Wasn't that some bomb-ass food? See ya soon bitch!</p>";
+}
+
+could be put inside the UserLog object, or it could be a part of a totally different object, maybe the Check object. 
+
+Create a Check object that handles the state of the user's session for the application
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+August 5, 2019
+
+Returning from the land of:
+
+0. From July 16th to July 26th. Worked on TDD Udemy tutorial. 
+n-1. July 27th and 28th: Creating the complete new stack of flash cards
+n. August 3rd and 4th: Reviewing 80% of the flashcards for the first time
+
+What I learned that is applicable to this effort:
+
+Syntax from the cards: I need to memorize much more, but I see how the structure of JS ties around itself
+TDD: it should be applied to each method that I have. I should have a test for every method that I write
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+Reviewed the Angular Heroes tutorial. Whew! Angular is a bulky piece of work. Very little of what I looked
+at was recognizable as vanilla JS. And the jargon is extremely dense. They speak of manipulating the DOM using
+Angular, but the DOM seems further away than it does with React. 
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+Issue: CSS not properly displaying the product boxes in .section3
+
+Possible Solution:
+
+Add 
+display: flex to section3 
+
+and see what happens
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+I used the Udemy TDD tutorial and added Jasmine to the app. I can now begin to develop tests for my methods
+I should write a test for every method, it doesn't matter that I may change all the functionality in the future
+
+------------------------------------------------------------------------------------------------------------------
+
+August 6th, 2019
+
+ToDoList(created at the start of the session)
+
+1. Change the name of the divs from .section to something recognizable
+2. Write a test for the passDataToUserLog method
+3. Correct the CSS for the application so that the product div is properly formatted
+
+I didn't do anything in this TODO list, because by starting to write the passDataToUserLog test, I realized
+I was more interested in the state of the UserLog display. How could I change it? And would JS respond to the 
+changes? 
+
+I set up a new method that displays a message in the UserLog div when the application starts
+function displayDataInUserLog() {}
+
+The method is called by the onload attribute of the <body> tag
+
+I could not find a way to call a similar "onload" method for a div, and there doesn't appear to be one
+
+Now the application toggles from the initial message to the second message with a list of items they ate
+
+I need to write tests for both of these methods, I started the test for the first.
+
+I still need to figure out how to reach the div through travesing the DOM, I think it will be key to writing the 
+tests.
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+August 7, 2019 (150 solid minutes of coding)
+
+Multiple attempts at cracking the Jasmine egg.
+-Realized I needed to import index.js to make some of my code make sense. 
+-Thinking I should create a seperate file for UserLog, just like the tutorial for Calculator
+-Still trying to figure out if Jasmine has access to my HTML initial state. If I call a document element in Jasmine
+ and assign it a value, this cannot be the same object that is displaying in the browser window. So what and where is this object?
+-How do I connect my UserLog and my div that displays information? I would like to change the state by changing the values in an instance of the UserLog class
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+1. What does the UserLog need?
+
+It needs a function that when called assigns a value to the div that represents the UserLog component
+Right now the functions that perform this are global:
+-function passDataToUserLog() {
+-function displayDataInUserLog() {
+
+I want them to be methods of the UserLog class, not the Window object. I will probably need to rename them
+
+
+
+2. What does testing need right now?
+
+I need to break my original test IDEA down into something clearer. What am I trying to do? Now that I know I want to call the functions as methods from the UserLog, I realize my it statement in the first test is actually like a clue:
+
+ it("should pass data to the UserLog component")
+
+ This isnt what my app currently does. It just calls functions to change the HTML in a component that has no relation to a UserLog instance. I need to find a way to...
+
+ ------------------------------------------------------------------------------------------------------------------
+
+ August 8, 2019
+
+ ...create a brain for the application
+ I will call this brain Calculator. It will contain the functionality that so far has been connected with 
+ the index.js file and the UserLog.
+
+ Started Calculator class code and moved the functions correctly. 
+
+-------------------------------------------------------------------------------------------------------------------
+
+August 9, 2019
+
+Some of the objects that I think I need to create:
+
+class menu {
+  constructor() {
+    this.menuName = menuName;
+  }
+}
+
+class foodItem {
+  constructor() {
+    this.id = id;
+    this.name = name;
+    this.price = price;
+  }
+}
+
+class table {
+  constructor() {
+    this.partyId = partyId;
+    this.partySize = partySize;
+    this.seatArray = seatArray;     //will hold the seat info for each diner, and can be the basis of checks
+  }
+}
+
+class seat {
+  constructor() {
+    this.seatId = seatId;
+  }
+}
+
+class check {
+  constructor() {
+    this.checkNum = checkNum;
+    this.itemArray = itemArray;
+    this.seatList = seatList;
+    this.total = total;
+    this.status = status  //is the check open or closed?
+  }
+}
+
+class server {
+  constructor() {
+
+  }
+}
+
+class tableOrderQueueForChefs {     //a list of tableOrder(s) 
+  constructor() {     
+
+  }
+}
+
+class tableOrder {
+  constructor() {
+
+  }
+}
+
+class eightySixList {
+  constructor() {
+
+  }
+}
+
+class voids {
+  constructor() {
+
+  }
+}
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+TODO:
+
+Create some static foodItems and push() them to an array in UserLog
+Sum the total for each of the items, and create a running tally of how many of each items were ordered
+Implement the Burger class as a form with checkboxes. Each toggle will also add or subtract from the price of the burger in the UserLog
+
+ex.
+
+class Burger {
+  constructor() {
+    this.price = price;
+    this.temperature = '';
+    this.cheese = false;
+    this.tomato = false;
+    this.lettuce = false;
+    this.onion = false;
+    this.ketchup = false;
+    this.mustard = false;
+    this.mayo = false;
+    this.bacon = false;
+    this.pickle = false;
+    
+  }
+}
+
+class Fries {
+  constructor() {
+    this.price = price;
+    this.size = '';
+  }
+}
+
+class Milkshake {
+  constructor() {
+    this.price = price;
+    this.size = '';
+    this.flavor = '';
+  }
+}
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+For each seat there should be an Order.
+
+class Order {  //an order is a one-time request. One guest may create multiple orders in one dining session
+  this.orderId = orderId;
+  this.seatNum = seatNum;
+  this.items = [];
+
+}
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+I need to think about application structure. Right now files are everywhere, and nothing is grouped according to nesting and functionality. I would like to change that. 
+
+-------------------------------------------------------------------------------------------------------------------
+
+August 10, 2019
+
+So I have objects that I have created in the menu.js file for menu items. I would like to pass instances of those items to the UserLog. I would then like to call a method from the UserLog that renders the data. 
+
+So what I want UserLog to do is render data, not calculate it. The calculation of the data should be completed before the component receives the data to render
+
+Currently the userLog instance is holding the information it received from object order1. 
+
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+By the end of the day I realized what two tasks I had been trying to accomplish with my code:
+
+1. Creating a setState method for the UserLog to have it's state set by a parent or sibling object
+2. Creating a render method for the UserLog to display it's current state
+
+But I encountered some issues that I am still in the process of resolving:
+
+1. How to use the state of the UserLog. Without an event to push the program ahead, nothing happens. What kind of event can I trigger to make UserLog use a setState method? I need it to feel natural to the user.
+
+2. The passDataToUserLog method is populated by an array from the Calculator object's constructor. This constructor gets it's information from the Order object. I need to use the passDataToUserLog method, the myArr1 array, and portions of the order.js code to create the interface for the user to enter data through UI elements like checkboxes or forms.
+
+3. How should I create my data store to populate the application?
+
+4. Is the application missing what could be called a "main thread". If I wanted to create a script file to run my
+program, what would that look like?
+
+
+I also realized I will need to begin to create more component code in JavaScript, and work on pulling in input from the user. The input from the user may be the solution to issue #1, as this will create events. 
+
+I guess I wonder, what should my program be doing when no one is entering data or creating events?
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+Q.
+4. Is the application missing what could be called a "main thread". If I wanted to create a script file to run my program, what would that look like?
+
+A.
+Ha ha, realized another use of the ordering of the script tag, besides being able to create components. The <script> tag allows the programmer to control the flow of the program, making the program run methods or perform any assigned tasks that the developer feels like creating a tag for
+
+<script></script>
+<script></script>
+<script></script>
+<script></script>
+<script></script>
+<script></script>...
+
+Each of these script tags can be filled with variable assignments and method calls that run IN ORDER!
+
+So if I want to spend time creating tables with one tag, then loading the tables with seats in another,  then finally ordering items for each person in a different tag, its all possible. 
+
+The script tag does exactly what it claims to do, execute scripts using JS
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+August 12, 2019
+
+Started the TDD tutorial again in order to start writing tests.
+I was having a problem getting the tests to pass. I kept getting this error:
+
+TypeError: Cannot set property 'innerHTML' of null
+
+After searching a WHILE I found this:
+
+https://stackoverflow.com/questions/40267775/tesing-window-onload-js-function-using-jasmine-framework?rq=1
+
+based on this google query: 
+onload null jasmine
+
+It looks like in order to effectively test MY application I need to finish the TDD tutorial
+
+---------------------------------------------------------------------------------------------------------------------
+
+August 18, 2019
+
+Returning to my code from 6 days. In that time I covered:
+1. material from the TDD Udemy course
+2. researched the methods of Jasmine
+3. completed 80% of my JavaScript flashcard stack
+
+I realized looking at the UserLog script that an instance of the UserLog class does not get initialized a value from itemTally() method. This could be the reason for the error from 8/12/2019. 
+
+I just recalled that my original idea was to store multiple instances of the Order class for each check, in an array inside an instance of UserLog. This was so that the same time table could place multiple rounds of orders and each round would be stored seperately
+
+I have successfully connected the userLog instance in the UserLog class to the data from the order instance from the Order class. I must now connect the instance of the userLog to the HTML
+
+I have successfully connected the instance of the userLog to the HTML
+
+I found this comment in the UserLog:
+
+    "//We pass data to the UserLog, which is storing the state of the user's check data. The plan is to create a render method in the User Log"
+
+Initially I thought this was a good idea, as I would then be able to provide the user the ability to see the UserLog when desired. But why wouldn't they want to see their userLog instance continuously? But for the business it might be better for sales to hide the log... maybe... maybe not...  Hmmm...
+
+We moved the creation of myArr1 from the constructor of the calculator to the passDataToUserLog() method, 
+which makes more sense. It also places the state of the application here.
+
+Previously, on 8/12/2019 we had created a clear the userLog method. We uncommented the method. Now the userLog is cleared, and each push of the AddMeToCart button populates the userLog instance, then clears it
+
+The next steps for the program development:
+-create a test for the creation of the userLog
+-create a test for the population of the div by the userLog component
+-test the data passed to make sure it is correct and what is expected
+-spread the functionality to each of the buttons on the page. I need to determine each button's relationship to the UserLog and the Calculator classes.
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+The userLog instances would be stored in the Check class instance
+They could be stored in an array
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+It appears the tests run before the userLog gets populated. The console keeps complaining that the innerHTML is null. Have I connected the userLog to the view?
+
+-----------------------------------------------------------------------------------------------------------
+
+August 19, 2019
+
+
+I have successfully transfered an array of objects between my created class object instances. This movement
+of data is shown by a modification to the DOM and the HTML associated with the objects. Essentially I am treating divs like Angular view files and presenting data from them. 
+
+Don't confuse the HTML and what you would like the view to do, with the JS and what some of these
+objects you are creating are. The JS is independent of the HTML. The view displays what it is told to display by either the initial HTML or the DOM. If I choose to use the DOM, I could manipulate any HTML element with any DOM element. There is not a one-to-one link between a view and a class like in Angular. Any JS object can manipulate any HTML element. There is no framework to complain.
+
+So just because in the view there is a box called products, and in the code I have a products file, the 
+relationship is exclusively logical in nature. There is nothing in the syntax that couples these objects, 
+outside of the DOM methods that I may choose to call from my JS.
+
+I realized this was all important to understand when I started to create the products.js file. What I want from the HTML (the view) and the JS (the logic) are two totally seperate things.
+
+
+products (the HTML/CSS)
+1. I would like each productDisplay div inside the products div to have a picture of their particular menu item 
+2. I would like the products div to have styling and element positioning that is controlled by the CSS
+3. There should be a button that when clicked, triggers a method in the DOM
+
+products (the JS)
+1. I would like an instance of products to hold an array of product displays, dynamically populated in the product view by the administrative user
+2. I would like each instance of product display to:
+
+ a. Hold an instance object from the menu
+ b. Be able to store the value of the instance (in an array)
+ c. Use getters and setters to pass data in and out about menu items
+ d. Take in data from parameters to set the type of object in the display
+      ex. I could show:
+          burger in p-d1,
+          fries in p-d2,
+          shake in p-d3...
+
+        ...or each p-d could just have the same thing, all burgers. 
+    The point is whatever is in there is dynamically populated by the application's administrative user
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+So the Products table should be populated dynamically based on the admin's whim. the Products object will
+hold an array of Product Displays in an array called viewBuilder. viewBuilder will be used to dynamically fill the div 'products' with 'productDisplays' instances
+
+ProductDisplays will hold instances of menuItems
+Every productDisplays instance will have a button that calls the passDataToUserLog() method
+
+viewBuilder as a method or an array is a good idea. 
+
+If it is a method, it sounds active, like it pulls in pieces and puts together the view
+If it is an array, it sounds passive, like the view's parts are passed to it for state storage
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$   
+
+I have created a seats.js file too, using the idea of the viewBuilder array.
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+I should be able to use the Order class to start to create ProductDisplay methods. We should be using parts from the order.js file
+
+ex. 
+single instances of desired Menu items should be connected one-to-one to ProductDisplay instances, and be created when the passToUserLog() method is triggered. Something like that.
+
+The Order class should be modified to serve as a data store for all orders placed. Could use a 2D array, storing each collection of items as an array in an allOrders array
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+Also take care not to confuse coding conventions with syntax for: 
+  a. JS property names
+  b. HTML attributes
+  c. DOM properties for elements and nodes
+  
+For instance, the key 'id' has different meanings and functionality depending if it is an HTML attribute, part of a DOM element or node, or used as a property key in a JS object. 
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+Commit this code to GitHub 
+

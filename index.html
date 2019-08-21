@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+
+    <script src="menu.js"></script>
+    <script src="order.js"></script>
+
+    <script src="userlog.js"></script>
+    <script src="calculator.js"></script>
+    <script src="index.js"></script>
+
+    <title>Restaurant App</title>
+  </head>
+  <body onload="calc.displayDataInUserLog()">
+    <div id="root"></div>
+
+    <div class="display">
+      <div class="section1">header</div>
+      <div class="section2">
+        <div>menus</div>
+        <div class="menu-displays">m-d1</div>
+        <div class="menu-displays">m-d2</div>
+        <div class="menu-displays">m-d3</div>
+        <div class="menu-displays">m-d4</div>
+        <div class="menu-displays">m-d5</div>
+        <div class="menu-displays">m-d6</div>
+      </div>
+      <div class="section3">
+        <div>products</div>
+        <div class="product-displays">
+          p-d1
+          <button
+            onclick="calc.passDataToUserLog();"
+            id="addMeBtn"
+            class="addMeBtn"
+          >
+            Add Me to Cart
+          </button>
+        </div>
+        <div class="product-displays">
+          p-d2
+          <button class="addMeBtn">Add Me to Cart</button>
+        </div>
+        <div class="product-displays">
+          p-d3
+          <button class="addMeBtn">Add Me to Cart</button>
+        </div>
+        <div class="product-displays">
+          p-d4
+          <button class="addMeBtn">Add Me to Cart</button>
+        </div>
+      </div>
+      <div class="section4">seats</div>
+      <div id="logInfo" class="section5">
+        user log
+      </div>
+    </div>
+  </body>
+</html>
+
+<!--
+
+  Create the CSS for the seats and the log elements
+  
+-->
