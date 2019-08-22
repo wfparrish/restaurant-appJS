@@ -5,29 +5,58 @@ class Products {
   }
 
   passDataToUserLog(id) {
-    this.selectedProdDisp = document.getElementById(id);
-    //this.selectedProdDisp = burger1;                //Will create a array filled with burgers
-    console.log(this.selectedProdDisp);
-    this.myArrProducts.push(this.selectedProdDisp);
+    this.selectedProd = document.getElementById(id);
+    this.display = "";
+    switch (id) {
+      case "addMeBtn1":
+        this.selectedProd = new Burger();
+        this.display = new ProductDisplay(this.selectedProd);
+        break;
+      case "addMeBtn2":
+        this.selectedProd = new Fries();
+        this.display = new ProductDisplay(this.selectedProd);
+        break;
+      case "addMeBtn3":
+        this.selectedProd = new Milkshake();
+        this.display = new ProductDisplay(this.selectedProd);
+        break;
+      case "addMeBtn4":
+        this.selectedProd = new Chicken();
+        this.display = new ProductDisplay(this.selectedProd);
+        break;
+    }
+    this.myArrProducts.push(this.display);
     this.viewBuilder = this.myArrProducts;
     console.log(productBox.viewBuilder);
+    userLog.itemTally(productBox.viewBuilder);
+    document.getElementById("logInfo").innerHTML =
+      "<p>Wasn't that some bomb-ass food?" +
+      "<br />" +
+      " You ate: " +
+      "<br />" +
+      "<br />" +
+      userLog.itemList.map(item => {
+        return item.menuItem.name;
+      }) +
+      "<br /> " +
+      "<br /> See ya soon bitch!</p>";
   }
 }
 
-class ProductDisplays {
-  constructor(id, menuItem) {
-    this.id = "P-d" + id;
+class ProductDisplay {
+  constructor(menuItem) {
+    this.id = "P-d" + ProductDisplay.incrementId();
     this.menuItem = menuItem;
+  }
+
+  static incrementId() {
+    if (!this.latestId) this.latestId = 1;
+    else this.latestId++;
+    return this.latestId;
   }
 }
 
 let productBox = new Products();
-let productDisp1 = new ProductDisplays(1, burger1);
-let productDisp2 = new ProductDisplays(2, fries1);
-let productDisp3 = new ProductDisplays(3, milkshake1);
-let productDisp4 = new ProductDisplays(4, chix0);
-productBox.passDataToUserLog("addMeBtn1");
-console.log(productBox.viewBuilder);
 
 //I should be able to use the Order class to start to create ProductDisplay methods. We should be using parts from the order.js file
 

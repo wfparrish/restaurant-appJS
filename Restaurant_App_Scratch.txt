@@ -995,3 +995,34 @@ Rewrite the passDataToUserLog() method to fill the viewBuilder array with menu o
 Pass the objects in the viewBuilder to the UserLog
 
 -----------------------------------------------------------------------------------------------------------
+
+August 21, 2019
+
+
+Very quickly I was able to begin to send the data to the userLog instance. I wrapped the menu items in productDisplay instances by using a switch statement. The id of the button is used to determine what menu item is wrapped in the display. I needed to figure out how to get the data out though, and I found these solutions online.
+
+1.
+
+    userLog.itemList.forEach(obj => {
+        Object.keys(obj).forEach(key => {
+          console.log("key : " + key + " - value : " + obj[key].name);
+        });
+      });
+
+2.
+      JSON.stringify(userLog.itemList) +
+
+Neither one was correct. This is what I am currently using:
+
+3.
+
+  userLog.itemList.map(item => {
+        return item.menuItem.name;
+      }) +
+
+Currently the data is in an array. Every time I push the Add Me to Cart buttons, a new productDisplay instance gets added to an array. That array is then sent over to the userLog.itemArray array, and the entire array is displayed. I need to find a way to display each item seperately on a new line, along with 
+the price of each item.
+
+Issues:
+Currently the passDataToUserLog() is long and unweildy. It also does more than one thing, which is a no-no for pure functions. It's more like a script. I would like to find a way to simplify it, maybe break it into multiple functions, all chained together so that the single button push still has the same effect for the user of the application. 
+
