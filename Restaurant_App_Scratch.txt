@@ -1026,3 +1026,42 @@ the price of each item.
 Issues:
 Currently the passDataToUserLog() is long and unweildy. It also does more than one thing, which is a no-no for pure functions. It's more like a script. I would like to find a way to simplify it, maybe break it into multiple functions, all chained together so that the single button push still has the same effect for the user of the application. 
 
+----------------------------------------------------------------------------------------------------------
+
+August 22, 2019
+
+Instead of splitting the array, I decided to use the nature of HTML divs(block elements) to get menu item names to appear on new lines. 
+
+I need to create a new div with each click, instead of sending an array
+
+I found this solution online and decided to drop it in and see what happened
+https://stackoverflow.com/questions/5886144/create-divs-from-array-elements
+This is way off, but the elements do print line-by-line. 
+
+
+    for (let stuff in userLog) {
+      let newElement = document.createElement("div");
+      newElement.id = userLog[stuff];
+      newElement.innerHTML = userLog[stuff];
+      document.body.appendChild(newElement);
+    }
+
+The Output:
+
+1
+1
+I am the UserLog for seat 1
+[object Object]
+1
+1
+I am the UserLog for seat 1
+[object Object],[object Object]
+1
+1
+I am the UserLog for seat 1
+[object Object],[object Object],[object Object]
+
+I need to learn to traverse the dom correctly to get the correct output in the appropriate space, but this
+appears to be a better solution than trying to manipulate the array. Play with this idea.
+
+One benefit seems to be having divs associated with the output. That could be useful. 

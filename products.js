@@ -37,9 +37,16 @@ class Products {
       "<br />" +
       userLog.itemList.map(item => {
         return item.menuItem.name;
-      }) +
-      "<br /> " +
-      "<br /> See ya soon bitch!</p>";
+      });
+
+    //Instead of splitting the array, I decided to use the nature of divs(block elements) to get info on new lines. this is way off, but the elements do print line-by-line. I need to create a new div with each click, instead of sending an array
+    for (let stuff in userLog) {
+      let newElement = document.createElement("div");
+      newElement.id = userLog[stuff];
+      newElement.innerHTML = userLog[stuff];
+      document.body.appendChild(newElement);
+    }
+    +"<br /> " + "<br /> See ya soon bitch!</p>";
   }
 }
 
