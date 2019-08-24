@@ -27,6 +27,7 @@ class Products {
 
   passDataToUserLog(id) {
     let calc1 = new Calculator();
+    this.order = new Order(2, []);
     this.selectedProd = document.getElementById(id);
     this.display = "";
     //creates a menu item and puts it in a product display object
@@ -74,7 +75,15 @@ class Products {
       "<br /> " +
       "<br /> " +
       "<br /> " +
-      "<button class='sendOrderBtn'>Send Order</button>";
+      "<button class='sendOrderBtn' onclick='productBox.createOrder()'>Send Order</button>" +
+      "</p>";
+  }
+
+  createOrder() {
+    //creates a 2D array with
+    this.order.orderItems.push(this.viewBuilder);
+    console.log(this.order.orderItems);
+    return this.order.orderItems;
   }
 }
 

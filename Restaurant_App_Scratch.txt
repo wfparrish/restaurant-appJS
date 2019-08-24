@@ -1169,3 +1169,22 @@ So instead of the messages I currently have describing a situation where the Use
 
 In one motion we gather an order and then send it.
 
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+So I am close to what I want to implement. When I click the Send Order button, it does send the values in the viewBuilder array. If I have sent the order, I would like a new order item to be started if I start ordering more items. This is not what is happening. The new items are being added to the array. 
+
+If however, after I have built an order and sent the order using the button, if I press Send Order again immediately, the program does what I want, creating a 2D array with multiple orders inside.
+
+Also we need to fix the Order id increment method. I want to see that it is assigning id's to individual orders. Right now I am still hard-coding the ids. I would like to see the order Id in the console if that is possible, inside the 2D array for the check. 
+
+I commented this method out of the constructor for Order. It could be good or bad, who knows?
+    //this.orderId = Order.incrementId();
+
+Also the order object in the Products class is a property of the Products class, it was not created independent of the Products( and the productBox instance)
+
+Could it be to solve this problem it would be easier if I created the seats and the check items and passed one of them the order information?
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+I also need to fix the floating point problem. My calculations have too many zeroes
+

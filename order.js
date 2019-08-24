@@ -1,6 +1,6 @@
 class Order {
   constructor(orderId, orderItems) {
-    this.orderId = orderId;
+    //this.orderId = Order.incrementId();
     this.orderItems = orderItems;
   }
 
@@ -11,6 +11,12 @@ class Order {
   get order() {
     //console.log(orderItems);
     return this.orderItems;
+  }
+
+  static incrementId() {
+    if (!this.latestId) this.latestId = 1;
+    else this.latestId++;
+    return this.latestId;
   }
 }
 
