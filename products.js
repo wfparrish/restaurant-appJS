@@ -26,8 +26,10 @@ class Products {
   }
 
   passDataToUserLog(id) {
+    let calc1 = new Calculator();
     this.selectedProd = document.getElementById(id);
     this.display = "";
+    //creates a menu item and puts it in a product display object
     switch (id) {
       case "addMeBtn1":
         this.selectedProd = new Burger();
@@ -46,26 +48,33 @@ class Products {
         this.display = new ProductDisplay(this.selectedProd);
         break;
     }
+    //creates an array of product displays and shows the content of the product displays in the userLog view
     this.myArrProducts.push(this.display);
     this.viewBuilder = this.myArrProducts;
-    console.log(productBox.viewBuilder);
     userLog.itemTally(productBox.viewBuilder);
     document.getElementById("logInfo").innerHTML =
-      "<p>Wasn't that some bomb-ass food?" +
+      "<p>Damn nigga... you real hungry ain't you?" +
       "<br />" +
-      " You ate: " +
+      "<br />" +
+      " You fittin to smash: " +
       "<br />" +
       "<br />" +
       userLog.itemList.map(item => {
+        calc1.addition(item.menuItem);
+        //creates a div for each menu item that shows name and price
         let itemView = document.createElement("div");
         itemView.id = "itemView";
-        itemView.innerText = item.menuItem.name;
-        console.log(itemView);
-        return itemView;
+        itemView.innerText = item.menuItem.name + "   " + item.menuItem.price;
+        return itemView.innerText;
       }) +
       "<br /> " +
-      "<br /> See ya soon bitch!</p>";
-    console.log(userLog.itemList);
+      "<br /> " +
+      " Your total will be: " +
+      calc1.total +
+      "<br /> " +
+      "<br /> " +
+      "<br /> " +
+      "<button class='sendOrderBtn'>Send Order</button>";
   }
 }
 

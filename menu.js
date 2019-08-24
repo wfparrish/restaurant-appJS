@@ -1,7 +1,7 @@
 class Burger {
   constructor() {
     this.name = "Burger";
-    this.price = price;
+    this.price = 3.89;
     this.temperature = "";
     this.cheese = false;
     this.tomato = false;
@@ -18,7 +18,7 @@ class Burger {
 class Fries {
   constructor() {
     this.name = "Fries";
-    this.price = price; //make this an array
+    this.price = 0.99; //make this an array
     this.size = ""; //make this an array
   }
 }
@@ -26,7 +26,7 @@ class Fries {
 class Milkshake {
   constructor() {
     this.name = "Milkshake";
-    this.price = price;
+    this.price = 2.99;
     this.size = ""; //make this an array
     this.flavor = ""; //make this an array
   }
@@ -35,7 +35,7 @@ class Milkshake {
 class Chicken {
   constructor() {
     this.name = "Chix";
-    this.price = price;
+    this.price = 3.59;
     this.style = ""; //broiled, pan seared, battered and fried
   }
 }
@@ -43,7 +43,7 @@ class Chicken {
 class Sides {
   constructor() {
     this.name = "Sides";
-    this.price = price;
+    this.price = 1.75;
     //macaroni, coleslaw, spinach, corn, etc...
   }
 }
@@ -51,6 +51,6 @@ class Sides {
 class Drink {
   constructor() {
     this.name = "Drink";
-    this.price = price;
+    this.price = 1.75;
   }
 }

@@ -1101,6 +1101,12 @@ and does modify the DOM, adding a div each time the button is clicked
 
 I need to combine the two of these things, so that I see burgers, fries, and milkshake, the DOM gets modified, AND each element displays on its own row
 
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+Actually 1. is the correct solution with one modification, to:
+
+return itemView.innerText;
+
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 I am starting to think that the problem goes back to the inheritance of certain CSS properties in the div.
@@ -1148,5 +1154,18 @@ The Products() class should be initialized with this object
 
 The order class should be modified to serve as a data store for all orders placed. Could use a 2D array, storing each collection of items as an array in an allOrders array
 
-So the Order class needs to be developed so that we actually gather an order (using the viewBuilder array) to be added to a collection of orders. This is going to start to shape the user's experience of the application, namely, how "thick" the application feels, how many levels they have to dig through to place an order. Even though it is an SPA, there is still the need to pass through processes inside the app, and its that handling of the processing that at times is not without its constraints on the programmer. Sometimes you have to make an implementation choice which shapes UX and UI
+So the Order class needs to be developed so that we actually gather an order (using the viewBuilder array)to be added to a collection of orders. This is going to start to shape the user's experience of the application, namely, how "thick" the application feels, how many levels they have to dig through to place an order. Even though it is an SPA, there is still the need to pass through processes inside the app, and its that handling of the processing that at times is not without its constraints on the programmer. Sometimes you have to make an implementation choice which shapes UX and UI
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+Need to solve the CSS issue with the block elements not showing on individual lines, since I have confirmed that <div> elements are being added to the DOM with each click of the buttons
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+So the Order class is actually going to collect the items in the viewBuilder and group them in an array (thus a 2D array).
+The Order class will then send the order to the "kitchen"
+
+So instead of the messages I currently have describing a situation where the UserLog view holds a check of items, here we intend to use the Order class to send the data that will be held by the UserLog instance as one order. This makes sense and solves part of the UI/UX issue. 
+
+In one motion we gather an order and then send it.
 

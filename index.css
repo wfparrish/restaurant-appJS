@@ -95,3 +95,10 @@ code {
   border-style: solid;
   border-color: blue;
 }
+
+.sendOrderBtn {
+  position: relative;
+  border: 2px;
+  border-style: solid;
+  border-color: blue;
+}
