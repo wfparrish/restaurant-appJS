@@ -1065,3 +1065,88 @@ I need to learn to traverse the dom correctly to get the correct output in the a
 appears to be a better solution than trying to manipulate the array. Play with this idea.
 
 One benefit seems to be having divs associated with the output. That could be useful. 
+
+----------------------------------------------------------------------------------------------------------
+August 23, 2019
+
+So I have two possible directions
+
+1.
+
+
+
+      userLog.itemList.map(item => {
+        let itemView = document.createElement("div");
+        itemView.id = "itemView";
+        itemView.innerText = item.menuItem.name;
+        console.log(itemView);
+        return itemView;
+      })
+
+2.
+
+      userLog.itemList.map(item => {
+        let itemView = document.createElement("div");
+        itemView.id = "itemView";
+        itemView.innerText = item.menuItem.name;
+        console.log(itemView);
+        return itemView;
+
+The first returns an array filled with names of food and does not modify the DOM
+The second returns multiple array-like objects like so:
+
+[object HTMLDivElement]
+
+and does modify the DOM, adding a div each time the button is clicked
+
+I need to combine the two of these things, so that I see burgers, fries, and milkshake, the DOM gets modified, AND each element displays on its own row
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+I am starting to think that the problem goes back to the inheritance of certain CSS properties in the div.
+If you think about it, why do I think that there could be a new line as I imagine it in the userLog? The userLog div is not the Window object. It is just an element. And the page is already sliced up into grids. I need to rethink how I will display the output as I wish.
+
+Maybe I could use a table?
+
+----------------------------------------------------------------------------------------------------------
+
+August 24, 2019
+
+Going to deal with the rendering issue later, as I feel it is a CSS issue to be resolved once I have additional data to present along with the name of the item send to the userLog.
+
+Using a table is a good idea, but so is using custom divs
+
+What I want to do is go back and get some data to present alongside the name. I would like to address the calculation of price. For that we are going to implement the Calculator class. Previously our Calculator class performed our two main methods we are currently using:
+
+passDataToUserLog()
+displayDataInUserLog()
+
+passDataToUserLog() - is part of the Calculator class. This frees us to use the Calculator class to exclusively handle mathmatical processes. 
+
+displayDataInUserLog() - I need to either use or discard this method
+If I discard I need to modify this line in the index.html file:
+
+  <body onload="calc.displayDataInUserLog()">
+
+If I keep it I need to decide what JS object should call the method. What class do I want associated with the method, which is called with the loading of the document? Products? Orders? UserLog? Or a totally different class?
+
+For now I going to keep the functionality and place it in the Products class. 
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+I realized I never addressed the Order issue. That is, my collection returned as an array to viewBuilder should ultimately be used to populate an Order object.
+
+The Products() class should be initialized with this object  
+
+     this.myArr0 = [
+       order0.orderItems[0].name,
+       order0.orderItems[1].name,
+       order0.orderItems[2].name
+     ];
+
+
+
+The order class should be modified to serve as a data store for all orders placed. Could use a 2D array, storing each collection of items as an array in an allOrders array
+
+So the Order class needs to be developed so that we actually gather an order (using the viewBuilder array) to be added to a collection of orders. This is going to start to shape the user's experience of the application, namely, how "thick" the application feels, how many levels they have to dig through to place an order. Even though it is an SPA, there is still the need to pass through processes inside the app, and its that handling of the processing that at times is not without its constraints on the programmer. Sometimes you have to make an implementation choice which shapes UX and UI
+

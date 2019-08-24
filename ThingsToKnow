@@ -16,3 +16,16 @@ I will see the output in the console
 
 --------------------------------------------------------------------------------------
 
+Using Git:
+
+
+How to commit my changes to the local git repository as well as my forked repository in github?
+To add files changes for commit, use the following command.
+
+git add .
+then, make a local commit by
+
+git commit
+once you make your local commit, you can then push it to your remote GitHub fork.
+
+git push

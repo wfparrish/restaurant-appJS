@@ -1,10 +1,3 @@
-// class ProductDisplays {
-//   constructor(id, menuItem) {
-//     this.id = "P-d" + id;
-//     this.menuItem = menuItem;
-//   }
-// }
-
 class Table {
   constructor() {
     this.partyId = partyId;

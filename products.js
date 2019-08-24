@@ -2,6 +2,27 @@ class Products {
   constructor() {
     this.viewBuilder = [];
     this.myArrProducts = [];
+    this.myArr0 = [
+      order0.orderItems[0].name,
+      order0.orderItems[1].name,
+      order0.orderItems[2].name
+    ];
+  }
+
+  displayDataInUserLog() {
+    //Populates the UserLog view using myArr0
+    document.getElementById("logInfo").innerHTML =
+      "<p>You should try our " +
+      "<br />" +
+      "<br />" +
+      this.myArr0[0] +
+      "<br /> " +
+      this.myArr0[1] +
+      "<br /> " +
+      this.myArr0[2] +
+      "<br /> " +
+      "<br /> " +
+      "We know how to do this dicknose!</p>";
   }
 
   passDataToUserLog(id) {
@@ -38,20 +59,13 @@ class Products {
       userLog.itemList.map(item => {
         let itemView = document.createElement("div");
         itemView.id = "itemView";
+        itemView.innerText = item.menuItem.name;
         console.log(itemView);
-        // let content = document.createTextNode(item.menuItem.name);
-        // itemView.appendChild(content);
-        // document.getElementById("itemView").innerHTML =
-        //   "<div>" + content + "</div>";
-
-        // console.log(content);
         return itemView;
       }) +
       "<br /> " +
       "<br /> See ya soon bitch!</p>";
     console.log(userLog.itemList);
-
-    //Instead of splitting the array, I decided to use the nature of divs(block elements) to get info on new lines. this is way off, but the elements do print line-by-line. I need to create a new div with each click, instead of sending an array
   }
 }
 
@@ -69,10 +83,3 @@ class ProductDisplay {
 }
 
 let productBox = new Products();
-
-//I should be able to use the Order class to start to create ProductDisplay methods. We should be using parts from the order.js file
-
-//ex. single instances of desired Menu items should be connected one-to-one to ProductDisplay instances, and be created when the passToUserLog() method is triggered. Something like that.
-
-//The order class should be modified to serve as
-//a data store for all orders placed. Could use a 2D array, storing each collection of items as an array in an allOrders array
