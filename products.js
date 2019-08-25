@@ -77,13 +77,20 @@ class Products {
       "<br /> " +
       "<button class='sendOrderBtn' onclick='productBox.createOrder()'>Send Order</button>" +
       "</p>";
+
+    //clear the viewBuilder
   }
 
-  createOrder() {
-    //creates a 2D array with
-    this.order.orderItems = this.viewBuilder;
-    console.log(this.order.orderItems);
-    return this.order.orderItems;
+  createOrder(index = order0.incrementId()) {
+    //creates an array with product display items. It appears to have scope of the lifetime of the function
+    let guestOrder = new Order(index, this.viewBuilder);
+    //These console log statements show the product display array and the orderId of the current order
+    // console.log(guestOrder.orderItems);
+    // console.log("This guest has placed " + guestOrder.orderId + " orders");
+    tempDB.growDB(guestOrder.orderItems);
+    console.log("In the tempDB.arrBD: " + tempDB.arrDB);
+    console.log("viewBuilder: " + productBox.viewBuilder);
+    return guestOrder.orderItems;
   }
 }
 

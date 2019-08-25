@@ -1,22 +1,15 @@
 class Order {
   constructor(orderId, orderItems) {
     //this.orderId = Order.incrementId();
+    this.orderId = orderId;
     this.orderItems = orderItems;
   }
 
-  set order(items) {
-    this.orderItems = items.map(items => items);
-  }
-
-  get order() {
-    //console.log(orderItems);
-    return this.orderItems;
-  }
-
-  static incrementId() {
+  incrementId() {
     if (!this.latestId) this.latestId = 1;
     else this.latestId++;
-    return this.latestId;
+    let orderId = this.latestId;
+    return orderId;
   }
 }
 

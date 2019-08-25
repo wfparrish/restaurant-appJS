@@ -1188,3 +1188,18 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 I also need to fix the floating point problem. My calculations have too many zeroes
 
+---------------------------------------------------------------------------------------------------------------------------
+August 25, 2019
+
+Falling into the wabbit hole...
+
+I see a few things I could do at a glance
+
+1. Fix the createOrder() call so that .push method is creating a 2D array 100% of the time when we click Send Order button.
+   We have to take the logic that is creating the "double order error" with the Send Order button, keep it, but push it back so that it happens when we wish it to, not later and as a logic bug.
+2. Break the passDataToUserLog() method into a collection of smaller methods. The code is becoming spaghetti
+3. Figure out the relationship of the Seats, Check, Table, Products and UserLog logic and view
+
+So take the output from createOrder() and start to populate an array. Each time you press the Send Order button populate this new array. You will now have your 2D array. Maybe it will be part of an OrderTempDB class I need to create, something like that. Because there is a difference between an Order and an array of Orders. I think I was trying to have the Order class hold ITSELF in an array... hahaha 
+
+The simple solution is to create a data store for the Order objects (OrderTempDB)
