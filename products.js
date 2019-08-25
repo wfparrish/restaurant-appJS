@@ -3,9 +3,9 @@ class Products {
     this.viewBuilder = [];
     this.myArrProducts = [];
     this.myArr0 = [
-      order0.orderItems[0].name,
-      order0.orderItems[1].name,
-      order0.orderItems[2].name
+      order0.orderItems[0],
+      order0.orderItems[1],
+      order0.orderItems[2]
     ];
   }
 
@@ -15,11 +15,11 @@ class Products {
       "<p>You should try our " +
       "<br />" +
       "<br />" +
-      this.myArr0[0] +
+      this.myArr0[0].name +
       "<br /> " +
-      this.myArr0[1] +
+      this.myArr0[1].name +
       "<br /> " +
-      this.myArr0[2] +
+      this.myArr0[2].name +
       "<br /> " +
       "<br /> " +
       "We know how to do this dicknose!</p>";
@@ -81,7 +81,7 @@ class Products {
 
   createOrder() {
     //creates a 2D array with
-    this.order.orderItems.push(this.viewBuilder);
+    this.order.orderItems = this.viewBuilder;
     console.log(this.order.orderItems);
     return this.order.orderItems;
   }

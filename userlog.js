@@ -21,9 +21,5 @@ class UserLog {
 }
 
 let userLog = new UserLog(1, 1, "I am the UserLog for seat 1");
-//console.log(order0);
-//console.log(order0.orderItems);
-userLog.itemTally(order0.orderItems); //items are coming from the Order class
-//console.log(userLog.itemList[0]);
-//console.log(userLog.itemList[1]);
-//console.log(userLog.itemList[2]);
+
+userLog.itemTally(order0.orderItems); // order0.orderItems instance used in the constructor of the Products class
