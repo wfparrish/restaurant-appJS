@@ -7,6 +7,7 @@ class Products {
       order0.orderItems[1],
       order0.orderItems[2]
     ];
+    this.guestOrder = "";
   }
 
   displayDataInUserLog() {
@@ -26,6 +27,7 @@ class Products {
   }
 
   passDataToUserLog(id) {
+    debugger;
     let calc1 = new Calculator();
     this.order = new Order(2, []);
     this.selectedProd = document.getElementById(id);
@@ -51,8 +53,10 @@ class Products {
     }
     //creates an array of product displays and shows the content of the product displays in the userLog view
     this.myArrProducts.push(this.display);
+    //console.log(this.myArrProducts);
     this.viewBuilder = this.myArrProducts;
     userLog.itemTally(productBox.viewBuilder);
+    //console.log(userLog.itemTally(productBox.viewBuilder));
     document.getElementById("logInfo").innerHTML =
       "<p>Damn nigga... you real hungry ain't you?" +
       "<br />" +
@@ -83,14 +87,14 @@ class Products {
 
   createOrder(index = order0.incrementId()) {
     //creates an array with product display items. It appears to have scope of the lifetime of the function
-    let guestOrder = new Order(index, this.viewBuilder);
+    this.guestOrder = new Order(index, this.viewBuilder);
     //These console log statements show the product display array and the orderId of the current order
-    // console.log(guestOrder.orderItems);
-    // console.log("This guest has placed " + guestOrder.orderId + " orders");
-    tempDB.growDB(guestOrder.orderItems);
+    // console.log(this.guestOrder.orderItems);
+    // console.log("This guest has placed " + this.guestOrder.orderId + " orders");
+    tempDB.growDB(this.guestOrder.orderItems);
     console.log("In the tempDB.arrBD: " + tempDB.arrDB);
-    console.log("viewBuilder: " + productBox.viewBuilder);
-    return guestOrder.orderItems;
+    console.log("In the viewBuilder: " + productBox.viewBuilder);
+    return this.guestOrder.orderItems;
   }
 }
 

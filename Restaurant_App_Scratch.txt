@@ -1202,4 +1202,15 @@ I see a few things I could do at a glance
 
 So take the output from createOrder() and start to populate an array. Each time you press the Send Order button populate this new array. You will now have your 2D array. Maybe it will be part of an OrderTempDB class I need to create, something like that. Because there is a difference between an Order and an array of Orders. I think I was trying to have the Order class hold ITSELF in an array... hahaha 
 
-The simple solution is to create a data store for the Order objects (OrderTempDB)
+The simple solution is to create a data store for the Order objects (OrderDB)
+
+create a script tag in index.html for orderDB.js
+
+tempDB = new OrderDB(); //in the orderDB.js file
+tempDB.growDB(guestOrder.orderItems); //in products.js method call
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+We have placed a debugger statement in the passDataToUserLog() method to begin tracking down the magic multiplying of the product displays
+
+
