@@ -1275,4 +1275,370 @@ and got this output: []   <===this does not mean "empty array" because the stuff
 
 Q. How does tempDB.arrDB have any value WHATSOEVER?
 
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
+Here is most of the code to decipher the console's output
+	
+First pass through the code. Compares the output between the just JS variable or method in console.log,
+ "a string of text" + JS variable or method in the console, and "a string of text" + JSON.stringify() output
+
+LINE 1
+
+console.log(localViewBuilder);
+
+1st Output ===>
+
+
+[ProductDisplay]
+0: ProductDisplay {id: "P-d1", menuItem: Burger}
+length: 1
+__proto__: Array(0)
+
+2nd Output ===>
+
+(2) [ProductDisplay, ProductDisplay]
+0: ProductDisplay {id: "P-d1", menuItem: Burger}
+1: ProductDisplay {id: "P-d2", menuItem: Burger}
+length: 2
+__proto__: Array(0)
+
+**************************************************************************************************************************
+
+console.log("locaViewBuilder: " + localViewBuilder);
+1st Output ===> locaViewBuilder: [object Object]
+2nd Output ===> locaViewBuilder: [object Object],[object Object]
+
+console.log("locaViewBuilder: " + JSON.stringify(localViewBuilder));
+1st Output ===> locaViewBuilder: 
+[
+{"id":"P-d1",
+  "menuItem":{"name":"Burger","price":3.89,"temperature":"","cheese":false,"tomato":false,"lettuce":false,"onion":false,"ketchup":false,"mustard":false,"mayo":false,"bacon":false,"pickle":false}
+}
+]
+
+2nd Output ===> locaViewBuilder: 
+[
+{"id":"P-d1",
+  "menuItem":{"name":"Burger","price":3.89,"temperature":"","cheese":false,"tomato":false,"lettuce":false,"onion":false,"ketchup":false,"mustard":false,"mayo":false,"bacon":false,"pickle":false}
+},
+{"id":"P-d2",
+  "menuItem":{"name":"Burger","price":3.89,"temperature":"","cheese":false,"tomato":false,"lettuce":false,"onion":false,"ketchup":false,"mustard":false,"mayo":false,"bacon":false,"pickle":false}
+}
+]
+  
+
+  
+  -----------------------------------------
+	
+
+LINE 2
+
+1st Output ===> 
+
+[ProductDisplay]
+0: ProductDisplay {id: "P-d1", menuItem: Burger}
+length: 1
+__proto__: Array(0)
+
+2nd Output ===>
+
+(2) [ProductDisplay, ProductDisplay]
+0: ProductDisplay {id: "P-d1", menuItem: Burger}
+1: ProductDisplay {id: "P-d2", menuItem: Burger}
+length: 2
+__proto__: Array(0)
+
+*********************************************************************************************************************************
+
+console.log("this.guestOrder.orderItems: " + this.guestOrder.orderItems);
+1st Output ===> this.guestOrder.orderItems: [object Object] 
+2nd Output ===> this.guestOrder.orderItems: [object Object],[object Object]	
+		
+console.log("this.guestOrder.orderItems: " + JSON.stringify(this.guestOrder.orderItems));
+1st Output ===> this.guestOrder.orderItems: 
+[
+{"id":"P-d1",
+  "menuItem":{"name":"Burger","price":3.89,"temperature":"","cheese":false,"tomato":false,"lettuce":false,"onion":false,"ketchup":false,"mustard":false,"mayo":false,"bacon":false,"pickle":false}
+}
+]
+
+2nd Output ===> this.guestOrder.orderItems: 
+[
+{"id":"P-d1",
+  "menuItem":{"name":"Burger","price":3.89,"temperature":"","cheese":false,"tomato":false,"lettuce":false,"onion":false,"ketchup":false,"mustard":false,"mayo":false,"bacon":false,"pickle":false}
+},
+{"id":"P-d2",
+  "menuItem":{"name":"Burger","price":3.89,"temperature":"","cheese":false,"tomato":false,"lettuce":false,"onion":false,"ketchup":false,"mustard":false,"mayo":false,"bacon":false,"pickle":false}
+}
+]
+
+-------------------------------------------
+
+LINE 3
+console.log(this.guestOrder.orderId);
+1st Output ===> 1
+2nd Output ===> 2
+
+***************************************************************************************************************************************
+
+console.log("This guest has placed " + this.guestOrder.orderId + " orders");
+1st Output: ===> This guest has placed 1 orders
+2nd Output: ===> This guest has placed 2 orders
+
+--------------------------------------------
+	
+LINE 4	//Here is where the error is occurring. I am getting contradictory information here
+
+console.log(tempDB.arrDB);
+1st Output ===> []
+					0: Array(1)
+						0: ProductDisplay {id: "P-d1", menuItem: Burger}
+						length: 1
+						__proto__: Array(0)
+					length: 1
+					__proto__: Array(0)
+2nd Output ===> [Array(2)]
+					0: Array(2)
+						0: ProductDisplay {id: "P-d1", menuItem: Burger}
+						1: ProductDisplay {id: "P-d2", menuItem: Burger}
+						length: 2
+						__proto__: Array(0)
+					1: Array(2)
+						0: ProductDisplay {id: "P-d1", menuItem: Burger}
+						1: ProductDisplay {id: "P-d2", menuItem: Burger}
+						length: 2
+						__proto__: Array(0)
+					length: 2
+					__proto__: Array(0)
+
+***********************************************************************************************************************************************************
+
+console.log("In the tempDB.arrDB: " + tempDB.arrDB);
+1st Output ===> In the tempDB.arrDB: 		<=== This blank space is apparently not empty, it is hiding the array from console.log(tempDB.arrDB)
+2nd Output ===> In the tempDB.arrDB: [object Object],[object Object]
+
+console.log("In the tempDB.arrDB: " + JSON.stringify(tempDB.arrDB));
+1st Output ===> In the tempDB.arrDB: []
+2nd Output ===> In the tempDB.arrDB: [
+										[
+										{"id":"P-d1",
+										  "menuItem":{"name":"Burger","price":3.89,"temperature":"","cheese":false,"tomato":false,"lettuce":false,"onion":false,"ketchup":false,"mustard":false,"mayo":false,"bacon":false,"pickle":false}
+										},
+									    {"id":"P-d2",
+										  "menuItem":{"name":"Burger","price":3.89,"temperature":"","cheese":false,"tomato":false,"lettuce":false,"onion":false,"ketchup":false,"mustard":false,"mayo":false,"bacon":false,"pickle":false}
+										}
+										]
+									 ]
+
+-----------------------------------------------------------------------------------------------
+	
+LINE 5
+
+
+
+After we call this: 
+  tempDB.growDB(this.guestOrder.orderItems);
+
+we enter the growDB() method where this is called:
+
+console.log(this.arrDB)
+1st Output ===> [Array(1)]
+					0: Array(1)
+						0: ProductDisplay
+							id: "P-d1"
+							menuItem: Burger {name: "Burger", price: 3.89, temperature: "", cheese: false, tomato: false, …}
+							__proto__: Object
+						length: 1
+						__proto__: Array(0)
+					length: 1
+					__proto__: Array(0)
+
+
+2nd Output ===> (2) [Array(2), Array(2)]
+					0: Array(2)
+						0: ProductDisplay {id: "P-d1", menuItem: Burger}
+						1: ProductDisplay {id: "P-d2", menuItem: Burger}
+						length: 2
+						__proto__: Array(0)
+					1: Array(2)
+						0: ProductDisplay {id: "P-d1", menuItem: Burger}
+						1: ProductDisplay {id: "P-d2", menuItem: Burger}
+						length: 2
+						__proto__: Array(0)
+					length: 2
+					__proto__: Array(0)
+
+*****************************************************************************************************************
+
+console.log("this.arrDB: " + this.arrDB);
+1st Output ===> this.arrDB: [object Object]
+2nd Output ===> this.arrDB: [object Object],[object Object],[object Object],[object Object]	
+
+console.log("this.arrDB: " + JSON.stringify(this.arrDB));
+1st Output ===> this.arrDB: [
+								[
+								{"id":"P-d1",
+								  "menuItem":{"name":"Burger","price":3.89,"temperature":"","cheese":false,"tomato":false,"lettuce":false,"onion":false,"ketchup":false,"mustard":false,"mayo":false,"bacon":false,"pickle":false}
+								}
+								]
+							]
+
+2nd Output ===> this.arrDB: [		//Here is the first appearance of a 2D array. I would expect it to say 
+								[
+								{"id":"P-d1",
+								  "menuItem":{"name":"Burger","price":3.89,"temperature":"","cheese":false,"tomato":false,"lettuce":false,"onion":false,"ketchup":false,"mustard":false,"mayo":false,"bacon":false,"pickle":false}
+								},
+								{"id":"P-d2",
+								  "menuItem":{"name":"Burger","price":3.89,"temperature":"","cheese":false,"tomato":false,"lettuce":false,"onion":false,"ketchup":false,"mustard":false,"mayo":false,"bacon":false,"pickle":false}
+								}
+								],
+								[
+								{"id":"P-d1",
+								  "menuItem":{"name":"Burger","price":3.89,"temperature":"","cheese":false,"tomato":false,"lettuce":false,"onion":false,"ketchup":false,"mustard":false,"mayo":false,"bacon":false,"pickle":false}
+							    },
+								{"id":"P-d2",
+								  "menuItem":{"name":"Burger","price":3.89,"temperature":"","cheese":false,"tomato":false,"lettuce":false,"onion":false,"ketchup":false,"mustard":false,"mayo":false,"bacon":false,"pickle":false}
+								}
+								]
+							]
+
+------------------------------------------------------------------------------------------------------------------------
+
+LINE 6
+
+console.log(tempDB.arrDB);
+1st Output ===> [Array(1)]
+					0: Array(1)
+						0: ProductDisplay {id: "P-d1", menuItem: Burger}
+						length: 1
+						__proto__: Array(0)
+					length: 1
+					__proto__: Array(0)
+					
+2nd Output ===> 2) [Array(2), Array(2)]
+					0: Array(2)
+						0: ProductDisplay {id: "P-d1", menuItem: Burger}
+						1: ProductDisplay {id: "P-d2", menuItem: Burger}
+						length: 2
+						__proto__: Array(0)
+					1: Array(2)
+						0: ProductDisplay {id: "P-d1", menuItem: Burger}
+						1: ProductDisplay {id: "P-d2", menuItem: Burger}
+						length: 2
+						__proto__: Array(0)
+					length: 2
+					__proto__: Array(0)
+
+***********************************************************************************************************************
+
+console.log("In the tempDB.arrBD: " + tempDB.arrDB);
+1st Output ===> In the tempDB.arrBD: [object Object]
+2nd Output ===> In the tempDB.arrBD: [object Object],[object Object],[object Object],[object Object]
+
+
+1st Output ===> In the tempDB.arrBD: [
+										[
+										{"id":"P-d1",
+										  "menuItem":{"name":"Burger","price":3.89,"temperature":"","cheese":false,"tomato":false,"lettuce":false,"onion":false,"ketchup":false,"mustard":false,"mayo":false,"bacon":false,"pickle":false}
+										}
+										]
+									 ]
+
+2nd Output ===> In the tempDB.arrBD: [
+										[
+										{"id":"P-d1",
+										  "menuItem":{"name":"Burger","price":3.89,"temperature":"","cheese":false,"tomato":false,"lettuce":false,"onion":false,"ketchup":false,"mustard":false,"mayo":false,"bacon":false,"pickle":false}
+										},
+										{"id":"P-d2",
+										  "menuItem":{"name":"Burger","price":3.89,"temperature":"","cheese":false,"tomato":false,"lettuce":false,"onion":false,"ketchup":false,"mustard":false,"mayo":false,"bacon":false,"pickle":false}
+										}
+										],
+										[
+										{"id":"P-d1",
+										  "menuItem":{"name":"Burger","price":3.89,"temperature":"","cheese":false,"tomato":false,"lettuce":false,"onion":false,"ketchup":false,"mustard":false,"mayo":false,"bacon":false,"pickle":false}
+										},
+										{"id":"P-d2",
+										  "menuItem":{"name":"Burger","price":3.89,"temperature":"","cheese":false,"tomato":false,"lettuce":false,"onion":false,"ketchup":false,"mustard":false,"mayo":false,"bacon":false,"pickle":false}
+										}
+										]
+									 ]
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+LINE 7
+
+1st Output ===>
+2nd Output ===>
+
+console.log("this.guestOrder.orderItems: " + this.guestOrder.orderItems);
+1st Output ===> this.guestOrder.orderItems: [object Object]
+2nd Output ===> this.guestOrder.orderItems: [object Object],[object Object]
+
+console.log("this.guestOrder.orderItems: " + JSON.stringify(this.guestOrder.orderItems));
+1st Output ===> this.guestOrder.orderItems: [
+											{"id":"P-d1",
+											  "menuItem":{"name":"Burger","price":3.89,"temperature":"","cheese":false,"tomato":false,"lettuce":false,"onion":false,"ketchup":false,"mustard":false,"mayo":false,"bacon":false,"pickle":false}
+											}
+											]
+											
+2nd Output ===> this.guestOrder.orderItems: [
+											{"id":"P-d1",
+											  "menuItem":{"name":"Burger","price":3.89,"temperature":"","cheese":false,"tomato":false,"lettuce":false,"onion":false,"ketchup":false,"mustard":false,"mayo":false,"bacon":false,"pickle":false}
+											},
+											{"id":"P-d2",
+											  "menuItem":{"name":"Burger","price":3.89,"temperature":"","cheese":false,"tomato":false,"lettuce":false,"onion":false,"ketchup":false,"mustard":false,"mayo":false,"bacon":false,"pickle":false}
+											}
+											]
+
+-------------------------------------------------------------------------------------------------------------------------------	
+
+LINE 8
+
+1st Output ===>
+2nd Output ===>	
+
+console.log("In the viewBuilder: " + productBox.viewBuilder);
+1st Output ===> In the viewBuilder: [object Object]
+2nd Output ===> In the viewBuilder: [object Object],[object Object]
+
+
+1st Output ===> In the viewBuilder: [
+									{"id":"P-d1",
+									  "menuItem":{"name":"Burger","price":3.89,"temperature":"","cheese":false,"tomato":false,"lettuce":false,"onion":false,"ketchup":false,"mustard":false,"mayo":false,"bacon":false,"pickle":false}
+									}
+									]
+									
+2nd Output ===> In the viewBuilder: [
+									{"id":"P-d1",
+									  "menuItem":{"name":"Burger","price":3.89,"temperature":"","cheese":false,"tomato":false,"lettuce":false,"onion":false,"ketchup":false,"mustard":false,"mayo":false,"bacon":false,"pickle":false}
+									},
+									{"id":"P-d2",
+									  "menuItem":{"name":"Burger","price":3.89,"temperature":"","cheese":false,"tomato":false,"lettuce":false,"onion":false,"ketchup":false,"mustard":false,"mayo":false,"bacon":false,"pickle":false}
+									}
+									]
+
+
+1st Output ===>
+2nd Output ===>
+
+
+1st Output ===>
+2nd Output ===>
+	
+	
+1st Output ===>
+2nd Output ===>
+
+
+1st Output ===>
+2nd Output ===>
+
+
+1st Output ===>
+2nd Output ===>
+
+
+1st Output ===>
+2nd Output ===>
+	
+	
