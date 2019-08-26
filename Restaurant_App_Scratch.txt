@@ -1220,5 +1220,59 @@ Create a test.js file that performs three clicks each on the burger button and t
 
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
-So everytime I click AddMeToCart, a new Send Order button is created, one on top of another. 
-Each time I click in the space of what looks like one button, I am calling the method for each button I cant see also
+Here is where the error is occurring:
+
+console.log(tempDB.arrDB);
+1st Output ===> []
+					0: Array(1)
+						0: ProductDisplay {id: "P-d1", menuItem: Burger}
+						length: 1
+						__proto__: Array(0)
+					length: 1
+					__proto__: Array(0)
+2nd Output ===>
+
+console.log("In the tempDB.arrDB: " + tempDB.arrDB);
+1st Output ===> In the tempDB.arrDB: 
+2nd Output ===> In the tempDB.arrDB: [object Object],[object Object]
+
+console.log("In the tempDB.arrDB: " + JSON.stringify(tempDB.arrDB));
+1st Output ===> In the tempDB.arrDB: []
+2nd Output ===> In the tempDB.arrDB: [
+										[
+										{"id":"P-d1","menuItem":{"name":"Burger","price":3.89,"temperature":"","cheese":false,"tomato":false,"lettuce":false,"onion":false,"ketchup":false,"mustard":false,"mayo":false,"bacon":false,"pickle":false}
+										},
+									    {"id":"P-d2","menuItem":{"name":"Burger","price":3.89,"temperature":"","cheese":false,"tomato":false,"lettuce":false,"onion":false,"ketchup":false,"mustard":false,"mayo":false,"bacon":false,"pickle":false}
+										}
+										]
+									 ]
+
+----------------------------------------------------------------------------------------------------
+
+By my original logic and by the output from:
+
+console.log("In the tempDB.arrDB: " + tempDB.arrDB);
+1st Output ===> In the tempDB.arrDB:    <=== nothing there!
+
+and 
+
+console.log("In the tempDB.arrDB: " + JSON.stringify(tempDB.arrDB));
+1st Output ===> In the tempDB.arrDB: []   <=== looks like an empty array to me!
+
+I thought there was nothing in 
+tempDB.arrDB
+
+until I ran:
+console.log(tempDB.arrDB)
+
+and got this output: []   <===this does not mean "empty array" because the stuff below was inside it!!!
+					0: Array(1)
+						0: ProductDisplay {id: "P-d1", menuItem: Burger}
+						length: 1
+						__proto__: Array(0)
+					length: 1
+					__proto__: Array(0)
+
+Q. How does tempDB.arrDB have any value WHATSOEVER?
+
+
