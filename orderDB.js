@@ -1,11 +1,12 @@
 class OrderDB {
-  constructor(arr) {
-    this.arrDB = arr;
+  constructor() {
+    this.arrDB = [];
   }
 
-  growDB(arr) {
-    this.arrDB.push(arr);
+  growDB(arr1) {
+    this.arrDB.push(arr1);
+    console.log(this.arrDB);
   }
 }
 
-tempDB = new OrderDB(productBox.viewBuilder);
+const tempDB = new OrderDB();

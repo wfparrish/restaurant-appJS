@@ -1213,4 +1213,12 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 We have placed a debugger statement in the passDataToUserLog() method to begin tracking down the magic multiplying of the product displays
 
+But the debugger can only test one function and it's cycle around the event loop.
+If I want to test more than one cycle I need to write a script that calls events in the DOM that mimic the click events and their output.
 
+Create a test.js file that performs three clicks each on the burger button and the Send Order button
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+So everytime I click AddMeToCart, a new Send Order button is created, one on top of another. 
+Each time I click in the space of what looks like one button, I am calling the method for each button I cant see also
