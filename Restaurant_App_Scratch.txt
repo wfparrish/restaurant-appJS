@@ -1641,4 +1641,55 @@ console.log("In the viewBuilder: " + productBox.viewBuilder);
 1st Output ===>
 2nd Output ===>
 	
-	
+
+--------------------------------------------------------------------------------------------------------------------
+
+August 27, 2019
+
+I learned that the console may provide values for variables later, even though those values should be empty at the exact line in the code. The console will assume that you would like to know what value eventually gets filled in. Why? I don't know... 
+
+So if you want to know what the exact state of an object is the moment you console.log the object, use JSON.stringify()
+
+ex.
+
+For some reason the console kept telling me tempDB.arrBD was assigned a value in a place in the code that is not possible.
+I learned that the console will sometimes assign the value the variable becomes by the end of the function. When it does this it will alert you in the console with a small i symbol beside the return value. 
+
+The solution to finding out exactly what the value of the variable was is to use JSON.stringify on the object and console.log this value
+
+ex.
+console.log(JSON.stringify(tempDB.arrBD));
+//output: []
+
+This let me know that the "database" (my array, arrBD) is empty in the first pass of the createOrder() method, contrary to the confusing feedback from the console when running this statement, which told me it had already been populated 
+
+**************************************************************************
+
+Learning the "database" is empty is important, because it gives me a correct value for the start of the solution to 
+the 
+
+"Multiplying productDisplays"
+
+Why? Because either in the first pass, 0 displays initialized increased to 4 displays initialized, 
+
+or 
+
+1 displays initialized increased to  4 displays initialized
+
+These are completely different problems, and the sequences 0 to 4 vs 1 to 4 implies different types of logic to iterate through, and different errors I may have made
+
+
+
+*******************************************************************************
+
+My Windows update brought back my touch screen, which is funny because I found out by touching the screen, simulating the user experience of the app. I wasn't expecting it to work, but it did. Useful in the construction of the app.
+
+********************************************************************************
+
+Realized that with each click of a seat number in the seat's component, the userLog being displayed would be replaced
+
+***********************************
+Q. 
+
+1. what does __proto__ do?
+

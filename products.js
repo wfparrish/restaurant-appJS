@@ -82,23 +82,26 @@ class Products {
       "</p>";
 
     //clear the viewBuilder
+    this.viewBuilder = [];
   }
 
   createOrder(index = order0.incrementId()) {
     //creates an array with product display items. It appears to have scope of the lifetime of the function
     let localViewBuilder = this.viewBuilder;
-    console.log(localViewBuilder);
+    //console.log(localViewBuilder);
     this.guestOrder = new Order(index, localViewBuilder);
     //These console log statements show the product display array and the orderId of the current order
-    console.log(this.guestOrder.orderItems);
-    console.log(this.guestOrder.orderId);
-    console.log(tempDB.arrDB);
+    //console.log(this.guestOrder.orderItems);
+
+    // console.log(this.guestOrder.orderId);
+    console.log(JSON.stringify(tempDB.arrDB));
+    //console.log(tempDB.arrDB);
     tempDB.growDB(this.guestOrder.orderItems);
     console.log(tempDB.arrDB);
-    console.log("this.guestOrder.orderItems: " + this.guestOrder.orderItems);
-    console.log(
-      "In the viewBuilder: " + JSON.stringify(productBox.viewBuilder)
-    );
+    //console.log("this.guestOrder.orderItems: " + this.guestOrder.orderItems);
+    // console.log(
+    //   "In the viewBuilder: " + JSON.stringify(productBox.viewBuilder)
+    // );
     return;
   }
 }
