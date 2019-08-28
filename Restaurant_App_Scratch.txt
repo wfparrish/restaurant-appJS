@@ -1678,9 +1678,27 @@ or
 
 These are completely different problems, and the sequences 0 to 4 vs 1 to 4 implies different types of logic to iterate through, and different errors I may have made
 
-
-
 *******************************************************************************
+
+By clearing the viewBuilder I was able to get clearer output from the console as to what is being sent:
+
+Line 97: what the "database" starts with
+Line 8: what the value of the "database" is inside the method
+Line 100: the output of the method
+
+I can see that I am adding each product display to the inside of an array. This was not my intention. I wanted the whole order gathered, and then sent to the array
+
+ex. not: Order 1
+
+[["eyes"],["green"],["brown"]]
+
+but: Order 1
+
+["eyes","green","brown"]
+
+Also that weird thing the console does extends all the way out to arrays and their number of elements too. Don't trust the console, it lies to you about a lot it seems
+
+**************************************************************************************************************
 
 My Windows update brought back my touch screen, which is funny because I found out by touching the screen, simulating the user experience of the app. I wasn't expecting it to work, but it did. Useful in the construction of the app.
 
@@ -1693,3 +1711,6 @@ Q.
 
 1. what does __proto__ do?
 
+********************************************************************************
+
+-----------------------------------------------------------------------------------------------------------
