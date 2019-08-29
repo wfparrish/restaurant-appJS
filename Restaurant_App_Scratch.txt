@@ -1704,7 +1704,7 @@ My Windows update brought back my touch screen, which is funny because I found o
 
 ********************************************************************************
 
-Realized that with each click of a seat number in the seat's component, the userLog being displayed would be replaced
+Realized that with each click of a seat number in the seat's component, the userLog being displayed must be replaced with the userLog instance for the new seat.
 
 ***********************************
 Q. 
@@ -1714,3 +1714,27 @@ Q.
 ********************************************************************************
 
 -----------------------------------------------------------------------------------------------------------
+
+August 28, 2019
+
+Found this snippet of code, wondering if it could be useful for my present situation
+
+It loads a collection of objects as elements in an array. Could I load each item ordered like this? 
+
+My items should be productDisplay instances(at least I think), and I would like to load a collection of them into an array.
+When the user presses the Send Order button, then the 
+
+class Log {
+  constructor(...args) {
+    console.log(args)
+  }
+}
+new Log('a', 'b', 'c')
+// <- ['a' 'b' 'c']
+
+***************************************************************************************************
+
+So to create the order arrays the createOrder() method has to be called from the switch statement, which means one of the switch options has to be to "send the order". If the user is selecting elements in the switch, then it is just loading up the currentOrder array. I must remove the breaks and keep the user in the switch loop, until they decide to send the order. By then the currentOrder array will have been filled with all the items in the order. 
+
+To pull this off, the Send Order button must remain hidden until the user starts to add elements to the currentOrder array.
+Either that or we will create the element and append it to the DOM.

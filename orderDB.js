@@ -5,7 +5,6 @@ class OrderDB {
 
   growDB(arr1) {
     this.arrDB.push(arr1);
-    console.log(this.arrDB);
   }
 }
 

@@ -7,7 +7,7 @@ class Products {
       order0.orderItems[1],
       order0.orderItems[2]
     ];
-    this.guestOrder = "";
+    this.currentOrder = "";
   }
 
   displayDataInUserLog() {
@@ -23,10 +23,11 @@ class Products {
       this.myArr0[2].name +
       "<br /> " +
       "<br /> " +
-      "We know how to do this dicknose!</p>";
+      "We know how to do this! Sunny side up!</p>";
   }
 
   passDataToUserLog(id) {
+    debugger;
     let calc1 = new Calculator();
     this.order = new Order(2, []);
     this.selectedProd = document.getElementById(id);
@@ -57,7 +58,7 @@ class Products {
     userLog.itemTally(productBox.viewBuilder);
     //console.log(userLog.itemTally(productBox.viewBuilder));
     document.getElementById("logInfo").innerHTML =
-      "<p>Damn nigga... you real hungry ain't you?" +
+      "<p>Wow Hon... you real hungry ain't you?" +
       "<br />" +
       "<br />" +
       " You fittin to smash: " +
@@ -82,23 +83,24 @@ class Products {
       "</p>";
 
     //clear the viewBuilder
-    this.viewBuilder = [];
+    //this.viewBuilder = [];
   }
 
   createOrder(index = order0.incrementId()) {
     //creates an array with product display items. It appears to have scope of the lifetime of the function
     let localViewBuilder = this.viewBuilder;
     //console.log(localViewBuilder);
-    this.guestOrder = new Order(index, localViewBuilder);
+    this.currentOrder = new Order(index, localViewBuilder);
     //These console log statements show the product display array and the orderId of the current order
-    //console.log(this.guestOrder.orderItems);
+    //console.log(this.currentOrder.orderItems);
 
-    // console.log(this.guestOrder.orderId);
+    // console.log(this.currentOrder.orderId);
     console.log(JSON.stringify(tempDB.arrDB));
     //console.log(tempDB.arrDB);
-    tempDB.growDB(this.guestOrder.orderItems);
+    tempDB.growDB(this.currentOrder.orderItems);
     console.log(tempDB.arrDB);
-    //console.log("this.guestOrder.orderItems: " + this.guestOrder.orderItems);
+    console.log(JSON.stringify(tempDB.arrDB));
+    //console.log("this.currentOrder.orderItems: " + this.currentOrder.orderItems);
     // console.log(
     //   "In the viewBuilder: " + JSON.stringify(productBox.viewBuilder)
     // );
