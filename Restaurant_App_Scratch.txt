@@ -1746,3 +1746,28 @@ Going to complete a walk-through of the code using the debugger. I would like to
 - if there is more than one <button> created and layered on each other. 
 - what is leading to the "incrementing array problem"
 
+*********************************************************************************************************************
+
+this.currentOrder gets its state from being an Order object instance. So when localViewBuilder is updated, this.currentOrder is updated also
+
+********************************************************************************************************************
+
+So while running a debugger statement in the createOrder() method, I found the first major bug in my program. The code for OrderDB is doing something unexpected with the "this" keyword.
+
+"this" in the constructor of the class AND in the growDB method both reference the Products class and instance, not a OrderDB instance like you might expect.
+
+also when the debugger is running none of my methods in the Products instance are recognized as methods.
+
+I tried shuffling the order of the <script> tags, but I don't think that is the problem.
+
+also, the doubling is absolutely currently occuring when the .push() method is executed.
+
+I think none of the methods are recognized because the instance of Product, productBox, is created in the wrong places,
+and the createOrder() method is called inside an innerHTML statement. 
+1. in the bottom of the Products file
+2. inside an innerHTML statement
+
+
+Why?
+
+*************************************************************************************************************************
