@@ -1738,3 +1738,11 @@ So to create the order arrays the createOrder() method has to be called from the
 
 To pull this off, the Send Order button must remain hidden until the user starts to add elements to the currentOrder array.
 Either that or we will create the element and append it to the DOM.
+
+---------------------------------------------------------------------------------------------------------------------------
+August 29, 2019
+
+Going to complete a walk-through of the code using the debugger. I would like to know:
+- if there is more than one <button> created and layered on each other. 
+- what is leading to the "incrementing array problem"
+

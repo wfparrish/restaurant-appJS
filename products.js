@@ -27,7 +27,6 @@ class Products {
   }
 
   passDataToUserLog(id) {
-    debugger;
     let calc1 = new Calculator();
     this.order = new Order(2, []);
     this.selectedProd = document.getElementById(id);
@@ -87,9 +86,11 @@ class Products {
   }
 
   createOrder(index = order0.incrementId()) {
+    debugger;
     //creates an array with product display items. It appears to have scope of the lifetime of the function
     let localViewBuilder = this.viewBuilder;
     //console.log(localViewBuilder);
+    console.log(JSON.stringify(this.currentOrder));
     this.currentOrder = new Order(index, localViewBuilder);
     //These console log statements show the product display array and the orderId of the current order
     //console.log(this.currentOrder.orderItems);

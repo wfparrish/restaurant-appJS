@@ -8,4 +8,4 @@ class OrderDB {
   }
 }
 
-const tempDB = new OrderDB();
+let tempDB = new OrderDB();
