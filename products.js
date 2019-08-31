@@ -28,7 +28,6 @@ class Products {
 
   passDataToUserLog(id) {
     let calc1 = new Calculator();
-    this.order = new Order(2, []);
     this.selectedProd = document.getElementById(id);
     this.display = "";
     //creates a menu item and puts it in a product display object
@@ -83,10 +82,10 @@ class Products {
 
     //clear the viewBuilder
     //this.viewBuilder = [];
+    return;
   }
 
   createOrder(index = order0.incrementId()) {
-    debugger;
     //creates an array with product display items. It appears to have scope of the lifetime of the function
     let localViewBuilder = this.viewBuilder;
     //console.log(localViewBuilder);
@@ -123,3 +122,4 @@ class ProductDisplay {
 }
 
 let productBox = new Products();
+console.log(productBox);
