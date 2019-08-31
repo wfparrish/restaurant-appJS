@@ -4,7 +4,7 @@ class OrderDB {
   }
 
   growDB(arr1) {
-    this.arrDB.push(arr1);
+    this.arrDB.concat(arr1);
   }
 }
 

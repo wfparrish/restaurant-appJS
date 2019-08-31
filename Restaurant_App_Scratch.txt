@@ -1767,7 +1767,66 @@ and the createOrder() method is called inside an innerHTML statement.
 1. in the bottom of the Products file
 2. inside an innerHTML statement
 
+---------------------------------------------------------------------------------------------------------------------------
+August 30, 2019
+
+Running the program from the start of the passDataToUserLog() method through a second cycle of the passDataToUserLog() method seems to work up to 
+
+line 59
+
+so far. By working I mean having the expected output, which is an array with two productDisplay instances. On the next step of the debugger the 
+
 
 Why?
 
 *************************************************************************************************************************
+
+August 31, 2019
+
+
+Array.prototype.concat()
+-combines arrays into one array
+
+could be useful when generating one Order instance, since each ProductDisplay instance is wrapped in an array object
+
+**************************************************************************************************************************
+
+So the application is beginning to break. This is a good thing. The state has grown in complexity and I have learned more about JavaScript and its usage. I need to rebuild this thing for two timespans: short and long term
+
+  1. short term 
+      -create the "band-aid" solution for the createOrder() method call and the "incrementing array" problem
+      -start creating the HTML for the Seats component
+      -break the Product method into a collection of smaller methods
+      -fix the rendering of the Send Order button so that it appears because the hidden flag has been modified
+
+  2. long term
+      -correctly nest the scripts for the objects that will store the UserLog and Product instances, such as the Seats, Check, and Table classes. 
+
+
+***************************************************************************************************************************
+Using breakpoints:
+
+Besides the use of the debugger statement, I also can use breakpoints in the Chrome console.
+
+When in the console, open Sources
+-Click on a line number of code in a method call you would like to inspect
+-instigate the action that will call the method
+
+You will enter the debugger
+
+************************************************************************************************************************
+
+We have decided to compromise with the generation of the 2D array. It is unnecessary, as we can grab each order by the orderId associated with it, and not it's position in a 2D array.
+
+We will have to assign the value of this.currentOrder to an array each time we click, then add the array to an array when we send the order(thus the 2D array gets created)
+
+We will later add the 2D matrix storage of the items
+
+The current set up generates a unique id for each order, and has the correct total amount of items in one array. it is not segmented into a 2d array like i want. 
+
+Also I don't have access to the old order instances. I need to save them, which was another reason I want the 2D array format. Each array within the array would be a record of the individual orders made by the user over time
+
+Finally, at the moment that the user hits the Send Order button, I intend to remove the user's access to the userLog anyway. They will see a thank you message and an order number for their records. So the application is basically doing what
+it needs to. I do not need a perfect algorithm, I need a working algorithm
+---------------------------------------------------------------------------------------------------------------------------
+
