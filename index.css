@@ -39,7 +39,7 @@ code {
 
 .section5 {
   background: lavender;
-  grid-area: user log;
+  grid-area: user-log;
 }
 
 .display {
@@ -52,7 +52,7 @@ code {
   grid-template-areas:
     "header header header"
     "menus products user-log"
-    "seats seats seats";
+    "seats seats user-log";
   grid-gap: 10px;
 }
 

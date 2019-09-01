@@ -1846,5 +1846,17 @@ A user is someone who
 
 September 1, 2019
 
+These need to be added to the UI after the user(s) enter their table information
 
+Menu
+Products
+UserLog
+Seats
 
+To start, we need to create an instance of a Table object. The Table object(at least initially) is behind the scenes. It is a logical object without representation in the DOM. The Table instance can have:
+
+-a state of occupied or unoccupied
+-any number of Seat, Check, and UserLog instances
+
+***************************************************************************************************************************
+I can develop anything I need in the index.html file in terms of DOM nodes. Don't worry about their permanent position or context for now. The key is realizing that certain nodes will be visible or invisible based on the choices of the app's user. Use the index.html file as a playpen to see how the different sections of your application will look and feel.
