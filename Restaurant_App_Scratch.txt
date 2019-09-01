@@ -1828,5 +1828,23 @@ Also I don't have access to the old order instances. I need to save them, which 
 
 Finally, at the moment that the user hits the Send Order button, I intend to remove the user's access to the userLog anyway. They will see a thank you message and an order number for their records. So the application is basically doing what
 it needs to. I do not need a perfect algorithm, I need a working algorithm
+
+*********************************************************************************************************************
+
+So what do I need in the seat class?
+
+Set up an onclick event listener for each seat
+-when the click occurs the User Log view should change to show the log of the currently selected seat
+
+************************************************************************************************************
+
+A user is someone who
+-has a seat at the table
+-places orders
+
 ---------------------------------------------------------------------------------------------------------------------------
+
+September 1, 2019
+
+
 

@@ -78,7 +78,10 @@ class Products {
       "<br /> " +
       "<br /> " +
       "<button class='sendOrderBtn' onclick='productBox.createOrder()'>Send Order</button>" +
-      "</p>";
+      "<br /> " +
+      "<br /> " +
+      "See you soon you wacky next-door neighbor dude!!!";
+    ("</p>");
 
     //clear the viewBuilder
     //this.viewBuilder = [];
