@@ -1,3 +1,12 @@
+class TableOrderQueue {
+  //a list of tableOrder(s)
+  constructor() {}
+}
+
+class TableOrder {
+  constructor() {}
+}
+
 class Seat {
   constructor() {
     this.seatId = seatId;

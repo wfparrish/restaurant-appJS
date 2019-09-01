@@ -1860,3 +1860,10 @@ To start, we need to create an instance of a Table object. The Table object(at l
 
 ***************************************************************************************************************************
 I can develop anything I need in the index.html file in terms of DOM nodes. Don't worry about their permanent position or context for now. The key is realizing that certain nodes will be visible or invisible based on the choices of the app's user. Use the index.html file as a playpen to see how the different sections of your application will look and feel.
+
+**************************************************************************************************************
+
+I added the concept of a Party, since I wanted Seat to be the base class of the user. The Seat instance is the user's defined space, and a collection of users(or a collection of Seat instances) is a Party
+
+There is a subtle difference between Party and Check. Initially I thought we could group seats by checks, but now I know I will want the additional flexibility(and complexity) that grouping Tables into Parties, then into Checks, will afford me.
+
