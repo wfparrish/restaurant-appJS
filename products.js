@@ -53,7 +53,7 @@ class Products {
     this.myArrProducts.push(this.display);
     //console.log(this.myArrProducts);
     this.viewBuilder = this.myArrProducts;
-    userLog.itemTally(productBox.viewBuilder);
+    userLog1.itemTally(productBox.viewBuilder);
     //console.log(userLog.itemTally(productBox.viewBuilder));
     document.getElementById("logInfo").innerHTML =
       "<p>Wow Hon... you real hungry ain't you?" +
@@ -62,7 +62,7 @@ class Products {
       " You fittin to smash: " +
       "<br />" +
       "<br />" +
-      userLog.itemList.map(item => {
+      userLog1.itemList.map(item => {
         calc1.addition(item.menuItem);
         //creates a div for each menu item that shows name and price
         let itemView = document.createElement("div");

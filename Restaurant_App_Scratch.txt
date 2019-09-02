@@ -1873,3 +1873,12 @@ So start using the main file to script the testing of your components.
 
 Create a Table with all parts filled in the main.js file
 
+---------------------------------------------------------------------------------------------------------------------------
+
+September 2, 2019
+
+The Party class will not be an array. There will only be one party allowed per table. One party may have numerous checks.
+
+It appears that once again I need to figure out how to have the UserLog instance present the calculated data.
+
+
