@@ -1867,3 +1867,9 @@ I added the concept of a Party, since I wanted Seat to be the base class of the 
 
 There is a subtle difference between Party and Check. Initially I thought we could group seats by checks, but now I know I will want the additional flexibility(and complexity) that grouping Tables into Parties, then into Checks, will afford me.
 
+********************************************************************************************************************
+
+So start using the main file to script the testing of your components. 
+
+Create a Table with all parts filled in the main.js file
+
