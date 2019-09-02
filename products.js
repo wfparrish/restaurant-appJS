@@ -26,7 +26,7 @@ class Products {
       "We know how to do this! Sunny side up!</p>";
   }
 
-  //move this method to the Seat class
+  //move this entire method to the Seat class
   passDataToUserLog(id) {
     let calc1 = new Calculator();
     this.selectedProd = document.getElementById(id);

@@ -1903,3 +1903,11 @@ I need to go through the application again to figure out what it is doing
 I got more done than I expected, and I don't really know where the program's original test code is overlapping with these objects I have created and modified. I need to think about the names of the classes, properties, and methods and see if they make sense or are contradicting the logic of the program. I need to trace where the information is flowing and why. 
 
 I also need to put my functionality in the main() file like I intended
+
+*****************************************************************************************************
+
+Just as I realized that the Seat class was more than a seat, but the cockpit for the app's user, I realized that the Table class and it's instances is more than just a Table. 
+
+If this application is to serve it's purpose, it will be a hub whereby multiple handheld devices will communicate. Each device will be representing one table. The Table class is defining a class that could potentially represent each IP address-owning device to the server. Each Table instance, when created, would broadcast it's existence to the server program and the associated database when required(caching?).
+
+I thought of this after I realized that the Table instances would have a representation in some form of GUI for the program, one that would create a layout of the restaurant's floor. Once I realized I had created a Table class, an independent object, I realized it needed to be represented in it's environment if it's data was to be most effectively used. That's when I realized why an instance of a Table was more than just a table. Because I could envision the layout of the GUI, how it looked like the floorplan on a terminal, I realized it would represent a "smart table". it would be a table with an IP address, whether wireless capability was built into the table or was from a wireless tablet or phone.
