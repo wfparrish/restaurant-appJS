@@ -1902,3 +1902,4 @@ You need the Layout Creator to be special, to stand out from all the other simpl
 I need to go through the application again to figure out what it is doing
 I got more done than I expected, and I don't really know where the program's original test code is overlapping with these objects I have created and modified. I need to think about the names of the classes, properties, and methods and see if they make sense or are contradicting the logic of the program. I need to trace where the information is flowing and why. 
 
+I also need to put my functionality in the main() file like I intended

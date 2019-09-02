@@ -7,9 +7,4 @@ class Party {
   }
 }
 
-let party1 = new Party(
-  1,
-  5,
-  [seat1.seatId, seat2.seatId, seat3.seatId, seat4.seatId, seat5.seatId],
-  [check1]
-);
+let party1 = new Party(1, 5, [seatArray], [check1]);
