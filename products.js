@@ -65,7 +65,7 @@ class Products {
       "<br />" +
       //Note to self: 9/2/2019
       //Put this method in the Userlog class, but call it here through the Seat instance
-      //table.seatArray.seat.userLog.blahblahblah
+      //table0.seatArray.seat.userLog.blahblahblah
       userLog1.itemList.map(item => {
         calc1.addition(item.menuItem);
         //creates a div for each menu item that shows name and price
