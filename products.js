@@ -26,6 +26,7 @@ class Products {
       "We know how to do this! Sunny side up!</p>";
   }
 
+  //move this method to the Seat class
   passDataToUserLog(id) {
     let calc1 = new Calculator();
     this.selectedProd = document.getElementById(id);
@@ -62,6 +63,9 @@ class Products {
       " You fittin to smash: " +
       "<br />" +
       "<br />" +
+      //Note to self: 9/2/2019
+      //Put this method in the Userlog class, but call it here through the Seat instance
+      //table.seatArray.seat.userLog.blahblahblah
       userLog1.itemList.map(item => {
         calc1.addition(item.menuItem);
         //creates a div for each menu item that shows name and price
