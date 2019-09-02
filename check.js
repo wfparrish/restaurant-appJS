@@ -1,9 +1,11 @@
 class Check {
-  constructor() {
+  constructor(checkId, checkOrdersArray, checkSeatsIncluded, total, status) {
     this.checkId = checkId; //the id of the check
-    this.checkOrdersArray = []; //the array of Order instances that belong to the check
-    this.checkSeatsIncluded = []; //the users who have selected to be on one check
+    this.checkOrdersArray = checkOrdersArray; //the array of Order instances that belong to the check
+    this.checkSeatsIncluded = checkSeatsIncluded; //the users who have selected to be on one check
     this.total = total;
     this.status = status; //is the check open or closed?
   }
 }
+
+let check1 = new Check(1, [], [], 0, "open");

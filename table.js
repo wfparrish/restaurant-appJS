@@ -8,3 +8,4 @@ class Table {
     this.userLogArray = userLogArray;
   }
 }
+let table0 = new Table(1, party1, seatArray, [], [], []);
