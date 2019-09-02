@@ -1,10 +1,9 @@
 class UserLog {
-  constructor(tableId, checkId, seatId, logId, logInfo) {
-    this.tableId = tableId;
-    this.seatId = seatId;
-    this.checkId = checkId;
-    this.logId = logId;
-    this.logInfo = logInfo;
+  constructor(userLogId, table, check, seat) {
+    this.userLogId = userLogId;
+    this.tableId = table.tableId;
+    this.seatId = seat.seatId;
+    this.checkId = check.checkId;
     this.itemList = [];
   }
 
@@ -13,8 +12,7 @@ class UserLog {
     this.tableId = "";
     this.seatId = "";
     this.checkId = "";
-    this.logId = "";
-    this.logInfo = "";
+    this.userLogId = "";
     this.itemList = [];
   }
 

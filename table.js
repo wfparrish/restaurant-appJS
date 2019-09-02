@@ -1,7 +1,7 @@
 class Table {
-  constructor(tableId, seatArray, checkArray, orderArray, userLogArray) {
+  constructor(tableId, party, seatArray, checkArray, orderArray, userLogArray) {
     this.tableId = tableId;
-    this.party = new Party(partyId, partySize, partyMembers, partyChecks);
+    this.party = party;
     this.seatArray = [];
     this.checkArray = [];
     this.orderArray = [];
