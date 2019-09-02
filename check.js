@@ -8,4 +8,8 @@ class Check {
   }
 }
 
-let check1 = new Check(1, [], [], 0, "open");
+let check1 = new Check(1, [], [seat1, seat2, seat3, seat4, seat5], 0, "open");
+let check2 = new Check(2, [], [], 0, "open");
+let check3 = new Check(3, [], [], 0, "open");
+let check4 = new Check(4, [], [], 0, "open");
+let check5 = new Check(5, [], [], 0, "open");

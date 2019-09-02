@@ -1881,4 +1881,24 @@ The Party class will not be an array. There will only be one party allowed per t
 
 It appears that once again I need to figure out how to have the UserLog instance present the calculated data.
 
+***************************************************************************************************************************
+
+Realized I would like to create a GUI aspect to this application also. The restaurant owner should be able to drag and drop shapes onto a canvas to model the layout of his establishment. He should then be able to click on the layout and get the information on the tables that have been started by his customers.
+
+The customers would never have access to this map, they don't need it to create seats. The seats would always map to the correct table. The GUI would help the admin user quickly track what is happening with each table in real-time.
+
+Layout Creator 
+The Layout Creator will create shapes that can be merged, stretched, resized, etc... and merged together to create layouts that model the restaurant of the program user. They will then be able to drag and drop table icons, seat icons, etc... until the layout of the restaurant is created. Next they will begin the process of menu generation, table generation, etc...
+
+Q.
+Without the Layout Creator, what makes this an application for restaurants? 
+
+A. 
+Nothing.
+You need the Layout Creator to be special, to stand out from all the other simple calculators out there. 
+
+***************************************************************************************************************************
+
+I need to go through the application again to figure out what it is doing
+I got more done than I expected, and I don't really know where the program's original test code is overlapping with these objects I have created and modified. I need to think about the names of the classes, properties, and methods and see if they make sense or are contradicting the logic of the program. I need to trace where the information is flowing and why. 
 
