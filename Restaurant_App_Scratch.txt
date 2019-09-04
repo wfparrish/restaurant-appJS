@@ -1919,7 +1919,7 @@ September 3, 2019
 
 So our tasks for tonight:
 -identify the location where the userLog view is currently getting it's data(what Order instance and how?)
--connect the old Products code to the new Table class design
+-connect the old Products code to the new Table class design  
 -move the methods from the Products class to the Seat class
 -push the data into the UserLog for final presentation
 -have the UserLog instance present the data
@@ -1947,6 +1947,12 @@ A Table comes with:
 -seats for the users
 -a check for the table or for individual users
 -a log for each individual guest at the table
+
+So far a Table instance has 3 roles it can be defined as:
+-the code used to control the view that the guest sees in the index.html file in the display <div>
+-the GUI object/icon that will be in the Layout Creator and represents a table
+-the TCP/IP network node that will connect wirelessly and send the user's requests and receive the server's responses
+
 
 
 
