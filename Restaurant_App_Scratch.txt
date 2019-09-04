@@ -1910,4 +1910,43 @@ Just as I realized that the Seat class was more than a seat, but the cockpit for
 
 If this application is to serve it's purpose, it will be a hub whereby multiple handheld devices will communicate. Each device will be representing one table. The Table class is defining a class that could potentially represent each IP address-owning device to the server. Each Table instance, when created, would broadcast it's existence to the server program and the associated database when required(caching?).
 
-I thought of this after I realized that the Table instances would have a representation in some form of GUI for the program, one that would create a layout of the restaurant's floor. Once I realized I had created a Table class, an independent object, I realized it needed to be represented in it's environment if it's data was to be most effectively used. That's when I realized why an instance of a Table was more than just a table. Because I could envision the layout of the GUI, how it looked like the floorplan on a terminal, I realized it would represent a "smart table". it would be a table with an IP address, whether wireless capability was built into the table or was from a wireless tablet or phone.
+I thought of this after I realized that the Table instances would have a representation in some form of GUI for the program, one that would create a layout of the restaurant's floor. Once I realized I had created a Table class, an independent object, I realized it needed to be represented in it's environment if it's data was to be most effectively used. That's when I realized why an instance of a Table was more than just a table. Envisioning the layout of the GUI, and how it would let the user create their floorplan on a terminal, I realized the table icons I saw with my mind's eye represented a "smart table". It would be a table with an IP address, whether wireless capability was built into the table or was from a wireless tablet or phone.
+
+I had just asked myself when I would be close to having to start thinking in terms of the full stack. I think that time is close. I am going to have to find a way to transfer this to a server and test out the network. I can't just test it virtually, which is a whole different problem, btw.
+
+---------------------------------------------------------------------------------------------------------------------------
+September 3, 2019
+
+So our tasks for tonight:
+-identify the location where the userLog view is currently getting it's data(what Order instance and how?)
+-connect the old Products code to the new Table class design
+-move the methods from the Products class to the Seat class
+-push the data into the UserLog for final presentation
+-have the UserLog instance present the data
+
+***********************************************************************************************************************
+
+Remember this line?...
+
+this.currentOrder = new Order(index, localViewBuilder);
+
+It created a new Order instance in the createOrder method.
+Now that we have created the Table class, we can pass the code in this.currentOrder to the location we would like to pass it in the application:
+
+table0.seatArray[0][0].orderArray[0] = this.currentOrder;
+
+So the createOrder() method will be modified depending on where it goes (Seat class still?) to pass the Order instance value wherever required. Eventually the value should make it's way to the UserLog, which should render the value
+
+The question now becomes: Am I making spaghetti code? Should I be calling the table instance in the other .js files? I think I should, if the Table class is tying everything together in the code, leading up to sending data out on a network. 
+
+It seems like the Table object is the view displayed by the handheld device once the guests have arrived and entered their initial parameters into the system. They enter the Table view:
+
+A Table comes with:
+-menus
+-a display of products inside the menus, complete with prices and options
+-seats for the users
+-a check for the table or for individual users
+-a log for each individual guest at the table
+
+
+

@@ -27,13 +27,14 @@ let milkshake1 = new Milkshake((this.price = 2.99));
 let initialVals = [chix0, sides0, drink0];
 let order0 = new Order(0, initialVals);
 
+//Order objects created with an id and orderTally array. Imagine they are randomly generated orders used to test functionality of the application
+
 let orderTally1 = [burger1, fries1, milkshake1];
 let orderTally2 = [sides0, drink0];
 let orderTally3 = [chix0, fries1, drink0];
 let orderTally4 = [burger1, milkshake1];
 let orderTally5 = [drink0];
 
-//Order objects created with an id and orderTally array. They are random orders used to test functionality of the application
 let order1 = new Order(1, orderTally1);
 let order2 = new Order(2, orderTally2);
 let order3 = new Order(3, orderTally3);
