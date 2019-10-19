@@ -98,7 +98,7 @@ class Products {
     let localViewBuilder = this.viewBuilder;
     this.currentOrder = new Order(index, localViewBuilder);
     console.log(this.currentOrder);
-    //passes the order to the
+    //passes the order to the orderArray in the Table class instance
     table0.seatArray[0][0].orderArray[0] = this.currentOrder;
     console.log(table0.seatArray[0][0].orderArray[0]);
     tempDB.growDB(this.currentOrder.orderItems);

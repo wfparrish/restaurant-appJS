@@ -1953,6 +1953,47 @@ So far a Table instance has 3 roles it can be defined as:
 -the GUI object/icon that will be in the Layout Creator and represents a table
 -the TCP/IP network node that will connect wirelessly and send the user's requests and receive the server's responses
 
+---------------------------------------------------------------------------------------------------------------------------
 
+September 4, 2019
+
+Going to start Udemy Maxmillian Node.js tutorial, along with Node.js In Action, 2nd Edition, which I can only read online for some odd reason. It won't display in Adobe Reader.
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+September 24, 2019
+
+For the past three weeks I have been digging into Node.js. I learned that Node.js is not about a server, it is a runtime environment for the JavaScript language out of the browser. 
+
+I imagine the JS developer will be asked to expand their reportoire of tricks they can perform on a daily basis. 
+
+******************************************************************************************************************
+
+I was correct about the need to learn how to serve the application. The application only works if the information for the state comes from a centralized position. The amount of users should be able to scale up dramatically and not cause the application to fail. The application has to present ACID data that is accurate. It also needs to be secure and handle user administration, authentication, and authorization. All of this is best handled by a server.
+
+I have watched Maxmillian's tutorial and built along with it. I see how Node.js works on a grand scale. We also reviewed how Pug, Handlebars, and Express present data with HTML and it's variations. I learned about Sequelize and how to attach it to a MySQL database. I still have only finished 30% according to Udemy.
+
+I don't really know how frequently I will be sending data over the network to update the state of the application. What is the wise choice? How will the application get it's state updated? I don't know if I will be doing things client-side with a dash of Node, or a big ole bowl of Node.js. 
+
+If I want the application to be a SPA however, it seems as though I must use some framework like Angular or React to pull the data over and update the view. Node.js is not created to mimic SPAs. Each route reloads the browser window. At least as far as I know to this point, about to look into it
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+September 25, 2019
+
+Realized I need to use Node.js as the runtime environment for the application. Currently up to now I had been using Live Server. 
+
+After completing 30% of Maximillian's Udemy course on Node.js I feel like I need to restart the application. Obviously the application is a full-stack app. My original and current intention is to use the MERN stack. 
+
+Tonight I intend of starting a review of React. It might be a bit of a stretch, but I believe I can build the application using React as the front-end and Node.js with Express and MongoDB on the backend. If that is the case I should start immediately.
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+September 28, 2019
+
+Correct to switch to React. I can see how the concept of components will work, and my issues with passing state values to the UserLog would be managed by the React virtual DOM.
 
 
