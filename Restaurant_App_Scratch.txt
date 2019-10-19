@@ -1996,4 +1996,18 @@ September 28, 2019
 
 Correct to switch to React. I can see how the concept of components will work, and my issues with passing state values to the UserLog would be managed by the React virtual DOM.
 
+---------------------------------------------------------------------------------------------------------------------------
 
+October 18, 2019
+
+Completed 25% of Maximillian tutorial on React. I see that I understand the power of React, now that I started to create the application using vanilla JS. React is the perfect vehicle.
+
+I also started reading Secrets of the JavaScript Ninja. Very informative. It summarizes the topics of JS succinctly and shows how the language is truly functional in nature. 
+
+I think the correct thing to do at this point is to return to creating the application. My questions have been answered:
+1. How the application might use the "R" versus the "N" in the MERN stack to store state
+2. What the "E" in the stack is used for (routing and views)
+
+To create the application, my plan is to mimic Max when he creates the "Burger Builder", implementing his techniques for managing state in React
+
+As I currently envision it, the Node server will send the JS/React code to the network device's browser when the proper query is sent. The code will create a thick client, capable of calculations and maintaining state. The state shall be sent back to the server at appropriate times and stored in the "M" server

@@ -29,3 +29,23 @@ git commit
 once you make your local commit, you can then push it to your remote GitHub fork.
 
 git push
+
+
+---------------------------------------------------------------------------------------
+
+If the connection to Git disappears and the PATH variables get reset:
+
+https://stackoverflow.com/questions/4492979/git-is-not-recognized-as-an-internal-or-external-command
+
+
+Have you correctly set your PATH to point at your Git installation?
+
+You need to add the following paths to PATH:
+
+C:\Program Files\Git\bin\
+C:\Program Files\Git\cmd\
+And check that these paths are correct – you may have Git installed on a different drive, or under Program Files (x86). Correct the paths if necessary.
+
+use a semi-colon between each path to set multiple paths
+
+------------------------------------------------------------------------
