@@ -2016,3 +2016,27 @@ As I currently envision it, the Node server will send the JS/React code to the n
 
 Using Node I can use npm and its huge collection of libraries. One of those libraries is React
 
+-----------------------------------------------------------------------------------------------------------------------
+
+11/22/2019 
+
+Completed about 50% of Maxmillian tutorial on React. Also 30% of Grider tutorial on Node.js with React. Both tutorials convert to Redux. Will return to both later, but right now I have decided to write more of the RestaurantApp program in JS. 
+
+I would like to:
+-manage the state of the application between the instances of the Seat class
+-break up the giant method of the Product class into multiple methods
+-launch the app using a Node server
+
+************************************************************************************************************************
+
+I could think of the server as an Express/Node server. 
+I could wrap the current code in an Express development environment with MVC 
+I could run a simple Node server without Express
+
+
+
+
+
+
+Also Secrets of the JS Ninja is a game changer. It summmarizes everything I need to know about JS. A beautiful text.
+
