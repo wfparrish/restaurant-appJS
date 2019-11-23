@@ -19,3 +19,5 @@ let check2 = new Check(2, [], [], 0, "open");
 let check3 = new Check(3, [], [], 0, "open");
 let check4 = new Check(4, [], [], 0, "open");
 let check5 = new Check(5, [], [], 0, "open");
+
+let checkArray = [check1, check2, check3, check4, check5];

@@ -2034,9 +2034,14 @@ I could wrap the current code in an Express development environment with MVC
 I could run a simple Node server without Express
 
 
-
-
-
-
 Also Secrets of the JS Ninja is a game changer. It summmarizes everything I need to know about JS. A beautiful text.
+
+Accomplished:
+-fixed the "table0 not defined" bug for the main.js file. Now the table0 is populated with data from the other files in the program, but table0 is still not defined in the product.js file. Will look to see what that means or if it even matters.
+
+-created a server.js file and got it to read the index.html file. Everything is broken, no styling or DOM interaction. Seems as though the Node server can't tell what anything is. It is as if it is being spoken to in a foreign language. To see the page rendered, run 
+
+node server.js
+
+and go to localhost:8080
 

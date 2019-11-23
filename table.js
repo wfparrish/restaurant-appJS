@@ -8,11 +8,3 @@ class Table {
     this.userLogArray = userLogArray; //the array of logs that are connected to seats
   }
 }
-let table0 = new Table(
-  1,
-  party1,
-  [seatArray],
-  [check1],
-  [orderArray],
-  [userLogArray]
-);

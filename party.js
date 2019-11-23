@@ -7,4 +7,4 @@ class Party {
   }
 }
 
-let party1 = new Party(1, 5, [seatArray], [check1]);
+let party = new Party(1, 5, [seatArray], [check1]);
