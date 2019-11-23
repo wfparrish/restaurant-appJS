@@ -2045,3 +2045,8 @@ node server.js
 
 and go to localhost:8080
 
+********************************************
+
+main.js should be renamed to something more appropriate like tableBuilder.js 
+
+tableBuilder.js could also hold an array of table objects
