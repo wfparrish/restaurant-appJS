@@ -12,18 +12,19 @@
     <script src="orderDB.js"></script>
     <script src="userlog.js"></script>
     <script src="calculator.js"></script>
-    <script src="products.js"></script>
+    <script src="dailySpecial.js"></script>
+    <script src="productDisplay.js"></script>
     <script src="seat.js"></script>
     <script src="check.js"></script>
     <script src="party.js"></script>
     <script src="index.js"></script>
     <script src="table.js"></script>
-    <script src="main.js"></script>
+    <script src="tableBuilder.js"></script>
 
     <title>Restaurant App</title>
   </head>
 
-  <body onload="productBox.displayDataInUserLog()">
+  <body onload="dailySpecial.displayDataInUserLog()">
     <div id="root"></div>
 
     <div class="display">
@@ -44,7 +45,7 @@
         <div class="product-displays">
           p-d1
           <button
-            onclick="productBox.passDataToUserLog(this.id);"
+            onclick="seatState.passDataToUserLog(this.id);"
             id="addMeBtn1"
             class="addMeBtn"
           >
@@ -54,7 +55,7 @@
         <div class="product-displays">
           p-d2
           <button
-            onclick="productBox.passDataToUserLog(this.id);"
+            onclick="seatState.passDataToUserLog(this.id);"
             id="addMeBtn2"
             class="addMeBtn"
           >
@@ -64,7 +65,7 @@
         <div class="product-displays">
           p-d3
           <button
-            onclick="productBox.passDataToUserLog(this.id);"
+            onclick="seatState.passDataToUserLog(this.id);"
             id="addMeBtn3"
             class="addMeBtn"
           >
@@ -74,7 +75,7 @@
         <div class="product-displays">
           p-d4
           <button
-            onclick="productBox.passDataToUserLog(this.id);"
+            onclick="seatState.passDataToUserLog(this.id);"
             id="addMeBtn4"
             class="addMeBtn"
           >

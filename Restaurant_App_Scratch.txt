@@ -2018,7 +2018,7 @@ Using Node I can use npm and its huge collection of libraries. One of those libr
 
 -----------------------------------------------------------------------------------------------------------------------
 
-11/22/2019 
+November 22, 2019
 
 Completed about 50% of Maxmillian tutorial on React. Also 30% of Grider tutorial on Node.js with React. Both tutorials convert to Redux. Will return to both later, but right now I have decided to write more of the RestaurantApp program in JS. 
 
@@ -2050,3 +2050,18 @@ and go to localhost:8080
 main.js should be renamed to something more appropriate like tableBuilder.js 
 
 tableBuilder.js could also hold an array of table objects
+
+-------------------------------------------------------------------------------------------------------------------
+
+November 23, 2019
+
+Renamed main.js to tableBuilder.js. main.js can now be used to run whatever I choose
+Created DailySpecial() class to render the default value in the UserLog view. Removed redundant code in the Product class
+Passed Product class functionality to Seat class, eliminating product.js. Made productDisplay its own script
+
+created a number of files and variables of interest
+-assignedTable
+-setState
+-dailySpecial.js
+-tableBuilder.js
+
