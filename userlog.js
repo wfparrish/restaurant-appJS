@@ -22,6 +22,37 @@ class UserLog {
     this.itemList = items;
     return this.itemList;
   }
+
+  presentUserLog() {
+    document.getElementById("logInfo").innerHTML =
+      "<p>Wow Hon... you real hungry ain't you?" +
+      "<br />" +
+      "<br />" +
+      " You fittin to smash: " +
+      "<br />" +
+      "<br />" +
+      userLog1.itemList.map(item => {
+        debugger;
+        calc1.addition(item.menuItem);
+        //creates a div for each menu item that shows name and price
+        let itemView = document.createElement("div");
+        itemView.id = "itemView";
+        itemView.innerText = item.menuItem.name + "   " + item.menuItem.price;
+        return itemView.innerText;
+      }) +
+      "<br /> " +
+      "<br /> " +
+      " Your total will be: " +
+      calc1.total +
+      "<br /> " +
+      "<br /> " +
+      "<br /> " +
+      "<button class='sendOrderBtn' onclick='seatState.createOrder()'>Send Order</button>" +
+      "<br /> " +
+      "<br /> " +
+      "See you soon you wacky next-door neighbor dude!!!";
+    ("</p>");
+  }
 }
 
 let userLog1 = new UserLog(1, 1, 1, 1, "I am the UserLog for seat 1");

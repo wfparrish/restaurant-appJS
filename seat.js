@@ -9,7 +9,6 @@ class Seat {
   }
 
   passDataToUserLog(id) {
-    let calc1 = new Calculator();
     this.selectedProd = document.getElementById(id);
     this.display = "";
     //creates a menu item and puts it in a product display object
@@ -33,41 +32,9 @@ class Seat {
     }
     //creates an array of product displays and shows the content of the product displays in the userLog view
     this.myArrProducts.push(this.display);
-    //console.log(this.myArrProducts);
     this.viewBuilder = this.myArrProducts;
     userLog1.itemTally(seatState.viewBuilder);
-    //console.log(userLog.itemTally(productBox.viewBuilder));
-    document.getElementById("logInfo").innerHTML =
-      "<p>Wow Hon... you real hungry ain't you?" +
-      "<br />" +
-      "<br />" +
-      " You fittin to smash: " +
-      "<br />" +
-      "<br />" +
-      //Note to self: 9/2/2019
-      //Put this method in the Userlog class, but call it here through the Seat instance
-      //table0.seatArray.seat.userLog.blahblahblah
-      userLog1.itemList.map(item => {
-        calc1.addition(item.menuItem);
-        //creates a div for each menu item that shows name and price
-        let itemView = document.createElement("div");
-        itemView.id = "itemView";
-        itemView.innerText = item.menuItem.name + "   " + item.menuItem.price;
-        return itemView.innerText;
-      }) +
-      "<br /> " +
-      "<br /> " +
-      " Your total will be: " +
-      calc1.total +
-      "<br /> " +
-      "<br /> " +
-      "<br /> " +
-      "<button class='sendOrderBtn' onclick='seatState.createOrder()'>Send Order</button>" +
-      "<br /> " +
-      "<br /> " +
-      "See you soon you wacky next-door neighbor dude!!!";
-    ("</p>");
-
+    userLog1.presentUserLog();
     //clear the viewBuilder
     //this.viewBuilder = [];
     return this.viewBuilder;

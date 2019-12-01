@@ -2065,3 +2065,22 @@ created a number of files and variables of interest
 -dailySpecial.js
 -tableBuilder.js
 
+We need to finetune what data we are passing and why. So far the program works enough that I will go directly to changing seats in the current view of the app.
+
+------------------------------------------------------------------------------------------------------------------
+
+November 24, 2019
+
+I created the presentUserLog() method in the UserLog class. It is called by the Seat class when the view should be shown.
+I have the userLog instance performing the final calculation, summing the total of the items selected. I would like to have that calculation done in the Seat, but the code was too bulky and hard to read. For now the UserLog instance will have to perform some calculation.
+
+So I am attempting to show the state of the Seat instance by using some sort of UserLog object. Currently have a generic seat instance (seatState) to use, but I don't have a generic log, which I think makes more sense.
+
+in my code I reference 
+
+item.menuItem.name
+item.menuItem.price, etc...
+
+I need to figure out what menuItem is (search it in the code)
+
+

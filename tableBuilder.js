@@ -9,9 +9,7 @@ function tableBuilder() {
     orderArray,
     userLogArray
   );
-  console.log(table0);
   return table0;
 }
 
 assignedTable = new tableBuilder();
-console.log(assignedTable);
