@@ -2121,7 +2121,7 @@ What I wanted by the end of the coding session:
 4. the Calculator is having problems with the price variable. Something about the way I am calling methods and calculating
    the total is broken. It will not send back the data.
 
-   One of the things I was toying with was console.log(setState) inside the Calculator switch. Right now I keep getting undefined... Why?
+   One of the things I was toying with was console.log(setState) inside the Calculator switch in the table.js file. Right now I keep getting undefined... Why?
 
 Things I accomplished:
 -I once again had to solve the miracle of the multiplying order. 
