@@ -2126,4 +2126,25 @@ What I wanted by the end of the coding session:
 Things I accomplished:
 -I once again had to solve the miracle of the multiplying order. 
 
+**********************************************************************************************************************
 
+So I BIG issue is the scattered data being used to initialize objects. In none of the tutorials that I have seen do the instructors put instance data in the same file.
+
+ I think I need to have a main file that I run that loads all that data step after step, as if a user were entering the data into the system to initialize the state of the app.
+
+I just put the seatState variable in the switch statement for the table.js files for each of the seats. That should be a good thing, as each time I click on a seat, I will need to load the state of the seat I have selected. As I currently am planning it, that state is stored in the seatArray, which is a property of the table object. Hopefully I will figure out how to get a hold of that data and load it upon request. 
+
+When the page starts, currently 
+
+console.log(assignedTable.seatArray[0]);
+console.log(assignedTable.seatArray[1]);
+console.log(assignedTable.seatArray[2]);
+console.log(assignedTable.seatArray[3]);
+console.log(assignedTable.seatArray[4]);
+
+ has values all constructor values filled. seatState, on the other hand, has undefined properties.
+
+ I need seatState to be filled with default values upon the start of the program (seat1)
+ and I need seatState to be filled with the value of the selected seat each time I click on a seat.
+
+ I think it might be smart to add a selectedSeat property to the table object. 

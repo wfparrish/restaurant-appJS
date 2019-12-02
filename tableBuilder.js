@@ -7,9 +7,16 @@ function tableBuilder() {
     seatArray,
     checkArray,
     orderArray,
-    userLogArray
+    userLogArray,
+    selectedSeat
   );
   return table0;
 }
 
-assignedTable = new tableBuilder();
+assignedTable = new tableBuilder((selectedSeat = seatArray[0].seatId));
+console.log(assignedTable.seatArray[0].seatId);
+console.log(assignedTable.seatArray[1].seatId);
+console.log(assignedTable.seatArray[2].seatId);
+console.log(assignedTable.seatArray[3].seatId);
+console.log(assignedTable.seatArray[4].seatId);
+console.log(seatState);
