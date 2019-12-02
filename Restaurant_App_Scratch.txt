@@ -2083,4 +2083,47 @@ item.menuItem.price, etc...
 
 I need to figure out what menuItem is (search it in the code)
 
+---------------------------------------------------------------------------------------------------------------------------
+
+December 1, 2019
+
+I spent the past four days going over Grider's Data Structures and Algorithms Udemy. Gathered at least 75 pages of handwritten notes that I need to memorize. Actually most of my time spent between this diary entry and the last was spent covering multiple JS tutorials searching for an approach to learning JS faster. 
+
+--------------------------------------------------------------------------------------------------------------
+
+Found out what menuItem belongs to: the productDisplays
+
+What I wanted by the end of the coding session:
+
+1. onclick="seatState.passDataToUserLog(this.id)"
+    -VSCode says (when you hover over this.id) that "this" refers to the global.this i.e. the window... Why?
+        + Why not the seat or the button?
+    -In the seat file, in the passDataToUserLog method, the method receives the id of the button... Why?
+        + Why not the window?
+
+2. in the seat.js file:
+    -this line:
+    assignedTable.seatArray[0].orderArray = this.currentOrder
+
+    should be something like this:
+        assignedTable.seatArray[this.seatId - 1].orderArray = this.currentOrder
+
+    or like this:
+        assignedTable.seatArray[this.seatState.seatId - 1].orderArray = this.currentOrder
+
+3. in the seat.js file:
+    -this line:
+    let seatState = new Seat() 
+
+    everything is undefined. This should not be. Currently, when I click a seat button, the console logs out console.log()
+    statements from the table.js file with data from the seatArray. These seats have Id's that I can see. But once I start ordering items, the seatIds are undefined. I need to pass the order to the seatState object, THEN pass it to the seats in the seatArray in the table.js file
+
+4. the Calculator is having problems with the price variable. Something about the way I am calling methods and calculating
+   the total is broken. It will not send back the data.
+
+   One of the things I was toying with was console.log(setState) inside the Calculator switch. Right now I keep getting undefined... Why?
+
+Things I accomplished:
+-I once again had to solve the miracle of the multiplying order. 
+
 

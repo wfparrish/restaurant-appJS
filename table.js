@@ -14,26 +14,27 @@ class Table {
         console.log(this.seatArray[0]);
         seat1.userLog.presentUserLog();
         break;
+
       case "seat2":
         console.log(this.seatArray[1]);
         seat2.userLog.presentUserLog();
-
         break;
+
       case "seat3":
         console.log(this.seatArray[2]);
         seat3.userLog.presentUserLog();
-
         break;
+
       case "seat4":
         console.log(this.seatArray[3]);
         seat4.userLog.presentUserLog();
-
         break;
+
       case "seat5":
         console.log(this.seatArray[4]);
         seat5.userLog.presentUserLog();
-
         break;
+
       default:
         break;
     }

@@ -49,9 +49,10 @@ class Seat {
     assignedTable.seatArray[0].orderArray = this.currentOrder;
 
     //
-    console.log(assignedTable.seatArray);
+    // console.log(assignedTable.seatArray);
     tempDB.growDB(this.currentOrder.orderItems);
     this.viewBuilder = [];
+    console.log(localViewBuilder);
     return this.viewBuilder;
   }
 }

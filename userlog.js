@@ -32,9 +32,7 @@ class UserLog {
       "<br />" +
       "<br />" +
       userLog1.itemList.map(item => {
-        debugger;
-        calc1.addition(item.menuItem);
-        //creates a div for each menu item that shows name and price
+        calc1.addition(item); //these are product displays with menuItems inside
         let itemView = document.createElement("div");
         itemView.id = "itemView";
         itemView.innerText = item.menuItem.name + "   " + item.menuItem.price;

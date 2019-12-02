@@ -4,10 +4,12 @@ class Calculator {
   }
 
   addition(item) {
-    return (this.total = this.total + item.price);
+    let price = item.menuItem.price;
+    let total = this.total + price;
+    return total;
   }
   subtraction(item) {
-    return (this.total = this.total - item.price);
+    return (this.total = this.total - item.menuItem.price);
   }
   // static multiplication() {}
   // static division() {}
