@@ -20,43 +20,43 @@ class Table {
   selectSeat(id) {
     switch (id) {
       case "seat1":
-        selectedSeat = assignedTable.seatArray[0].seatId;
+        this.selectedSeat = assignedTable.seatArray[0].seatId;
         seatState = this.seatArray[0];
-        seat1.userLog.presentUserLog();
         console.log(this.seatArray[0]);
         console.log(seatState);
+        seat1.userLog.presentUserLog(seatState);
         break;
 
       case "seat2":
-        selectedSeat = assignedTable.seatArray[1].seatId;
+        this.selectedSeat = assignedTable.seatArray[1].seatId;
         seatState = this.seatArray[1];
-        seat2.userLog.presentUserLog();
         console.log(this.seatArray[1]);
         console.log(seatState);
+        seat2.userLog.presentUserLog(seatState);
         break;
 
       case "seat3":
-        selectedSeat = assignedTable.seatArray[2].seatId;
+        this.selectedSeat = assignedTable.seatArray[2].seatId;
         seatState = this.seatArray[2];
-        seat3.userLog.presentUserLog();
         console.log(this.seatArray[2]);
         console.log(seatState);
+        seat3.userLog.presentUserLog(seatState);
         break;
 
       case "seat4":
-        selectedSeat = assignedTable.seatArray[3].seatId;
+        this.selectedSeat = assignedTable.seatArray[3].seatId;
         seatState = this.seatArray[3];
-        seat4.userLog.presentUserLog();
         console.log(this.seatArray[3]);
         console.log(seatState);
+        seat4.userLog.presentUserLog(seatState);
         break;
 
       case "seat5":
-        selectedSeat = assignedTable.seatArray[4].seatId;
+        this.selectedSeat = assignedTable.seatArray[4].seatId;
         seatState = this.seatArray[4];
-        seat5.userLog.presentUserLog();
         console.log(this.seatArray[4]);
         console.log(seatState);
+        seat5.userLog.presentUserLog(seatState);
         break;
 
       default:

@@ -64,4 +64,4 @@ let seat4 = new Seat(4, [order4, order1, order4], userLog4);
 let seat5 = new Seat(5, [order3, order4], userLog5);
 
 let seatArray = [seat1, seat2, seat3, seat4, seat5];
-let seatState = new Seat();
+let seatState = new Seat(0, [], null);

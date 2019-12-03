@@ -23,7 +23,8 @@ class UserLog {
     return this.itemList;
   }
 
-  presentUserLog() {
+  presentUserLog(seatState) {
+    console.log(seatState);
     document.getElementById("logInfo").innerHTML =
       "<p>Wow Hon... you real hungry ain't you?" +
       "<br />" +
@@ -31,11 +32,12 @@ class UserLog {
       " You fittin to smash: " +
       "<br />" +
       "<br />" +
-      userLog1.itemList.map(item => {
+      seatState.userLog.itemList.map(item => {
+        console.log(assignedTable.selectedSeat);
         calc1.addition(item); //these are product displays with menuItems inside
         let itemView = document.createElement("div");
         itemView.id = "itemView";
-        itemView.innerText = item.menuItem.name + "   " + item.menuItem.price;
+        itemView.innerText = item.name + "   " + item.price;
         return itemView.innerText;
       }) +
       "<br /> " +
@@ -60,4 +62,8 @@ let userLog4 = new UserLog(4, 1, 1, 4, "I am the UserLog for seat 4");
 let userLog5 = new UserLog(5, 1, 1, 5, "I am the UserLog for seat 5");
 
 userLog1.itemTally(order0.orderItems); // order0.orderItems instance used in the constructor of the Products class
+userLog2.itemTally(order0.orderItems);
+userLog3.itemTally(order0.orderItems);
+userLog4.itemTally(order0.orderItems);
+userLog5.itemTally(order0.orderItems);
 let userLogArray = [userLog1, userLog2, userLog3, userLog4, userLog5];

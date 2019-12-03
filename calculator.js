@@ -4,7 +4,7 @@ class Calculator {
   }
 
   addition(item) {
-    let price = item.menuItem.price;
+    let price = item.price;
     let total = this.total + price;
     return total;
   }

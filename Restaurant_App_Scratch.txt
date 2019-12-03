@@ -2148,3 +2148,35 @@ console.log(assignedTable.seatArray[4]);
  and I need seatState to be filled with the value of the selected seat each time I click on a seat.
 
  I think it might be smart to add a selectedSeat property to the table object. 
+
+
+ ---------------------------------------------------------------------------------------------------------
+
+ December 2, 2019
+
+ I have state working for selecting seats. The order0.orderItems is being passed to each seat just for default value purposes. I need to send the default orders I created for each seat, but something is mismatched between the idea of items, item-tallying, and the orders I precreated like a database table.
+
+ Use the debugger as much as possible. It speeds up development and makes it easy. You need to practice accurately "aiming" the debugger statement. Picking the right spot with enough "clues" to analyze before the error helps shave time off of development.
+
+ **************************************************************************************
+
+I changed this line to this:
+
+assignedTable = new tableBuilder((selectedSeat = null));
+
+The default was seat1  
+
+wondering if this is why seatState is undefined at start? I don't know at codefreeze if selectedSeat and seatState are passing each other references
+
+*****************************************************************************************
+
+The calculations need to come out of the userLog. Right now everytime we select a seat the presentUserLog() method gets called, which then calls calc.addition(). This means that the calculator is adding the values for the default items in the display. Not what we want...
+
+
+
+
+
+
+
+
+
