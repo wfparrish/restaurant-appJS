@@ -2172,7 +2172,7 @@ wondering if this is why seatState is undefined at start? I don't know at codefr
 
 The calculations need to come out of the userLog. Right now everytime we select a seat the presentUserLog() method gets called, which then calls calc.addition(). This means that the calculator is adding the values for the default items in the display. Not what we want...
 
-
+--------------------------------------------------------------------------------------------------------------
 
 
 
