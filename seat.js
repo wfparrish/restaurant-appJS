@@ -34,7 +34,7 @@ class Seat {
     this.myArrProducts.push(this.display);
     this.viewBuilder = this.myArrProducts;
     userLog1.itemTally(seatState.viewBuilder);
-    userLog1.presentUserLog();
+    userLog1.presentUserLog(seatState);
     //clear the viewBuilder
     //this.viewBuilder = [];
     return this.viewBuilder;
@@ -52,10 +52,11 @@ class Seat {
     // console.log(assignedTable.seatArray);
     tempDB.growDB(this.currentOrder.orderItems);
     this.viewBuilder = [];
-    console.log(localViewBuilder);
     return this.viewBuilder;
   }
 }
+
+let seatState = new Seat(0, [], userLogSeatState);
 
 let seat1 = new Seat(1, [order1], userLog1);
 let seat2 = new Seat(2, [order2, order5], userLog2);
@@ -63,5 +64,9 @@ let seat3 = new Seat(3, [order5, order1], userLog3);
 let seat4 = new Seat(4, [order4, order1, order4], userLog4);
 let seat5 = new Seat(5, [order3, order4], userLog5);
 
-let seatArray = [seat1, seat2, seat3, seat4, seat5];
-let seatState = new Seat(0, [], null);
+let seatArray = [seatState, seat1, seat2, seat3, seat4, seat5];
+
+//sets the default selected seat in the UI
+debugger;
+seatState = seat1;
+console.log(assignedTable.selectedSeat);

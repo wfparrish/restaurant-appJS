@@ -2174,6 +2174,15 @@ The calculations need to come out of the userLog. Right now everytime we select 
 
 --------------------------------------------------------------------------------------------------------------
 
+December 3, 2019
+
+Discovered why seatState was undefined: I was not passing it into the calling function. Fixed this bug
+
+*************************************************************************************************************
+
+I revised a lil' bit. seatState has a id of 0. It holds state for the seat instance and is updated by the data from the seatArray. seatState (AKA seat "0") is not the default seat for the Table view. The default seat is seat1
+
+Realized if I want to present this to a corporate entity, I could use a webscraper to pull out the CSS characteristics of their online presence. I could use those images in my model that I create for them
 
 
 

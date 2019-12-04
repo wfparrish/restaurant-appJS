@@ -24,7 +24,6 @@ class UserLog {
   }
 
   presentUserLog(seatState) {
-    console.log(seatState);
     document.getElementById("logInfo").innerHTML =
       "<p>Wow Hon... you real hungry ain't you?" +
       "<br />" +
@@ -33,7 +32,6 @@ class UserLog {
       "<br />" +
       "<br />" +
       seatState.userLog.itemList.map(item => {
-        console.log(assignedTable.selectedSeat);
         calc1.addition(item); //these are product displays with menuItems inside
         let itemView = document.createElement("div");
         itemView.id = "itemView";
@@ -55,6 +53,8 @@ class UserLog {
   }
 }
 
+let userLogSeatState = new UserLog(0, 1, 1, 0);
+
 let userLog1 = new UserLog(1, 1, 1, 1, "I am the UserLog for seat 1");
 let userLog2 = new UserLog(2, 1, 1, 2, "I am the UserLog for seat 2");
 let userLog3 = new UserLog(3, 1, 1, 3, "I am the UserLog for seat 3");
@@ -66,4 +66,12 @@ userLog2.itemTally(order0.orderItems);
 userLog3.itemTally(order0.orderItems);
 userLog4.itemTally(order0.orderItems);
 userLog5.itemTally(order0.orderItems);
-let userLogArray = [userLog1, userLog2, userLog3, userLog4, userLog5];
+
+let userLogArray = [
+  userLogSeatState,
+  userLog1,
+  userLog2,
+  userLog3,
+  userLog4,
+  userLog5
+];
