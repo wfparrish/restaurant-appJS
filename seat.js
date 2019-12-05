@@ -32,9 +32,10 @@ class Seat {
     }
     //creates an array of product displays and shows the content of the product displays in the userLog view
     this.myArrProducts.push(this.display);
+    console.log(this.myArrProducts);
     this.viewBuilder = this.myArrProducts;
-    userLog1.itemTally(seatState.viewBuilder);
-    userLog1.presentUserLog(seatState);
+    userLogSeatState.itemTally(seatState.viewBuilder);
+    userLogSeatState.presentUserLog(seatState);
     //clear the viewBuilder
     //this.viewBuilder = [];
     return this.viewBuilder;
@@ -42,11 +43,11 @@ class Seat {
 
   createOrder(index = order0.incrementId()) {
     //creates an array with product display items. It appears to have scope of the lifetime of the function
-
     let localViewBuilder = this.viewBuilder;
     this.currentOrder = new Order(index, localViewBuilder);
     //passes the order to the orderArray in the Table class instance
-    assignedTable.seatArray[0].orderArray = this.currentOrder;
+    console.log(assignedTable.seatArray[this.seatId]);
+    assignedTable.seatArray[this.seatId].orderArray.push(this.currentOrder);
 
     //
     // console.log(assignedTable.seatArray);
@@ -67,6 +68,4 @@ let seat5 = new Seat(5, [order3, order4], userLog5);
 let seatArray = [seatState, seat1, seat2, seat3, seat4, seat5];
 
 //sets the default selected seat in the UI
-debugger;
 seatState = seat1;
-console.log(assignedTable.selectedSeat);

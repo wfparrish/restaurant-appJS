@@ -2184,6 +2184,34 @@ I revised a lil' bit. seatState has a id of 0. It holds state for the seat insta
 
 Realized if I want to present this to a corporate entity, I could use a webscraper to pull out the CSS characteristics of their online presence. I could use those images in my model that I create for them
 
+-------------------------------------------------------------------------------------------------------------------
+
+December 4, 2019
+
+I can add arrays to the orderArray for any seat object. Currently the passed arrays are empty. They should be filled with productDisplay instances.
+
+Possible Solution:
+
+*******************************************************************************************************************
+
+The order Id's are not unique. The pre-created id's for the pre-created orders and the iterator-created id's overlap in values
+
+Possible Solution: Start the incrementing at 6
+
+*******************************************************************************************************************
+
+The orders created in the UI using the Add Me To Cart buttons have the following hierarchy:
+  productDisplay>menuItem
+
+The pre-created orders are just the menu items in an array. 
+
+Possible Solution: Change the pre-created orders so that they are wrapped in productDisplay objects.
+
+-------------------------------------------------------------------------------------------------------------------
+
+
+
+
 
 
 

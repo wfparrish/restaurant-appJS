@@ -61,11 +61,11 @@ let userLog3 = new UserLog(3, 1, 1, 3, "I am the UserLog for seat 3");
 let userLog4 = new UserLog(4, 1, 1, 4, "I am the UserLog for seat 4");
 let userLog5 = new UserLog(5, 1, 1, 5, "I am the UserLog for seat 5");
 
-userLog1.itemTally(order0.orderItems); // order0.orderItems instance used in the constructor of the Products class
-userLog2.itemTally(order0.orderItems);
-userLog3.itemTally(order0.orderItems);
-userLog4.itemTally(order0.orderItems);
-userLog5.itemTally(order0.orderItems);
+userLog1.itemTally(order1.orderItems); // order0.orderItems instance used in the constructor of the Products class
+userLog2.itemTally(order2.orderItems);
+userLog3.itemTally(order3.orderItems);
+userLog4.itemTally(order4.orderItems);
+userLog5.itemTally(order5.orderItems);
 
 let userLogArray = [
   userLogSeatState,
