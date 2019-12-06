@@ -8,7 +8,8 @@ function tableBuilder() {
     checkArray,
     orderArray,
     userLogArray,
-    selectedSeat
+    selectedSeat,
+    calc1
   );
   return table0;
 }

@@ -4,12 +4,11 @@ class Calculator {
   }
 
   addition(item) {
-    let price = item.price;
-    let total = this.total + price;
-    return total;
+    this.total = this.total + item.price;
+    return this.total;
   }
   subtraction(item) {
-    return (this.total = this.total - item.menuItem.price);
+    return (total = total - item.menuItem.price);
   }
   // static multiplication() {}
   // static division() {}

@@ -2209,10 +2209,23 @@ Possible Solution: Change the pre-created orders so that they are wrapped in pro
 
 -------------------------------------------------------------------------------------------------------------------
 
+December 5, 2019
 
+Wrapped the orders instances used for dummy data in productDisplays. Also the "P-d" id numbers are unique identifiers. They are created with each selection of an item.    
 
+Correct state management for the different seats in the application is an ongoing process. Currently each seat has it's own state that gets passed to it by seatState as the state of the application changes. 
 
+******************************************************************************************************************
 
+Things to work on:
+
+The seats seem to be sharing values between themselves. The total for calc1 gets passed from seat to seat. This is probably occurring somewhere in the userLog or the Calculator. 
+
+Each time you click a seat the total value increases
+Each time you click Add Me to Cart instead of adding one item and returning the new sum, the method is summing all 
+of the dummy data for the seat.
+
+*******************************************************************************************************************
 
 
 

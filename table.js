@@ -6,7 +6,8 @@ class Table {
     checkArray,
     orderArray,
     userLogArray,
-    selectedSeat
+    selectedSeat,
+    calc1
   ) {
     this.tableId = tableId;
     this.party = party;
@@ -15,6 +16,7 @@ class Table {
     this.orderArray = orderArray; //the array of orders that were placed by party members
     this.userLogArray = userLogArray; //the array of logs that are connected to seats'
     this.selectedSeat = selectedSeat; //the default seat or the seat selected by the user of the program
+    this.calc1 = calc1;
   }
 
   selectSeat(id) {

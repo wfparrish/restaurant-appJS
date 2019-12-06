@@ -50,6 +50,7 @@ class UserLog {
       "<br /> " +
       "See you soon you wacky next-door neighbor dude!!!";
     ("</p>");
+    console.log(calc1.total);
   }
 }
 

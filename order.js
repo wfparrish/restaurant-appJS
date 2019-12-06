@@ -23,17 +23,41 @@ let burger1 = new Burger((this.price = 3.89));
 let fries1 = new Fries((this.price = 0.99));
 let milkshake1 = new Milkshake((this.price = 2.99));
 
+//wrapping the menu items in product displays
+let chixDisplay = new ProductDisplay(chix0);
+let sidesDisplay = new ProductDisplay(sides0);
+let drinkDisplay = new ProductDisplay(drink0);
+let burgerDisplay = new ProductDisplay(burger1);
+let friesDisplay = new ProductDisplay(fries1);
+let milkshakeDisplay = new ProductDisplay(milkshake1);
+
 //initial message in UserLog created with variable values(zeroth Order)
-let initialVals = [chix0, sides0, drink0];
+let initialVals = [
+  chixDisplay.menuItem,
+  sidesDisplay.menuItem,
+  drinkDisplay.menuItem
+];
 let order0 = new Order(0, initialVals);
 
 //Order objects created with an id and orderTally array. Imagine they are randomly generated orders used to test functionality of the application
 
-let orderTally1 = [burger1, fries1, milkshake1];
-let orderTally2 = [sides0, drink0];
-let orderTally3 = [chix0, fries1, drink0];
-let orderTally4 = [burger1, milkshake1];
-let orderTally5 = [drink0];
+let orderTally1 = [
+  burgerDisplay.menuItem,
+  friesDisplay.menuItem,
+  milkshakeDisplay.menuItem
+];
+
+let orderTally2 = [sidesDisplay.menuItem, drinkDisplay.menuItem];
+
+let orderTally3 = [
+  chixDisplay.menuItem,
+  friesDisplay.menuItem,
+  drinkDisplay.menuItem
+];
+
+let orderTally4 = [burgerDisplay.menuItem, milkshakeDisplay.menuItem];
+
+let orderTally5 = [drinkDisplay.menuItem];
 
 let order1 = new Order(1, orderTally1);
 let order2 = new Order(2, orderTally2);
