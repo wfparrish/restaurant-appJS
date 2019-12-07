@@ -2226,6 +2226,20 @@ Each time you click Add Me to Cart instead of adding one item and returning the 
 
 *******************************************************************************************************************
 
+December 7, 2019
 
+The orderIds for the Order instances are not unique. The original dummy data has been created with the orderIds 0-5. I need to start incrementing at 6, or write a new main file that runs everything in the program from start to finish, essentially simulating a user. 
 
+If I do simulate a user, I would like to use a generator function to create the instances for the Seat and the Order classes.
 
+***************************************************************************************************************
+
+created previousTotal variable in the UserLog to track if the seat instance had previously been clicked on and an order generated. 
+
+if previousTotal is not null then rerender the info stored for the seat
+if previousTotal is null, then calculate an order for the seat
+
+I should probably make one or more of the seats completely empty to test creating an order and adding the values to the seat.
+
+This would be the first step towards using a generator for creating a seat instance and adding an order for the seat dynamically
+************************************************************************************************************************

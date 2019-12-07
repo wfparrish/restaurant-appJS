@@ -8,37 +8,49 @@ class Seat {
     this.currentOrder = "";
   }
 
+  // refreshSeatState(seatId, userLog) {
+  //   this.seatId = seatId;
+  //   this.orderArray = [];
+  //   this.userLog = userLog;
+  //   this.viewBuilder = [];
+  //   this.myArrProducts = [];
+  //   this.currentOrder = "";
+  // }
+
   passDataToUserLog(id) {
     this.selectedProd = document.getElementById(id);
     this.display = "";
-    //creates a menu item and puts it in a product display object
-    switch (id) {
-      case "addMeBtn1":
-        this.selectedProd = new Burger();
-        this.display = new ProductDisplay(this.selectedProd);
-        break;
-      case "addMeBtn2":
-        this.selectedProd = new Fries();
-        this.display = new ProductDisplay(this.selectedProd);
-        break;
-      case "addMeBtn3":
-        this.selectedProd = new Milkshake();
-        this.display = new ProductDisplay(this.selectedProd);
-        break;
-      case "addMeBtn4":
-        this.selectedProd = new Chicken();
-        this.display = new ProductDisplay(this.selectedProd);
-        break;
+    if (id !== null || undefined) {
+      switch (id) {
+        case "addMeBtn1":
+          this.selectedProd = new Burger();
+          this.display = new ProductDisplay(this.selectedProd);
+          break;
+        case "addMeBtn2":
+          this.selectedProd = new Fries();
+          this.display = new ProductDisplay(this.selectedProd);
+          break;
+        case "addMeBtn3":
+          this.selectedProd = new Milkshake();
+          this.display = new ProductDisplay(this.selectedProd);
+          break;
+        case "addMeBtn4":
+          this.selectedProd = new Chicken();
+          this.display = new ProductDisplay(this.selectedProd);
+          break;
+      }
+
+      //creates an array of product displays and shows the content of the product displays in the userLog view
+      this.myArrProducts.push(this.display);
+      this.viewBuilder = this.myArrProducts;
+      userLogSeatState.itemTally(seatState.viewBuilder);
+      userLogSeatState.presentUserLog(seatState);
+      console.log(this.viewBuilder);
+    } else {
+      return this.viewBuilder;
     }
-    //creates an array of product displays and shows the content of the product displays in the userLog view
-    this.myArrProducts.push(this.display);
-    console.log(this.myArrProducts);
-    this.viewBuilder = this.myArrProducts;
-    userLogSeatState.itemTally(seatState.viewBuilder);
-    userLogSeatState.presentUserLog(seatState);
     //clear the viewBuilder
     //this.viewBuilder = [];
-    return this.viewBuilder;
   }
 
   createOrder(index = order0.incrementId()) {

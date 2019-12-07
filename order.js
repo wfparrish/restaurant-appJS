@@ -6,7 +6,7 @@ class Order {
   }
 
   incrementId() {
-    if (!this.latestId) this.latestId = 1;
+    if (!this.latestId) this.latestId = 6;
     else this.latestId++;
     let orderId = this.latestId;
     return orderId;
