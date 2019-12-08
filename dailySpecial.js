@@ -23,5 +23,3 @@ class DailySpecial {
       "We know how to do this! Sunny side up!</p>";
   }
 }
-
-let dailySpecial = new DailySpecial();

@@ -20,7 +20,6 @@ class UserLog {
   }
 
   presentUserLog(seatState) {
-    debugger;
     //checks to see if the items ordered have already been totaled(i.e. not the first time the seat has been selected and an order placed by the user). If the order has never been totaled this is the code that runs
     if (this.previousTotal == null) {
       document.getElementById("logInfo").innerHTML =
@@ -31,7 +30,6 @@ class UserLog {
         "<br />" +
         "<br />" +
         seatState.userLog.itemList.map(item => {
-          debugger;
           calc1.addition(item); //these are product displays with menuItems inside
           let itemView = document.createElement("div");
           itemView.id = "itemView";
@@ -64,7 +62,6 @@ class UserLog {
         "<br />" +
         //the alternative that runs if this is NOT the first time the seat has been selected
         seatState.userLog.itemList.map(item => {
-          debugger;
           calc1.addition(item); //these are product displays with menuItems inside
           let itemView = document.createElement("div");
           itemView.id = "itemView";
@@ -73,7 +70,7 @@ class UserLog {
         }) +
         "<br /> " +
         "<br /> " +
-        " Your total will be: " +
+        " Your total for this order will be: " +
         calc1.total +
         "<br /> " +
         "<br /> " +
@@ -83,33 +80,8 @@ class UserLog {
         "<br /> " +
         "See you soon you wacky next-door neighbor dude!!!";
       ("</p>");
-      // console.log(seatState);
-      // seatState.refreshSeatState(seatState.seatId, seatState.userLogSeatState);
-      //this.refreshUserLogItemList(seatState);
+
       this.previousTotal = calc1.total;
     }
   }
 }
-
-let userLogSeatState = new UserLog(0, 1, 1, 0);
-
-let userLog1 = new UserLog(1, 1, 1, 1, "I am the UserLog for seat 1");
-let userLog2 = new UserLog(2, 1, 1, 2, "I am the UserLog for seat 2");
-let userLog3 = new UserLog(3, 1, 1, 3, "I am the UserLog for seat 3");
-let userLog4 = new UserLog(4, 1, 1, 4, "I am the UserLog for seat 4");
-let userLog5 = new UserLog(5, 1, 1, 5, "I am the UserLog for seat 5");
-
-userLog1.itemTally(order1.orderItems); // order0.orderItems instance used in the constructor of the Products class
-userLog2.itemTally(order2.orderItems);
-userLog3.itemTally(order3.orderItems);
-userLog4.itemTally(order4.orderItems);
-userLog5.itemTally(order5.orderItems);
-
-let userLogArray = [
-  userLogSeatState,
-  userLog1,
-  userLog2,
-  userLog3,
-  userLog4,
-  userLog5
-];

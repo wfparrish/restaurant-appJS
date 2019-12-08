@@ -6,5 +6,3 @@ class Party {
     this.partyChecks = partyChecks; //an array of Checks associated with each party
   }
 }
-
-let party = new Party(1, 5, [seatArray], [check1]);

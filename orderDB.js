@@ -7,5 +7,3 @@ class OrderDB {
     this.arrDB.concat(arr1);
   }
 }
-
-let tempDB = new OrderDB();

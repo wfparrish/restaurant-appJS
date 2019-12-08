@@ -1,5 +1,3 @@
-let assignedTable;
-
 function tableBuilder() {
   let table0 = new Table(
     1,
@@ -13,5 +11,3 @@ function tableBuilder() {
   );
   return table0;
 }
-
-assignedTable = new tableBuilder((selectedSeat = null));

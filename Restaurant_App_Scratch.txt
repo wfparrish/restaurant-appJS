@@ -2243,3 +2243,9 @@ I should probably make one or more of the seats completely empty to test creatin
 
 This would be the first step towards using a generator for creating a seat instance and adding an order for the seat dynamically
 ************************************************************************************************************************
+
+The seat instances do not store their state after their state has been changed. It appears as though they revert to the original state(orders instances and model objects). I would like to save the changes(additions to the order) and be able to seem immediately when I return to a seat.
+
+************************************************************************************************************************
+
+I need to indicate in some way, whether through text or CSS, which seat I have selected in the UI. I already have the selectedSeat variable created. It would be interesting to produce the effect in CSS

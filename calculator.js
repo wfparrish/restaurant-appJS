@@ -4,7 +4,6 @@ class Calculator {
   }
 
   addition(item) {
-    //debugger;
     this.total = this.total + item.price;
     return this.total;
   }
@@ -17,5 +16,3 @@ class Calculator {
   // static multiplication() {}
   // static division() {}
 }
-
-let calc1 = new Calculator();
