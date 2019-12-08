@@ -5,7 +5,7 @@ class Seat {
     this.userLog = userLog; //the userLog instance associated with a seat
     this.viewBuilder = [];
     this.myArrProducts = [];
-    this.currentOrder = "";
+    this.currentOrder = [];
   }
 
   // refreshSeatState(seatId, userLog) {
@@ -36,8 +36,10 @@ class Seat {
       }
 
       //creates an array of product displays and shows the content of the product displays in the userLog view
+      //debugger;
       this.myArrProducts.push(this.display);
       this.viewBuilder = this.myArrProducts;
+      this.currentOrder = this.myArrProducts;
       userLogSeatState.itemTally(seatState.viewBuilder);
       userLogSeatState.presentUserLog(seatState);
       console.log(this.viewBuilder);
@@ -56,7 +58,6 @@ class Seat {
     console.log(assignedTable.seatArray[this.seatId]);
     assignedTable.seatArray[this.seatId].orderArray.push(this.currentOrder);
 
-    //
     // console.log(assignedTable.seatArray);
     tempDB.growDB(this.currentOrder.orderItems);
     this.viewBuilder = [];

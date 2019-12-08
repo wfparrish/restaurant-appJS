@@ -2249,3 +2249,19 @@ The seat instances do not store their state after their state has been changed. 
 ************************************************************************************************************************
 
 I need to indicate in some way, whether through text or CSS, which seat I have selected in the UI. I already have the selectedSeat variable created. It would be interesting to produce the effect in CSS
+
+------------------------------------------------------------------------------------------------------------------------
+
+December 8, 2019
+
+When a seat IS selected, there is an order that is calculated and presented in the userLog portion of the UI. If the next step of the user is to click the Add Me To Cart button, the desired effect is to add one item to the list of items that appears in the userLog. Currently that is not occurring. The total of the order is being incremented by itself(total + total + total...) for each push of the Add Me To Cart button. The length of the list displaying in the userLog does not change, however.
+
+************************************************************************************************************************
+
+If the next step of the user is to click the Add Me To Cart button, the desired effect is to add one item to the list of items that appears in the userLog. I have fixed the logic bug so that the itemList that appears in the userLog grows each time Add Me To Cart is selected. Things I need to work on:
+
+-if you switch from one seat back to the original seat, the itemList grows one item, the last item selected before you switch seats. 
+-each time you select a seat, you will get an error about not being able to use menuItem property of something that is undefined. I need to learn what is undefined and fix the logic bug
+-I need to save the state of the modified seat so that the updated state is always what is presented in the userLog when you select a seat
+
+------------------------------------------------------------------------------------------------------------------------

@@ -21,6 +21,10 @@ class UserLog {
 
   presentUserLog(seatState) {
     //checks to see if the items ordered have already been totaled(i.e. not the first time the seat has been selected and an order placed by the user). If the order has never been totaled this is the code that runs
+
+    seatState.userLog.itemList.push(
+      seatState.currentOrder[seatState.currentOrder.length - 1].menuItem
+    );
     if (this.previousTotal == null) {
       document.getElementById("logInfo").innerHTML =
         "<p>Wow Hon... you real hungry ain't you?" +
@@ -48,10 +52,12 @@ class UserLog {
         "<br /> " +
         "See you soon you wacky next-door neighbor dude!!!";
       ("</p>");
-      // console.log(seatState);
-      // seatState.refreshSeatState(seatState.seatId, seatState.userLogSeatState);
-      //this.refreshUserLogItemList(seatState);
+
+      console.log(seatState.userLog);
+      console.log(userLogSeatState);
+      console.log(seatState.currentOrder[0].menuItem);
       this.previousTotal = calc1.total;
+      calc1.total = 0;
     } else {
       document.getElementById("logInfo").innerHTML =
         "<p>Still hungry huh? Save room for dessert, but order some more!!!" +
@@ -60,7 +66,6 @@ class UserLog {
         " You fittin to smash: " +
         "<br />" +
         "<br />" +
-        //the alternative that runs if this is NOT the first time the seat has been selected
         seatState.userLog.itemList.map(item => {
           calc1.addition(item); //these are product displays with menuItems inside
           let itemView = document.createElement("div");
@@ -82,6 +87,7 @@ class UserLog {
       ("</p>");
 
       this.previousTotal = calc1.total;
+      calc1.total = 0;
     }
   }
 }
