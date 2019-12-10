@@ -21,7 +21,6 @@ class UserLog {
 
   presentUserLog(seatState) {
     //checks to see if the items ordered have already been totaled(i.e. not the first time the seat has been selected and an order placed by the user). If the order has never been totaled this is the code that runs
-
     seatState.userLog.itemList.push(
       seatState.currentOrder[seatState.currentOrder.length - 1].menuItem
     );

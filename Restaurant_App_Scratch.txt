@@ -2265,3 +2265,7 @@ If the next step of the user is to click the Add Me To Cart button, the desired 
 -I need to save the state of the modified seat so that the updated state is always what is presented in the userLog when you select a seat
 
 ------------------------------------------------------------------------------------------------------------------------
+
+December 9, 2019
+
+I am on the right path with the table.js file and the way I modified the switch statement for the first case. There is a jumble of data in the seatState. Right now currentOrder has an order array and the productDisplays that I create in the forEach loop. These two are redundant.

@@ -23,8 +23,18 @@ class Table {
     switch (id) {
       case "seat1":
         calc1.clearCalculator();
+
         this.selectedSeat = assignedTable.seatArray[1].seatId;
         seatState = this.seatArray[1];
+        seatState.currentOrder = seatState.orderArray;
+        debugger;
+        seatState.currentOrder[0].orderItems.forEach(item => {
+          let productDisplay = new ProductDisplay(item);
+          seatState.currentOrder.push(productDisplay);
+        });
+        //I need to create a new method here to present the userLog. The seat's selection and the necessity to present info to the userLog is not the same functionality as adding an item to the order and presenting the updated userLog.
+
+        //I could copy and paste some of the HTML for the view from the userLog.js file.
         seat1.userLog.presentUserLog(seatState);
         break;
 
