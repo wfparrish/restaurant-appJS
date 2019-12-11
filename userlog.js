@@ -51,10 +51,6 @@ class UserLog {
         "<br /> " +
         "See you soon you wacky next-door neighbor dude!!!";
       ("</p>");
-
-      console.log(seatState.userLog);
-      console.log(userLogSeatState);
-      console.log(seatState.currentOrder[0].menuItem);
       this.previousTotal = calc1.total;
       calc1.total = 0;
     } else {

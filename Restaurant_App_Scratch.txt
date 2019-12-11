@@ -2269,3 +2269,14 @@ If the next step of the user is to click the Add Me To Cart button, the desired 
 December 9, 2019
 
 I am on the right path with the table.js file and the way I modified the switch statement for the first case. There is a jumble of data in the seatState. Right now currentOrder has an order array and the productDisplays that I create in the forEach loop. These two are redundant.
+
+------------------------------------------------------------------------------------------------------------------------
+
+December 10, 2019
+
+I just used the previous HTML for the userLog to create views for the table when a seat is selected.
+
+I need to save the state of the seatState variable in the seatArray for each seat. Then, when I then click on a seat, the seatArray will be used to fill seatState, and seatState will present the data. Successfully implemented, the state of the seat will be stored and recalled whenever the seat is re-selected. 
+
+
+
