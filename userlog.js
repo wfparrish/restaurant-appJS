@@ -26,6 +26,10 @@ class UserLog {
     );
     if (this.previousTotal == null) {
       document.getElementById("logInfo").innerHTML =
+        "<h1>" +
+        "Seat " +
+        seatState.seatId +
+        "</h1>" +
         "<p>Wow Hon... you real hungry ain't you?" +
         "<br />" +
         "<br />" +
@@ -55,6 +59,10 @@ class UserLog {
       calc1.total = 0;
     } else {
       document.getElementById("logInfo").innerHTML =
+        "<h1>" +
+        "Seat " +
+        seatState.seatId +
+        "</h1>" +
         "<p>Still hungry huh? Save room for dessert, but order some more!!!" +
         "<br />" +
         "<br />" +

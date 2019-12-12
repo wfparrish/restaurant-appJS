@@ -28,14 +28,17 @@ class Table {
         seatState = this.seatArray[1];
         seatState.currentOrder = seatState.orderArray;
         document.getElementById("logInfo").innerHTML =
-          "<h1>Seat 1</h1>" +
+          "<h1>" +
+          "Seat " +
+          seatState.seatId +
+          "</h1>" +
           "<p>Coming back for more eh?" +
           "<br />" +
           "<br />" +
           " You gonna gobble down: " +
           "<br />" +
           "<br />" +
-          seatState.currentOrder[0].orderItems.forEach(item => {
+          seatState.currentOrder[0].orderItems.map(item => {
             let productDisplay = new ProductDisplay(item);
             seatState.currentOrder.push(productDisplay);
             calc1.addition(item); //these are product displays with menuItems inside
@@ -57,6 +60,7 @@ class Table {
           "See you soon you wacky next-door neighbor dude!!!";
         "</p>";
         this.calc1.total = 0;
+        this.seatArray[1] = seatState;
         break;
 
       case "seat2":
@@ -66,14 +70,17 @@ class Table {
         seatState = this.seatArray[2];
         seatState.currentOrder = seatState.orderArray;
         document.getElementById("logInfo").innerHTML =
-          "<h1>Seat 2</h1>" +
+          "<h1>" +
+          "Seat " +
+          seatState.seatId +
+          "</h1>" +
           "<p>Coming back for more eh?" +
           "<br />" +
           "<br />" +
           " You gonna gobble down: " +
           "<br />" +
           "<br />" +
-          seatState.currentOrder[0].orderItems.forEach(item => {
+          seatState.currentOrder[0].orderItems.map(item => {
             let productDisplay = new ProductDisplay(item);
             seatState.currentOrder.push(productDisplay);
             calc1.addition(item); //these are product displays with menuItems inside
@@ -95,6 +102,7 @@ class Table {
           "See you soon you wacky next-door neighbor dude!!!";
         "</p>";
         this.calc1.total = 0;
+        this.seatArray[2] = seatState;
         break;
 
       case "seat3":
@@ -103,14 +111,17 @@ class Table {
         seatState = this.seatArray[3];
         seatState.currentOrder = seatState.orderArray;
         document.getElementById("logInfo").innerHTML =
-          "<h1>Seat 3</h1>" +
+          "<h1>" +
+          "Seat " +
+          seatState.seatId +
+          "</h1>" +
           "<p>Coming back for more eh?" +
           "<br />" +
           "<br />" +
           " You gonna gobble down: " +
           "<br />" +
           "<br />" +
-          seatState.currentOrder[0].orderItems.forEach(item => {
+          seatState.currentOrder[0].orderItems.map(item => {
             let productDisplay = new ProductDisplay(item);
             seatState.currentOrder.push(productDisplay);
             calc1.addition(item); //these are product displays with menuItems inside
@@ -132,6 +143,7 @@ class Table {
           "See you soon you wacky next-door neighbor dude!!!";
         "</p>";
         this.calc1.total = 0;
+        this.seatArray[3] = seatState;
         break;
 
       case "seat4":
@@ -140,14 +152,17 @@ class Table {
         seatState = this.seatArray[4];
         seatState.currentOrder = seatState.orderArray;
         document.getElementById("logInfo").innerHTML =
-          "<h1>Seat 4</h1>" +
+          "<h1>" +
+          "Seat " +
+          seatState.seatId +
+          "</h1>" +
           "<p>Coming back for more eh?" +
           "<br />" +
           "<br />" +
           " You gonna gobble down: " +
           "<br />" +
           "<br />" +
-          seatState.currentOrder[0].orderItems.forEach(item => {
+          seatState.currentOrder[0].orderItems.map(item => {
             let productDisplay = new ProductDisplay(item);
             seatState.currentOrder.push(productDisplay);
             calc1.addition(item); //these are product displays with menuItems inside
@@ -169,6 +184,7 @@ class Table {
           "See you soon you wacky next-door neighbor dude!!!";
         "</p>";
         this.calc1.total = 0;
+        this.seatArray[4] = seatState;
         break;
 
       case "seat5":
@@ -177,14 +193,17 @@ class Table {
         seatState = this.seatArray[5];
         seatState.currentOrder = seatState.orderArray;
         document.getElementById("logInfo").innerHTML =
-          "<h1>Seat 5</h1>" +
+          "<h1>" +
+          "Seat " +
+          seatState.seatId +
+          "</h1>" +
           "<p>Coming back for more eh?" +
           "<br />" +
           "<br />" +
           " You gonna gobble down: " +
           "<br />" +
           "<br />" +
-          seatState.currentOrder[0].orderItems.forEach(item => {
+          seatState.currentOrder[0].orderItems.map(item => {
             let productDisplay = new ProductDisplay(item);
             seatState.currentOrder.push(productDisplay);
             calc1.addition(item); //these are product displays with menuItems inside
@@ -206,6 +225,7 @@ class Table {
           "See you soon you wacky next-door neighbor dude!!!";
         "</p>";
         this.calc1.total = 0;
+        this.seatArray[5] = seatState;
         break;
 
       default:

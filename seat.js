@@ -42,7 +42,6 @@ class Seat {
       this.currentOrder = this.myArrProducts;
       userLogSeatState.itemTally(seatState.viewBuilder);
       userLogSeatState.presentUserLog(seatState);
-      console.log(this.viewBuilder);
     } else {
       return this.viewBuilder;
     }
