@@ -2324,6 +2324,8 @@ Q. If we are starting with new data, will the errors persist?
 
 ***********************************************************************************************************************
 
+Some of the bugs I have observed:
+
 If I select some items as seats 1, 2, and 4 and then immediately click their respective seats, then the items I selected remain in the userLog view
 If I select some items as seat3 or seat5 and then immediately click their respective seats, then the items I selected are replaced by the original data in the userLog view for the seat.
 Although the original data in seat 3 is replaced, if you immediately click seat 5, the data from seat 3 will be in the userLog for seat 5, and vice versa for starting on seat 5 (the data replaced will show up in the userLog for seat 3
