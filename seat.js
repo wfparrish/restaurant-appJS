@@ -51,8 +51,10 @@ class Seat {
 
   createOrder(index = order0.incrementId()) {
     //creates an array with product display items. It appears to have scope of the lifetime of the function
+    debugger;
     let localViewBuilder = this.viewBuilder;
     this.currentOrder = new Order(index, localViewBuilder);
+    console.log(this.currentOrder);
     //passes the order to the orderArray in the Table class instance
     console.log(assignedTable.seatArray[this.seatId]);
     assignedTable.seatArray[this.seatId].orderArray.push(this.currentOrder);
