@@ -21,8 +21,9 @@ class UserLog {
 
   presentUserLog(seatState) {
     //checks to see if the items ordered have already been totaled(i.e. not the first time the seat has been selected and an order placed by the user). If the order has never been totaled this is the code that runs
+    console.log(seatState.currentOrder[seatState.currentOrder.orderItems]);
     seatState.userLog.itemList.push(
-      seatState.currentOrder[seatState.currentOrder.length - 1].menuItem
+      seatState.currentOrder[seatState.currentOrder.orderItems.length - 1]
     );
     if (this.previousTotal == null) {
       document.getElementById("logInfo").innerHTML =

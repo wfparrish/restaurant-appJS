@@ -23,7 +23,6 @@ class Table {
     switch (id) {
       case "seat1":
         calc1.clearCalculator();
-
         this.selectedSeat = assignedTable.seatArray[1].seatId;
         seatState = this.seatArray[1];
         seatState.currentOrder = seatState.orderArray;

@@ -2332,5 +2332,44 @@ Although the original data in seat 3 is replaced, if you immediately click seat 
 )
 
 
+------------------------------------------------------------------------------------------------------------------------
+
+December 12, 2019
+
+The orderItems array is unclear in my code logic. It is because we have instantiated it beforehand. This is having unintended consequences.
+
+------------------------------------------------------------------------------------------------------------------------
+
+December 13, 2019
+
+The Chrome debugger suddenly would not show tooltips for the variables when you hovered over them. I solved the problem by updating Chrome.
+
+************************************************************************************************************************
+
+The state of the application is breaking, as far as I understand it. 
+
+1. I have two files that present views very similar views:
+
+-userLog.js
+-table.js
+
+2. I have become confused about the way the app using its state to calculate. Instead of an orderArray made of selected items that have not been sent and new items being added to the array, I have an order array that is composed of orders, and ProductDisplays
+
+3. Clicking to add items to the order is adding undefined values
+
+4. This line in the userLog:
+
+    if (this.previousTotal == null) {
+
+could have been causing problems. I am not sure when this statement would ever stop running, and inside that statement is a .map method. My fear is that the .map keeps running until it tries to process an undefined item.
+
+5. These lines seem to create the productDisplays that are muddying up my orderArray
+
+ let productDisplay = new ProductDisplay(item);
+            seatState.currentOrder.push(productDisplay);
+
+
+------------------------------------------------------------------------------------------------------------------------
+
 
 

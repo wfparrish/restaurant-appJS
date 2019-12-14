@@ -39,7 +39,7 @@ class Seat {
       //debugger;
       this.myArrProducts.push(this.display);
       this.viewBuilder = this.myArrProducts;
-      this.currentOrder = this.myArrProducts;
+      this.currentOrder = new Order(order0.incrementId(), this.myArrProducts);
       userLogSeatState.itemTally(seatState.viewBuilder);
       userLogSeatState.presentUserLog(seatState);
     } else {
@@ -51,7 +51,6 @@ class Seat {
 
   createOrder(index = order0.incrementId()) {
     //creates an array with product display items. It appears to have scope of the lifetime of the function
-    debugger;
     let localViewBuilder = this.viewBuilder;
     this.currentOrder = new Order(index, localViewBuilder);
     console.log(this.currentOrder);
