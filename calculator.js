@@ -4,7 +4,7 @@ class Calculator {
   }
 
   addition(item) {
-    this.total = this.total + item.price;
+    this.total = this.total + item.menuItem.price;
     return this.total;
   }
   subtraction(item) {

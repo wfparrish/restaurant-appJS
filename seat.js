@@ -39,7 +39,7 @@ class Seat {
       //debugger;
       this.myArrProducts.push(this.display);
       this.viewBuilder = this.myArrProducts;
-      this.currentOrder = new Order(order0.incrementId(), this.myArrProducts);
+      //this.currentOrder = new Order(order0.incrementId(), this.myArrProducts);
       userLogSeatState.itemTally(seatState.viewBuilder);
       userLogSeatState.presentUserLog(seatState);
     } else {

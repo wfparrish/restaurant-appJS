@@ -22,23 +22,15 @@ let initialVals = [
 ];
 let order0 = new Order(0, initialVals);
 
-let orderTally1 = [
-  burgerDisplay.menuItem,
-  friesDisplay.menuItem,
-  milkshakeDisplay.menuItem
-];
+let orderTally1 = [burgerDisplay, friesDisplay, milkshakeDisplay];
 
-let orderTally2 = [sidesDisplay.menuItem, drinkDisplay.menuItem];
+let orderTally2 = [sidesDisplay, drinkDisplay];
 
-let orderTally3 = [
-  chixDisplay.menuItem,
-  friesDisplay.menuItem,
-  drinkDisplay.menuItem
-];
+let orderTally3 = [chixDisplay, friesDisplay, drinkDisplay];
 
-let orderTally4 = [burgerDisplay.menuItem, milkshakeDisplay.menuItem];
+let orderTally4 = [burgerDisplay, milkshakeDisplay];
 
-let orderTally5 = [drinkDisplay.menuItem];
+let orderTally5 = [drinkDisplay];
 
 let order1 = new Order(1, orderTally1);
 let order2 = new Order(2, orderTally2);
@@ -133,23 +125,4 @@ let party = new Party(1, 5, [seatArray], [check1]);
 //tableBuilder.js
 //create assignedTable
 let assignedTable;
-
 assignedTable = new tableBuilder((selectedSeat = null));
-
-//stuff I saw after the debugger went into WebComponent.blah blah . Not sure if it will be part of the script
-// document.getElementById("logInfo").innerHTML =
-//       "<p>You should try our " +
-//       "<br />" +
-//       "<br />" +
-//       this.myArr0[0].name +
-//       "<br /> " +
-//       this.myArr0[1].name +
-//       "<br /> " +
-//       this.myArr0[2].name +
-//       "<br /> " +
-//       "<br /> " +
-//       "We know how to do this! Sunny side up!</p>";
-
-// let dailySpecial = new DailySpecial();
-
-// dailySpecial.displayDataInUserLog()
