@@ -2373,11 +2373,20 @@ could have been causing problems. I am not sure when this statement would ever s
 
 December 14, 2019
 
-I redesigned the seat.js switch so that it is checking for an undefined state in the order. Basically asking the question: have you already selected any items? Items that you possibly have not confirmed? 
+Fixed the order issue. All the items that are part of an order (regardless of when or where the order is created) are wrapped by the productDisplay objects. 
+Fixed the state of the orderArray also. Now only one order is placed in the orderArray.
+
+All the seats sum their total correctly when you click from seat to seat. Now I have to add additional items in orders and add them to the orderArray for each seat.
+
+I redesigned the seat.js switch so that it is checking for an undefined state in the order. Basically asking the question: have you already selected any items? Items that you possibly have not confirmed and sent to the kitchen? 
 
 I thought that this would help check whether a seat had already been clicked or not, but I see that is not correct. I still need to check for the selectedSeat seperately, and render a message with a backdrop if they have not
 
 This will be useful later, when i want to check before the user tries to send an empty order, or order items without selecting a seat the items will be assigned to
 
+***********************************************************************************************************************
 
+If I keep selecting seats, the total begins to sum more and more items from the previous seats. I need to clear the state each time. I don't know if it is in the seat or the table or the userLog. 
+
+Experiment with starting with an undefined orderArray.
 

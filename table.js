@@ -25,6 +25,7 @@ class Table {
       case "seat1":
         this.selectedSeat = assignedTable.seatArray[1].seatId;
         seatState = this.seatArray[1];
+        console.log(seat1.orderArray[0]);
         // console.log(seatState.orderArray[0].orderItems);
         // console.log(seatState.currentOrder);
         if (seatState.orderArray[0].orderItems !== undefined) {
@@ -71,6 +72,7 @@ class Table {
       case "seat2":
         this.selectedSeat = assignedTable.seatArray[2].seatId;
         seatState = this.seatArray[2];
+        console.log(seat2.orderArray[0]);
         // console.log(seatState.orderArray[0].orderItems);
         // console.log(seatState.currentOrder);
         if (seatState.orderArray[0].orderItems !== undefined) {
@@ -117,6 +119,7 @@ class Table {
       case "seat3":
         this.selectedSeat = assignedTable.seatArray[3].seatId;
         seatState = this.seatArray[3];
+        console.log(seat3.orderArray[0]);
         // console.log(seatState.orderArray[0].orderItems);
         // console.log(seatState.currentOrder);
         if (seatState.orderArray[0].orderItems !== undefined) {
@@ -163,6 +166,7 @@ class Table {
       case "seat4":
         this.selectedSeat = assignedTable.seatArray[4].seatId;
         seatState = this.seatArray[4];
+        console.log(seat4.orderArray[0]);
         // console.log(seatState.orderArray[0].orderItems);
         // console.log(seatState.currentOrder);
         if (seatState.orderArray[0].orderItems !== undefined) {
@@ -209,6 +213,7 @@ class Table {
       case "seat5":
         this.selectedSeat = assignedTable.seatArray[5].seatId;
         seatState = this.seatArray[5];
+        console.log(seat5.orderArray[0]);
         // console.log(seatState.orderArray[0].orderItems);
         // console.log(seatState.currentOrder);
         if (seatState.orderArray[0].orderItems !== undefined) {
