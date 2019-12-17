@@ -2390,3 +2390,51 @@ If I keep selecting seats, the total begins to sum more and more items from the 
 
 Experiment with starting with an undefined orderArray.
 
+------------------------------------------------------------------------------------------------------------------------
+
+December 16, 2019
+
+The application from a clean start:
+-Clicked each seat once in a series. The state of the userLog view for each seat reflects the items in the appropriate array (it seems). The total for each view is correct (data is not being visibly shared between the seats). Once I reach the end of the series and click seat1 for a second time, I get this output:
+
+Seat 1
+You know you want it, right?
+
+Just hit the order button!
+
+Burger 3.89,Fries 0.99,Milkshake 2.99,Sides 1.75,Drink 1.75,Drink 1.75,Burger 3.89,Milkshake 2.99,Chix 3.59,Fries 0.99,Drink 1.75
+
+Your total will be: 26.33
+
+
+Send Order
+
+See you soon you wacky next-door neighbor dude!!!
+
+Items from seat1 through seat5 are now the new order in the userLog for seat1
+
+If I immediately click seat2:
+
+Burger 3.89,Fries 0.99,Milkshake 2.99,Sides 1.75,Drink 1.75,Drink 1.75,Burger 3.89,Milkshake 2.99,Chix 3.59,Fries 0.99,Drink 1.75,Burger 3.89,Fries 0.99,Milkshake 2.99,Sides 1.75,Drink 1.75,Drink 1.75,Burger 3.89,Milkshake 2.99,Chix 3.59,Fries 0.99,Drink 1.75
+
+Your total will be: 52.660000000000004
+
+If I immediately click seat3:
+
+Burger 3.89,Fries 0.99,Milkshake 2.99,Sides 1.75,Drink 1.75,Drink 1.75,Burger 3.89,Milkshake 2.99,Chix 3.59,Fries 0.99,Drink 1.75,Burger 3.89,Fries 0.99,Milkshake 2.99,Sides 1.75,Drink 1.75,Drink 1.75,Burger 3.89,Milkshake 2.99,Chix 3.59,Fries 0.99,Drink 1.75,Burger 3.89,Fries 0.99,Milkshake 2.99,Sides 1.75,Drink 1.75,Drink 1.75,Burger 3.89,Milkshake 2.99,Chix 3.59,Fries 0.99,Drink 1.75,Burger 3.89,Fries 0.99,Milkshake 2.99,Sides 1.75,Drink 1.75,Drink 1.75,Burger 3.89,Milkshake 2.99,Chix 3.59,Fries 0.99,Drink 1.75
+
+Your total will be: 105.31999999999998
+
+so on...
+
+************************************************************************************************************************
+
+Things to fix:
+
+1. I have the productDisplay/[order] issue again. It is coming from the passDataToUserLog() method of the seat class
+2. 
+
+Things to know:
+
+1. The program is designed to only sum the last order that was created and placed in the orderArray()
+2. 

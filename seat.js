@@ -12,6 +12,21 @@ class Seat {
   //Write your method here
   // }
 
+  createOrder(index = order0.incrementId()) {
+    //creates an array with product display items. It appears to have scope of the lifetime of the function
+    let localViewBuilder = this.viewBuilder;
+    this.currentOrder = new Order(index, localViewBuilder);
+    console.log(this.currentOrder);
+    //passes the order to the orderArray in the Table class instance
+    console.log(assignedTable.seatArray[this.seatId]);
+    assignedTable.seatArray[this.seatId].orderArray.push(this.currentOrder);
+
+    // console.log(assignedTable.seatArray);
+    tempDB.growDB(this.currentOrder.orderItems);
+    this.viewBuilder = [];
+    return this.viewBuilder;
+  }
+
   passDataToUserLog(id) {
     this.selectedProd = document.getElementById(id);
     this.display = "";
@@ -35,32 +50,25 @@ class Seat {
           break;
       }
 
+      //sets the seatState to the selected seat
+      seatState = assignedTable.seatArray[assignedTable.selectedSeat];
+      console.log(seatState);
+      console.log(this.userLog);
+      console.log(this.orderArray);
       //creates an array of product displays and shows the content of the product displays in the userLog view
-      //debugger;
       this.myArrProducts.push(this.display);
       this.viewBuilder = this.myArrProducts;
-      //this.currentOrder = new Order(order0.incrementId(), this.myArrProducts);
-      userLogSeatState.itemTally(seatState.viewBuilder);
-      userLogSeatState.presentUserLog(seatState);
+      this.currentOrder[0] = new Order(
+        order0.incrementId(),
+        this.myArrProducts
+      );
+      seatState.userLog.itemTally(seatState.viewBuilder);
+      debugger;
+      seatState.userLog.presentUserLog(seatState);
     } else {
       return this.viewBuilder;
     }
     //clear the viewBuilder
     //this.viewBuilder = [];
-  }
-
-  createOrder(index = order0.incrementId()) {
-    //creates an array with product display items. It appears to have scope of the lifetime of the function
-    let localViewBuilder = this.viewBuilder;
-    this.currentOrder = new Order(index, localViewBuilder);
-    console.log(this.currentOrder);
-    //passes the order to the orderArray in the Table class instance
-    console.log(assignedTable.seatArray[this.seatId]);
-    assignedTable.seatArray[this.seatId].orderArray.push(this.currentOrder);
-
-    // console.log(assignedTable.seatArray);
-    tempDB.growDB(this.currentOrder.orderItems);
-    this.viewBuilder = [];
-    return this.viewBuilder;
   }
 }

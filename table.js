@@ -63,6 +63,7 @@ class Table {
             "See you soon you wacky next-door neighbor dude!!!";
           ("</p>");
           seatState.orderArray[0].orderItems = this.orderBuilder;
+          this.orderBuilder = [];
         }
         this.calc1.total = 0;
         this.seatArray[1] = seatState;
@@ -110,6 +111,7 @@ class Table {
             "See you soon you wacky next-door neighbor dude!!!";
           ("</p>");
           seatState.orderArray[0].orderItems = this.orderBuilder;
+          this.orderBuilder = [];
         }
         this.calc1.total = 0;
         this.seatArray[2] = seatState;
@@ -157,6 +159,7 @@ class Table {
             "See you soon you wacky next-door neighbor dude!!!";
           ("</p>");
           seatState.orderArray[0].orderItems = this.orderBuilder;
+          this.orderBuilder = [];
         }
         this.calc1.total = 0;
         this.seatArray[3] = seatState;
@@ -204,6 +207,7 @@ class Table {
             "See you soon you wacky next-door neighbor dude!!!";
           ("</p>");
           seatState.orderArray[0].orderItems = this.orderBuilder;
+          this.orderBuilder = [];
         }
         this.calc1.total = 0;
         this.seatArray[4] = seatState;
@@ -251,6 +255,7 @@ class Table {
             "See you soon you wacky next-door neighbor dude!!!";
           ("</p>");
           seatState.orderArray[0].orderItems = this.orderBuilder;
+          this.orderBuilder = [];
         }
         this.calc1.total = 0;
         this.seatArray[5] = seatState;
