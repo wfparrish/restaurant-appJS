@@ -8,7 +8,7 @@ class Calculator {
     return this.total;
   }
   subtraction(item) {
-    return (total = total - item.menuItem.price);
+    return (total = total - item.price);
   }
   clearCalculator() {
     this.total = 0;

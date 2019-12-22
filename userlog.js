@@ -20,13 +20,10 @@ class UserLog {
   }
 
   presentUserLog(seatState) {
-    //checks to see if the items ordered have already been totaled(i.e. not the first time the seat has been selected and an order placed by the user). If the order has never been totaled this is the code that runs
-
-    //this is what is pushing the undefined value into the itemList
-    console.log(seatState.currentOrder[seatState.currentOrder[0].orderItems]);
-    seatState.userLog.itemList.push(
-      seatState.currentOrder[seatState.currentOrder[0].orderItems.length - 1]
-    );
+    if (seatState.currentOrder[0] !== undefined)
+      seatState.userLog.itemList.push(
+        seatState.currentOrder[seatState.currentOrder.length - 1]
+      );
     if (this.previousTotal == null) {
       document.getElementById("logInfo").innerHTML =
         "<h1>" +
@@ -40,11 +37,14 @@ class UserLog {
         "<br />" +
         "<br />" +
         seatState.userLog.itemList.map(item => {
-          console.log(seatState.userLog.itemList);
+          console.log(item);
           calc1.addition(item); //these are product displays with menuItems inside
           let itemView = document.createElement("div");
           itemView.id = "itemView";
-          itemView.innerText = item.menuItem.name + "   " + item.menuItem.price;
+          itemView.innerText =
+            item.orderItem[0].menuItem.name +
+            "   " +
+            item.orderItem[0].menuItem.price;
           return itemView.innerText;
         }) +
         "<br /> " +

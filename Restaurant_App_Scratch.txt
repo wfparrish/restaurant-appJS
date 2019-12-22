@@ -2438,3 +2438,62 @@ Things to know:
 
 1. The program is designed to only sum the last order that was created and placed in the orderArray()
 2. 
+
+------------------------------------------------------------------------------------------------------------------
+
+December 17, 2019
+
+Notice the following code returned from the program when we select seat3 and immediately order an item:
+//this is the statement we run to see the orderArray's state
+      console.log(this.orderArray);
+
+
+(2) [Order, Order]
+
+0: Order
+orderId: 6
+orderItems: [ProductDisplay]
+__proto__: Object
+
+1: Order
+orderId: 1
+orderItems: Array(3)
+0: ProductDisplay {id: "P-d4", menuItem: Burger}
+1: ProductDisplay {id: "P-d5", menuItem: Fries}
+2: ProductDisplay {id: "P-d6", menuItem: Milkshake}
+length: 3
+
+__proto__: Array(0)
+__proto__: Object
+length: 2
+__proto__: Array(0)
+
+This output is the desired output for our program. Although seat3 is instanciated with more than one order instance, the only order instance that should be a part of this calculation is the last array in the orderArray for the seat. Our code accomplishes this. Congrats!
+
+************************************************************************************************************************
+
+December 21, 2019
+
+Working with application state. Right now I have two files that are similar. They are designed to handle the userLog view at different moments in the lifetime of the application
+
+table.js (uses a switch statement with a hard-coded view for each case)
+userLog.js (uses a method, presentUserLog())
+
+The hard-coding in the table.js switch should probably be replaced by calls to the presentUserLog() method in each case of the switch
+
+ex.
+
+selectSeat(id) {
+  case "seat1":
+  this.selectedSeat = assignedTable.seatArray[1].seatId;
+  seatState = this.seatArray[1];
+  if(seatState.orderArray[0].orderItems !== undefined){
+    presentUserLog()
+    //blah, blah, blah, something like this
+  }
+}
+
+Reuse the code and simplify the code so that there is only one method that presents data to the userLog view
+
+**********************************************************************************************************************
+

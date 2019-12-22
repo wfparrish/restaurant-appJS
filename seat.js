@@ -6,6 +6,7 @@ class Seat {
     this.viewBuilder = [];
     this.myArrProducts = [];
     this.currentOrder = [];
+    this.orderHolder = [];
   }
 
   // refreshSeatState(seatId, userLog) {
@@ -16,9 +17,7 @@ class Seat {
     //creates an array with product display items. It appears to have scope of the lifetime of the function
     let localViewBuilder = this.viewBuilder;
     this.currentOrder = new Order(index, localViewBuilder);
-    console.log(this.currentOrder);
     //passes the order to the orderArray in the Table class instance
-    console.log(assignedTable.seatArray[this.seatId]);
     assignedTable.seatArray[this.seatId].orderArray.push(this.currentOrder);
 
     // console.log(assignedTable.seatArray);
@@ -30,7 +29,7 @@ class Seat {
   passDataToUserLog(id) {
     this.selectedProd = document.getElementById(id);
     this.display = "";
-    if (id !== null || undefined) {
+    if (id !== null && id !== undefined) {
       switch (id) {
         case "addMeBtn1":
           this.selectedProd = new Burger();
@@ -52,19 +51,17 @@ class Seat {
 
       //sets the seatState to the selected seat
       seatState = assignedTable.seatArray[assignedTable.selectedSeat];
-      console.log(seatState);
-      console.log(this.userLog);
-      console.log(this.orderArray);
+
       //creates an array of product displays and shows the content of the product displays in the userLog view
       this.myArrProducts.push(this.display);
       this.viewBuilder = this.myArrProducts;
-      this.currentOrder[0] = new Order(
-        order0.incrementId(),
-        this.myArrProducts
-      );
-      seatState.userLog.itemTally(seatState.viewBuilder);
+      let index = order0.incrementId();
+      this.orderHolder = new Order(index, this.viewBuilder);
+      this.currentOrder[this.currentOrder.length - 1] = this.orderHolder;
+      seatState.userLog.itemTally(seatState.currentOrder);
       debugger;
       seatState.userLog.presentUserLog(seatState);
+      console.log(seatState);
     } else {
       return this.viewBuilder;
     }
