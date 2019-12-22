@@ -37,14 +37,16 @@ class UserLog {
         "<br />" +
         "<br />" +
         seatState.userLog.itemList.map(item => {
-          console.log(item);
-          calc1.addition(item); //these are product displays with menuItems inside
+          console.log(seatState.userLog.itemList[this.itemList.length - 1]);
+          //console.log(seatState.currentOrder[0].orderItems[0]);
+          debugger;
+          calc1.addition(item.orderItems[0]); //these are product displays with menuItems inside
           let itemView = document.createElement("div");
           itemView.id = "itemView";
           itemView.innerText =
-            item.orderItem[0].menuItem.name +
+            item.orderItems[0].menuItem.name +
             "   " +
-            item.orderItem[0].menuItem.price;
+            item.orderItems[0].menuItem.price;
           return itemView.innerText;
         }) +
         "<br /> " +

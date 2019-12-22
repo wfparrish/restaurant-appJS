@@ -73,8 +73,6 @@ class Table {
       case "seat2":
         this.selectedSeat = assignedTable.seatArray[2].seatId;
         seatState = this.seatArray[2];
-        // console.log(seatState.orderArray[0].orderItems);
-        // console.log(seatState.currentOrder);
         if (seatState.orderArray[0].orderItems !== undefined) {
           let index = order0.incrementId();
           let localOrderTally = seatState.orderArray[0].orderItems;
@@ -123,8 +121,6 @@ class Table {
       case "seat3":
         this.selectedSeat = assignedTable.seatArray[3].seatId;
         seatState = this.seatArray[3];
-        // console.log(seatState.orderArray[0].orderItems);
-        // console.log(seatState.currentOrder);
         if (seatState.orderArray[0].orderItems !== undefined) {
           let index = order0.incrementId();
           let localOrderTally = seatState.orderArray[0].orderItems;
@@ -173,8 +169,6 @@ class Table {
       case "seat4":
         this.selectedSeat = assignedTable.seatArray[4].seatId;
         seatState = this.seatArray[4];
-        // console.log(seatState.orderArray[0].orderItems);
-        // console.log(seatState.currentOrder);
         if (seatState.orderArray[0].orderItems !== undefined) {
           let index = order0.incrementId();
           let localOrderTally = seatState.orderArray[0].orderItems;
@@ -223,8 +217,6 @@ class Table {
       case "seat5":
         this.selectedSeat = assignedTable.seatArray[5].seatId;
         seatState = this.seatArray[5];
-        // console.log(seatState.orderArray[0].orderItems);
-        // console.log(seatState.currentOrder);
         if (seatState.orderArray[0].orderItems !== undefined) {
           let index = order0.incrementId();
           let localOrderTally = seatState.orderArray[0].orderItems;

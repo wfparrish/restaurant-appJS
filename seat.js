@@ -59,9 +59,7 @@ class Seat {
       this.orderHolder = new Order(index, this.viewBuilder);
       this.currentOrder[this.currentOrder.length - 1] = this.orderHolder;
       seatState.userLog.itemTally(seatState.currentOrder);
-      debugger;
       seatState.userLog.presentUserLog(seatState);
-      console.log(seatState);
     } else {
       return this.viewBuilder;
     }

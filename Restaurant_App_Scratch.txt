@@ -2497,3 +2497,10 @@ Reuse the code and simplify the code so that there is only one method that prese
 
 **********************************************************************************************************************
 
+December 22, 2019
+
+Currently, clicking a seat loads the saved order that has not been confirmed by the user (it hasn't been sent back to the kitchen using the Send Order button). When the user returns to the order they are building (by clicking said seat), they add an item to an order that is not the original order of the seat. Also, the item they selected is duplicated, so that ordering one burger gives a total of 7.78 (two burgers)
+
+Also, the .map function can be passed an index value. I think this will be helpful with having the calc1() function perform its calculation on each item in the array that .map is passing to it
+
+*********************************************************************************************************************
