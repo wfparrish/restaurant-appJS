@@ -11,6 +11,7 @@ class UserLog {
 
   //clears the userLog state of data
   refreshUserLogItemList(seatState) {
+    console.log(itemList)
     this.itemList = [];
   }
 
@@ -21,9 +22,11 @@ class UserLog {
 
   presentUserLog(seatState) {
     if (seatState.currentOrder[0] !== undefined)
+    debugger;
       seatState.userLog.itemList.push(
         seatState.currentOrder[seatState.currentOrder.length - 1]
       );
+      console.log(seatState.currentOrder[0]['orderItems'])
     if (this.previousTotal == null) {
       document.getElementById("logInfo").innerHTML =
         "<h1>" +
@@ -37,10 +40,10 @@ class UserLog {
         "<br />" +
         "<br />" +
         seatState.userLog.itemList.map(item => {
-          console.log(seatState.userLog.itemList[this.itemList.length - 1]);
+          //console.log(seatState.userLog.itemList[this.itemList.length - 1]);
           //console.log(seatState.currentOrder[0].orderItems[0]);
-          debugger;
-          calc1.addition(item.orderItems[0]); //these are product displays with menuItems inside
+          console.log(item.orderItems)
+          calc1.addition(item); //these are product displays with menuItems inside
           let itemView = document.createElement("div");
           itemView.id = "itemView";
           itemView.innerText =

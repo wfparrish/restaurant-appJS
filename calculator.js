@@ -4,7 +4,11 @@ class Calculator {
   }
 
   addition(item) {
-    this.total = this.total + item.menuItem.price;
+    this.total
+    item.orderItems.forEach((element)=> {
+      this.total += element.menuItem.price;
+    });
+    console.log(this.total)
     return this.total;
   }
   subtraction(item) {

@@ -508,7 +508,7 @@ Realized the
 
 function passDataToUserLog() {
   document.getElementById("logInfo").innerHTML =
-    "<p>Wasn't that some bomb-ass food? See ya soon bitch!</p>";
+    "<p>Wasn't that some bomb food? See ya soon!</p>";
 }
 
 could be put inside the UserLog object, or it could be a part of a totally different object, maybe the Check object. 
@@ -979,7 +979,8 @@ Output ===>
 
 These are the buttons as DOM nodes. I can view all their individual attributes in the console.
 
-But I am sending the wrong object. I don't need to send the button, I want to send the product display holding the menu item I want to access. Ultimately I want that array to have as output:
+But I am sending the wrong object. I don't need to send the button, I want to send the product display holding
+the menu item I want to access. Ultimately I want that array to have as output:
 
 (6) [null, burger1, fries1, burger1, burger1, fries1]
 
@@ -999,7 +1000,10 @@ Pass the objects in the viewBuilder to the UserLog
 August 21, 2019
 
 
-Very quickly I was able to begin to send the data to the userLog instance. I wrapped the menu items in productDisplay instances by using a switch statement. The id of the button is used to determine what menu item is wrapped in the display. I needed to figure out how to get the data out though, and I found these solutions online.
+Very quickly I was able to begin to send the data to the userLog instance. 
+I wrapped the menu items in productDisplay instances by using a switch statement. 
+The id of the button is used to determine what menu item is wrapped in the display. 
+I needed to figure out how to get the data out though, and I found these solutions online.
 
 1.
 
@@ -1080,7 +1084,7 @@ So I have two possible directions
         itemView.id = "itemView";
         itemView.innerText = item.menuItem.name;
         console.log(itemView);
-        return itemView;
+        return itemView.innerText;
       })
 
 2.
@@ -2504,3 +2508,19 @@ Currently, clicking a seat loads the saved order that has not been confirmed by 
 Also, the .map function can be passed an index value. I think this will be helpful with having the calc1() function perform its calculation on each item in the array that .map is passing to it
 
 *********************************************************************************************************************
+
+6/21/2020
+
+Returning to the Restaurant App. 
+
+Goal: Complete the calculator so that I have a portfolio piece
+
+Realization: The reason Launch School is so effective in terms of growth 
+is they put you in continuously changing scenarios where you use different
+aspects of the language. 
+
+It would not be wise to spend too much time a day working on this app.
+Maybe 3 or 4 hours each weekend
+
+Any more and your progress will be tremendously stunted.
+

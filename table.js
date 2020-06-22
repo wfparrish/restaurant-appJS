@@ -30,6 +30,7 @@ class Table {
           let localOrderTally = seatState.orderArray[0].orderItems;
           let localOrder = new Order(index, localOrderTally);
           seatState.currentOrder[0] = localOrder;
+          console.log(seatState.currentOrder[0].orderItems)
           document.getElementById("logInfo").innerHTML =
             "<h1>" +
             "Seat " +
@@ -41,13 +42,14 @@ class Table {
             " Just hit the order button! " +
             "<br />" +
             "<br />" +
-            seatState.currentOrder[0].orderItems.map(item => {
+            seatState.currentOrder.map((item, idx) => {
               this.calc1.addition(item);
               this.orderBuilder.push(item);
               let itemView = document.createElement("div");
               itemView.id = "itemView";
               itemView.innerText =
-                item.menuItem.name + "   " + item.menuItem.price;
+              item['orderItems'][idx]['menuItem']['name'] + "   " + 
+              item['orderItems'][idx]['menuItem']['price'];
               return itemView.innerText;
             }) +
             "<br /> " +
