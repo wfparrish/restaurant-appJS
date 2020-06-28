@@ -18,11 +18,11 @@ let milkshakeDisplay = new ProductDisplay(milkshake1);
 let initialVals = [
   chixDisplay.menuItem,
   sidesDisplay.menuItem,
-  drinkDisplay.menuItem
+  drinkDisplay.menuItem,
 ];
 let order0 = new Order(0, initialVals);
-
 let orderTally1 = [burgerDisplay, friesDisplay, milkshakeDisplay];
+console.log(JSON.stringify(orderTally1));
 
 let orderTally2 = [sidesDisplay, drinkDisplay];
 
@@ -47,7 +47,7 @@ let orderArray = [
   order5,
   order2,
   order3,
-  order1
+  order1,
 ];
 
 //orderDB.js
@@ -80,7 +80,7 @@ let userLogArray = [
   userLog2,
   userLog3,
   userLog4,
-  userLog5
+  userLog5,
 ];
 
 //dailySpecial.js
