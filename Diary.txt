@@ -2524,3 +2524,11 @@ Maybe 3 or 4 hours each weekend
 
 Any more and your progress will be tremendously stunted.
 
+6/28/2020
+
+Started Restaurant App 2.0 using Node and Express. Realized the first version was useful but dead. To grow fast, I need
+to start the backend API. This will allow me to control the data and the state of the application using CRUD operations.
+I will not need to wrestle with the browser's event loop to store and render data. Not as much.
+
+
+

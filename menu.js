@@ -2,7 +2,6 @@ class Burger {
   constructor() {
     this.name = "Burger";
     this.price = 3.89;
-    this.temperature = "";
   }
 }
 

@@ -22,7 +22,6 @@ let initialVals = [
 ];
 let order0 = new Order(0, initialVals);
 let orderTally1 = [burgerDisplay, friesDisplay, milkshakeDisplay];
-console.log(JSON.stringify(orderTally1));
 
 let orderTally2 = [sidesDisplay, drinkDisplay];
 
@@ -126,3 +125,5 @@ let party = new Party(1, 5, [seatArray], [check1]);
 //create assignedTable
 let assignedTable;
 assignedTable = new tableBuilder((selectedSeat = null));
+
+console.log(JSON.stringify(assignedTable));

@@ -11,7 +11,7 @@ class UserLog {
 
   //clears the userLog state of data
   refreshUserLogItemList(seatState) {
-    console.log(itemList)
+    console.log(itemList);
     this.itemList = [];
   }
 
@@ -21,12 +21,11 @@ class UserLog {
   }
 
   presentUserLog(seatState) {
-    if (seatState.currentOrder[0] !== undefined)
-    debugger;
-      seatState.userLog.itemList.push(
-        seatState.currentOrder[seatState.currentOrder.length - 1]
-      );
-      console.log(seatState.currentOrder[0]['orderItems'])
+    if (seatState.currentOrder[0] !== undefined) debugger;
+    seatState.userLog.itemList.push(
+      seatState.currentOrder[seatState.currentOrder.length - 1]
+    );
+    console.log(seatState.currentOrder[0]["orderItems"]);
     if (this.previousTotal == null) {
       document.getElementById("logInfo").innerHTML =
         "<h1>" +
@@ -39,10 +38,10 @@ class UserLog {
         " You fittin to smash: " +
         "<br />" +
         "<br />" +
-        seatState.userLog.itemList.map(item => {
+        seatState.userLog.itemList.map((item) => {
           //console.log(seatState.userLog.itemList[this.itemList.length - 1]);
           //console.log(seatState.currentOrder[0].orderItems[0]);
-          console.log(item.orderItems)
+          console.log(item.orderItems);
           calc1.addition(item); //these are product displays with menuItems inside
           let itemView = document.createElement("div");
           itemView.id = "itemView";
@@ -78,7 +77,7 @@ class UserLog {
         " You fittin to smash: " +
         "<br />" +
         "<br />" +
-        seatState.userLog.itemList.map(item => {
+        seatState.userLog.itemList.map((item) => {
           calc1.addition(item); //these are product displays with menuItems inside
           let itemView = document.createElement("div");
           itemView.id = "itemView";
