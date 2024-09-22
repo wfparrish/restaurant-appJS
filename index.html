@@ -1,132 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="./index.css" />
-    <link rel="shortcut icon" href="./favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
 
-    <script src="menu.js"></script>
-    <script src="productDisplay.js"></script>
-    <script src="order.js"></script>
-    <script src="orderDB.js"></script>
-    <script src="calculator.js"></script>
-    <script src="userlog.js"></script>
-    <script src="dailySpecial.js"></script>
-    <script src="seat.js"></script>
-    <script src="check.js"></script>
-    <script src="party.js"></script>
-    <script src="index.js"></script>
-    <script src="table.js"></script>
-    <script src="tableBuilder.js"></script>
-    <script src="main.js"></script>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="./index.css" />
+  <link rel="shortcut icon" href="./favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
 
-    <title>Restaurant App</title>
-  </head>
+  <title>Restaurant App</title>
+</head>
 
-  <body onload="dailySpecial.displayDataInUserLog()">
-    <div id="root">
-      <div class="display">
-        <div class="section1">
-          <div>header</div>
+<body onload="dailySpecial.displayDataInUserLog()">
+  <div id="root">
+    <div class="display">
+      <div class="section1">
+        <div>header</div>
+      </div>
+      <div class="section2">
+        <div>menus</div>
+        <div class="menu-displays">m-d1</div>
+        <div class="menu-displays">m-d2</div>
+        <div class="menu-displays">m-d3</div>
+        <div class="menu-displays">m-d4</div>
+        <div class="menu-displays">m-d5</div>
+        <div class="menu-displays">m-d6</div>
+      </div>
+      <div class="section3">
+        <div>products</div>
+        <div class="product-displays">
+          p-d1
+          <button onclick="seatState.passDataToUserLog(this.id);" id="addMeBtn1" class="addMeBtn">
+            Add Me to Cart
+          </button>
         </div>
-        <div class="section2">
-          <div>menus</div>
-          <div class="menu-displays">m-d1</div>
-          <div class="menu-displays">m-d2</div>
-          <div class="menu-displays">m-d3</div>
-          <div class="menu-displays">m-d4</div>
-          <div class="menu-displays">m-d5</div>
-          <div class="menu-displays">m-d6</div>
+        <div class="product-displays">
+          p-d2
+          <button onclick="seatState.passDataToUserLog(this.id);" id="addMeBtn2" class="addMeBtn">
+            Add Me to Cart
+          </button>
         </div>
-        <div class="section3">
-          <div>products</div>
-          <div class="product-displays">
-            p-d1
-            <button
-              onclick="seatState.passDataToUserLog(this.id);"
-              id="addMeBtn1"
-              class="addMeBtn"
-            >
-              Add Me to Cart
-            </button>
-          </div>
-          <div class="product-displays">
-            p-d2
-            <button
-              onclick="seatState.passDataToUserLog(this.id);"
-              id="addMeBtn2"
-              class="addMeBtn"
-            >
-              Add Me to Cart
-            </button>
-          </div>
-          <div class="product-displays">
-            p-d3
-            <button
-              onclick="seatState.passDataToUserLog(this.id);"
-              id="addMeBtn3"
-              class="addMeBtn"
-            >
-              Add Me to Cart
-            </button>
-          </div>
-          <div class="product-displays">
-            p-d4
-            <button
-              onclick="seatState.passDataToUserLog(this.id)"
-              id="addMeBtn4"
-              class="addMeBtn"
-            >
-              Add Me to Cart
-            </button>
-          </div>
+        <div class="product-displays">
+          p-d3
+          <button onclick="seatState.passDataToUserLog(this.id);" id="addMeBtn3" class="addMeBtn">
+            Add Me to Cart
+          </button>
         </div>
-        <div class="section4">
-          <div>seats</div>
-          <div
-            id="seat1"
-            class="seat-displays"
-            onclick="assignedTable.selectSeat(this.id)"
-          >
-            Seat 1
-          </div>
-          <div
-            id="seat2"
-            class="seat-displays"
-            onclick="assignedTable.selectSeat(this.id)"
-          >
-            Seat 2
-          </div>
-          <div
-            id="seat3"
-            class="seat-displays"
-            onclick="assignedTable.selectSeat(this.id)"
-          >
-            Seat 3
-          </div>
-          <div
-            id="seat4"
-            class="seat-displays"
-            onclick="assignedTable.selectSeat(this.id)"
-          >
-            Seat 4
-          </div>
-          <div
-            id="seat5"
-            class="seat-displays"
-            onclick="assignedTable.selectSeat(this.id)"
-          >
-            Seat 5
-          </div>
-        </div>
-        <div id="logInfo" class="section5">
-          <div>user log</div>
+        <div class="product-displays">
+          p-d4
+          <button onclick="seatState.passDataToUserLog(this.id)" id="addMeBtn4" class="addMeBtn">
+            Add Me to Cart
+          </button>
         </div>
       </div>
+      <div class="section4">
+        <div>seats</div>
+        <div id="seat1" class="seat-displays" onclick="assignedTable.selectSeat(this.id)">
+          Seat 1
+        </div>
+        <div id="seat2" class="seat-displays" onclick="assignedTable.selectSeat(this.id)">
+          Seat 2
+        </div>
+        <div id="seat3" class="seat-displays" onclick="assignedTable.selectSeat(this.id)">
+          Seat 3
+        </div>
+        <div id="seat4" class="seat-displays" onclick="assignedTable.selectSeat(this.id)">
+          Seat 4
+        </div>
+        <div id="seat5" class="seat-displays" onclick="assignedTable.selectSeat(this.id)">
+          Seat 5
+        </div>
+      </div>
+      <div id="logInfo" class="section5">
+        <div>user log</div>
+      </div>
     </div>
-  </body>
+  </div>
+
+  <!--Moved the script tags to the -->
+  <script src="menu.js"></script>
+  <script src="productDisplay.js"></script>
+  <script src="order.js"></script>
+  <script src="orderDB.js"></script>
+  <script src="calculator.js"></script>
+  <script src="userlog.js"></script>
+  <script src="dailySpecial.js"></script>
+  <script src="seat.js"></script>
+  <script src="check.js"></script>
+  <script src="party.js"></script>
+  <script src="index.js"></script>
+  <script src="table.js"></script>
+  <script src="tableBuilder.js"></script>
+  <script src="main.js"></script>
+
+</body>
+
 </html>
 
 <!--
